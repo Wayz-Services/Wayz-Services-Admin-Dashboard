@@ -28,8 +28,11 @@ export default async function LocaleLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
 
+  // Determine the direction based on locale
+  const isRtl = locale === "ar";
+
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={messages}>

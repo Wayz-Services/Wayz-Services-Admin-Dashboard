@@ -1,4 +1,3 @@
-import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import LocalizedLink from "../components/LocalizedLink";
 
