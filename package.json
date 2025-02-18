@@ -1,9 +1,8 @@
 {
-  "name": "nextjs-setup",
+  "name": "wayz-services-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node check-name.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
