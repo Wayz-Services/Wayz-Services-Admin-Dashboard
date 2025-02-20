@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ThemeSwitcher from "../utils/ThemeSwitcher";
+import LinkButton from "../components/LinkButton";
 
 export default function Home() {
   return (
@@ -35,10 +36,10 @@ export default function Home() {
       <div />
 
       <div className="flex items-center text-white font-semibold gap-5">
-        <button>Sign in</button>
-        <button className="bg-white px-4 rounded-lg py-2 text-black">
-          Post your task
-        </button>
+        <LinkButton href="/about">Sign In</LinkButton>
+        <LinkButton href="/" bg="white">
+          Post Your Task
+        </LinkButton>
       </div>
     </nav>
   );
