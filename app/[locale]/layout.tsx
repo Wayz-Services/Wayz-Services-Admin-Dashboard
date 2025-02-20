@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getMessages } from "next-intl/server";
 import ThemeProvider from "../utils/ThemeProvider";
-import ThemeSwitcher from "../utils/ThemeSwitcher";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,7 +35,6 @@ export default async function LocaleLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={messages}>
-            <ThemeSwitcher />
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
