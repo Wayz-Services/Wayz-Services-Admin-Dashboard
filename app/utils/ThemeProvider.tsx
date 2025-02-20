@@ -18,7 +18,7 @@ export default function ThemeProvider({ children, ...props }: ThemeProviderProps
 
   if (!mounted) {
     // If the component hasn't mounted yet, render nothing or a fallback
-    return null;
+    return <></>;
   }
 
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
