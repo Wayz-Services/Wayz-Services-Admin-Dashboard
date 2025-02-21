@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "react-feather";
 
@@ -36,69 +34,69 @@ export default function Carousel({
     return () => clearInterval(slideInterval);
   }, [autoSlide, autoSlideInterval]);
 
-  const splitDescription = (description: string): string[] => {
-    return description.split(". ").map((sentence) => sentence.trim() + ".");
-  };
+  const splitDescription = (description: string): string[] =>
+    description.split(". ").map((sentence) => sentence.trim() + ".");
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-      <div
-        className="flex transition-transform ease-out duration-500"
-        style={{ transform: `translateX(-${curr * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className="w-full flex-shrink-0 h-screen flex flex-col items-start justify-center relative"
-            style={{ backgroundColor: slide.bgColor || "white" }}
-          >
-             <div className="w-3/4" style={{ transform: "translateX(120px)" }}>
-    <div className="flex flex-col items-start leading-relaxed font-sans">
-        {splitDescription(slide.description).map(
-            (line: string, lineIndex: number) => (
-                <p key={lineIndex} className="text-2xl font-semibold"> {/* Modified <p> */}
-                    {line}
-                </p>
-            )
-        )}
-    </div>
-              <div className="flex items-start mt-4">
-                <img
-                  src={slide.image}
-                  alt="User"
-                  className="rounded-full w-20 h-20 mr-4"
-                />
-                <div className="flex flex-col items-start">
-                  <p className="font-bold text-base">{slide.name}</p>
-                  <p className="text-black text-sm">{slide.role}</p>
+    <div className="relative w-full h-auto min-h-[500px] overflow-hidden flex items-center justify-center">
+      {/* Carousel content */}
+      <div className="w-[91%] px-6 sm:px-8 flex items-center justify-center overflow-hidden"> {/* Reduced width */}
+        <div
+          className="flex w-full transition-transform ease-out duration-500"
+          style={{ transform: `translateX(-${curr * 100}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="w-full flex-shrink-0 h-auto min-h-[500px] flex flex-col items-start justify-center p-4 sm:p-10"
+              style={{ backgroundColor: slide.bgColor || "white" }}
+            >
+              <div className="w-full sm:w-3/4 pl-6 sm:pl-24">
+                <div className="flex flex-col items-start leading-relaxed font-sans">
+                  {splitDescription(slide.description).map(
+                    (line: string, lineIndex: number) => (
+                      <p key={lineIndex} className="text-base sm:text-xl font-semibold">
+                        {line}
+                      </p>
+                    )
+                  )}
+                </div>
+                <div className="flex items-start mt-4">
+                  <img
+                    src={slide.image}
+                    alt="User"
+                    className="rounded-full w-16 h-16 sm:w-20 sm:h-20 mr-4"
+                  />
+                  <div className="flex flex-col items-start">
+                    <p className="font-bold text-sm sm:text-base">{slide.name}</p>
+                    <p className="text-black text-xs sm:text-sm">{slide.role}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Updated Left Button Position */}
-      <div className="absolute inset-y-1/2 left-[20px] flex items-center space-x-4 z-10">
+      {/* Left Navigation Button */}
+      <div className="absolute top-1/2 left-1 sm:left-4 md:left-8 flex items-center z-10 transform -translate-y-12">
         <button
           onClick={prev}
-          className="p-3 rounded-full"
-          style={{ backgroundColor: "#0059AB" }}
+          className="p-4 rounded-full bg-[#0059AB] flex items-center justify-center"
         >
-          <ChevronLeft size={40} className="text-white" />
+          <ChevronLeft size={24} className="text-white" />
         </button>
       </div>
 
-      {/* Updated Right Button Position */}
-      <div className="absolute inset-y-1/2 right-[20px] flex items-center space-x-4 z-10">
+      {/* Right Navigation Button */}
+      <div className="absolute top-1/2 right-8 sm:right-10 md:right-16 transform translate-x-8 transform -translate-y-12  flex items-center z-10">
         <button
           onClick={next}
-          className="p-3 rounded-full"
-          style={{ backgroundColor: "#0059AB" }}
+          className="p-4 rounded-full bg-[#0059AB] flex items-center justify-center"
         >
-          <ChevronRight size={40} className="text-white" />
+          <ChevronRight size={24} className="text-white" />
         </button>
-      </div> 
+      </div>
     </div>
   );
 }

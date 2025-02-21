@@ -9,12 +9,12 @@ export default function Home() {
     const t = useTranslations("HomePage");
 
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-sans bg-white dark:bg-black">
+        <div className="flex flex-col items-center justify-between min-h-screen p-8 pb-20 gap-16 sm:p-20 font-sans bg-white dark:bg-black">
             <h1>{t("title")}</h1>
             <LocalizedLink href="/about">{t("about")}</LocalizedLink>
 
-            <div className="flex justify-center items-center flex-col pt-10 px-8">
-                <h2 className="text-2xl font-semibold text-blue-500 text-center mb-8">
+            <div className="flex flex-col justify-center items-center pt-10 px-8">
+                <h2 className="text-2xl font-semibold text-blue-500 text-center mb-8 mt-20">
                     WHAT OUR USERS HAVE TO SAY
                 </h2>
 
@@ -39,8 +39,6 @@ export default function Home() {
                     ]}
                 />
             </div>
-
-            
         </div>
     );
 }
