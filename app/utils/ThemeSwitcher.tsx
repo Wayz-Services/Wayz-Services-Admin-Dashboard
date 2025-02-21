@@ -6,6 +6,7 @@ const ThemeSwitcher = () => {
   const [mount, setMount] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
+
   useEffect(() => {
     setMount(true);
   }, []);
@@ -41,4 +42,5 @@ const ThemeSwitcher = () => {
     </div>
   ) : null;
 };
+
 export default ThemeSwitcher;
