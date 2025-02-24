@@ -1,8 +1,7 @@
 import Image from "next/image";
-import React from "react";
 import ThemeSwitcher from "../utils/ThemeSwitcher";
-import LinkButton from "./LinkButton";
-import LocalizedLink from "./LocalizedLink";
+import LinkButton from "./Reusables/LinkButton";
+import LocalizedLink from "./Reusables/LocalizedLink";
 
 interface HeaderProps {
   isLoggedIn?: boolean;
