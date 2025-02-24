@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import Image from "next/image";
+import ImageComponent from "./Reusables/Image";
 
-export default function App() {
+export default function Carousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -30,19 +30,19 @@ export default function App() {
     {
       description:
         "Working with WAYZ was a game-changer for our company. Their expertise and dedication were evident throughout the entire project. We highly recommend them.",
-      image: "/images/dummy-user.png",
+      image: "/images/Slide1.png",
       name: "Jane Smith",
       role: "Marketing Director",
     },
   ];
 
   return (
-    <div className="px-10">
+    <div className="px-10 bg-white dark:bg-black">
       <div className="relative">
         <div ref={sliderRef} className="keen-slider">
           {slides.map((slide, index) => (
             <div
-              className="keen-slider__slide flex items-center justify-center text-white text-[50px] h-[300px] max-h-screen"
+              className="keen-slider__slide flex items-center justify-center text-black text-[50px] h-[300px] max-h-screen dark:text-white"
               key={index}
             >
               <div className="w-full flex-shrink-0 min-h-[500px] flex flex-col justify-center p-4 sm:w-3/4">
@@ -50,21 +50,18 @@ export default function App() {
                   {slide.description}
                 </div>
                 <div className="flex items-start mt-4">
-                  <Image
+                  <ImageComponent
                     src={slide.image}
                     width={60}
                     height={60}
                     alt="User"
-                    unoptimized
-                    className="rounded-full sm:w-20 sm:h-20 mr-4 object-cover"
+                    className="rounded-full mr-4 object-cover"
                   />
                   <div>
                     <p className="font-bold text-sm sm:text-base">
                       {slide.name}
                     </p>
-                    <p className="text-black text-xs sm:text-sm">
-                      {slide.role}
-                    </p>
+                    <p className="text-xs sm:text-sm">{slide.role}</p>
                   </div>
                 </div>
               </div>

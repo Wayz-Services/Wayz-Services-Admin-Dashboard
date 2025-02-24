@@ -7,7 +7,12 @@ interface CardProps {
   buttonText?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, imageSrc, buttonText = "List your business" }) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  description,
+  imageSrc,
+  buttonText = "List your business",
+}) => {
   return (
     <div className="flex flex-col md:flex-row items-center bg-white shadow-2xl rounded-2xl p-8 w-full h-auto mx-auto mt-20">
       {/* Image Section (on the Left) */}
