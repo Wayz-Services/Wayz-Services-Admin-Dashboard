@@ -15,21 +15,21 @@ export default function YourProcess() {
 
       <div className="mt-10 flex flex-wrap justify-center gap-6">
         {steps.map((id) => (
-          <div
-            key={id}
-            className="bg-[#0059AB] border border-white rounded-xl pb-6 w-72 text-center flex flex-col items-center justify-center"
-          >
-            <div className="bg-white text-blue-700 text-xl font-semibold w-10 h-12 flex items-end pb-2 justify-center rounded-b-full">
-              {id}
+            <div
+              key={id}
+              className="bg-[#0059AB] border border-white rounded-xl pb-6 w-72 text-center flex flex-col items-center justify-between"
+            >
+              <div className="bg-white text-blue-700 text-xl font-semibold w-10 h-12 flex items-end pb-2 justify-center rounded-b-full">
+                {id}
+              </div>
+              <h3 className="font-semibold text-2xl italic mt-6">
+                {t(`steps.${id}.title`)}
+              </h3>
+              <p className="text-lg mt-2">{t(`steps.${id}.description`)}</p>
+              <div className="mt-4 flex justify-center">
+                <MdOutlineArrowOutward size={34} />
+              </div>
             </div>
-            <h3 className="font-semibold text-2xl italic mt-6">
-              {t(`steps.${id}.title`)}
-            </h3>
-            <p className="text-lg mt-2">{t(`steps.${id}.description`)}</p>
-            <div className="mt-4 flex justify-center">
-              <MdOutlineArrowOutward size={34} />
-            </div>
-          </div>
         ))}
       </div>
     </section>
