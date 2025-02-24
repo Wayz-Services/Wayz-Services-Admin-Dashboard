@@ -1,102 +1,127 @@
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "react-feather";
+"use client";
 
-interface Slide {
-  description: string;
-  bgColor?: string;
-  image?: string;
-  name?: string;
-  role?: string;
-}
+import React, { useState } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import Image from "next/image";
 
-interface CarouselProps {
-  children: Slide[];
-  autoSlide?: boolean;
-  autoSlideInterval?: number;
-}
+export default function App() {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
 
-export default function Carousel({
-  children: slides,
-  autoSlide = false,
-  autoSlideInterval = 3000,
-}: CarouselProps) {
-  const [curr, setCurr] = useState(0);
-
-  const prev = () =>
-    setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
-
-  const next = () =>
-    setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
-
-  useEffect(() => {
-    if (!autoSlide) return;
-    const slideInterval = setInterval(next, autoSlideInterval);
-    return () => clearInterval(slideInterval);
-  }, [autoSlide, autoSlideInterval]);
-
-  const splitDescription = (description: string): string[] =>
-    description.split(". ").map((sentence) => sentence.trim() + ".");
+  const slides = [
+    {
+      description:
+        "Our Experience With WAYZ Has Been Excellent From Start To Finish. Nathan And The Team Took The Time To Understand Our Business, Our Target Market, And Digital Ambitions They Have",
+      image: "/images/rob-olsson.png",
+      name: "Rob Olsson",
+      role: "Head Of Strategy",
+    },
+    {
+      description:
+        "Working with WAYZ was a game-changer for our company. Their expertise and dedication were evident throughout the entire project. We highly recommend them.",
+      image: "/images/dummy-user.png",
+      name: "Jane Smith",
+      role: "Marketing Director",
+    },
+  ];
 
   return (
-    <div className="relative w-full h-auto min-h-[500px] overflow-hidden flex items-center justify-center">
-      {/* Carousel content */}
-      <div className="w-[91%] px-6 sm:px-8 flex items-center justify-center overflow-hidden"> {/* Reduced width */}
-        <div
-          className="flex w-full transition-transform ease-out duration-500"
-          style={{ transform: `translateX(-${curr * 100}%)` }}
-        >
+    <div className="px-10">
+      <div className="relative">
+        <div ref={sliderRef} className="keen-slider">
           {slides.map((slide, index) => (
             <div
+              className="keen-slider__slide flex items-center justify-center text-white text-[50px] h-[300px] max-h-screen"
               key={index}
-              className="w-full flex-shrink-0 h-auto min-h-[500px] flex flex-col items-start justify-center p-4 sm:p-10"
-              style={{ backgroundColor: slide.bgColor || "white" }}
             >
-              <div className="w-full sm:w-3/4 pl-6 sm:pl-24">
-                <div className="flex flex-col items-start leading-relaxed font-sans">
-                  {splitDescription(slide.description).map(
-                    (line: string, lineIndex: number) => (
-                      <p key={lineIndex} className="text-base sm:text-xl font-semibold">
-                        {line}
-                      </p>
-                    )
-                  )}
+              <div className="w-full flex-shrink-0 min-h-[500px] flex flex-col justify-center p-4 sm:w-3/4">
+                <div className="leading-relaxed font-sans text-base sm:text-xl font-semibold">
+                  {slide.description}
                 </div>
                 <div className="flex items-start mt-4">
-                  <img
+                  <Image
                     src={slide.image}
+                    width={60}
+                    height={60}
                     alt="User"
-                    className="rounded-full w-16 h-16 sm:w-20 sm:h-20 mr-4"
+                    unoptimized
+                    className="rounded-full sm:w-20 sm:h-20 mr-4 object-cover"
                   />
-                  <div className="flex flex-col items-start">
-                    <p className="font-bold text-sm sm:text-base">{slide.name}</p>
-                    <p className="text-black text-xs sm:text-sm">{slide.role}</p>
+                  <div>
+                    <p className="font-bold text-sm sm:text-base">
+                      {slide.name}
+                    </p>
+                    <p className="text-black text-xs sm:text-sm">
+                      {slide.role}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow
+              left
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
 
-      {/* Left Navigation Button */}
-      <div className="absolute top-1/2 left-1 sm:left-4 md:left-8 flex items-center z-10 transform -translate-y-12">
-        <button
-          onClick={prev}
-          className="p-4 rounded-full bg-[#0059AB] flex items-center justify-center"
-        >
-          <ChevronLeft size={24} className="text-white" />
-        </button>
+            <Arrow
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              }
+            />
+          </>
+        )}
       </div>
+    </div>
+  );
+}
 
-      {/* Right Navigation Button */}
-      <div className="absolute top-1/2 right-8 sm:right-10 md:right-16 transform translate-x-8 transform -translate-y-12  flex items-center z-10">
-        <button
-          onClick={next}
-          className="p-4 rounded-full bg-[#0059AB] flex items-center justify-center"
-        >
-          <ChevronRight size={24} className="text-white" />
-        </button>
-      </div>
+function Arrow(props: {
+  disabled: boolean;
+  left?: boolean;
+  onClick: (e: any) => void;
+}) {
+  const disabled = props.disabled
+    ? "opacity-50 cursor-not-allowed pointer-events-none"
+    : "cursor-pointer";
+
+  const left = props.left ? "left-[5px]" : "left-auto right-[5px]";
+
+  return (
+    <div
+      className={`w-10 h-10 absolute top-1/2 -translate-y-1/2 bg-[#0C8CE9] rounded-full flex items-center justify-center arrow ${disabled} ${left}`}
+      onClick={(e) => {
+        if (!props.disabled) {
+          props.onClick(e);
+        }
+      }}
+    >
+      {props.left ? (
+        <IoArrowBack size={30} color="white" />
+      ) : (
+        <IoArrowForward color="white" size={30} />
+      )}
     </div>
   );
 }
