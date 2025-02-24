@@ -57,7 +57,8 @@ export default function Carousel() {
                     alt="User"
                     className="rounded-full mr-4 object-cover"
                   />
-                  <div>
+
+                  <div className="items-start">
                     <p className="font-bold text-sm sm:text-base">
                       {slide.name}
                     </p>
