@@ -1,6 +1,46 @@
 {
-    "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "Footer": {
+    "wayz": "WAYZ",
+    "quick_links": "Quick Links",
+    "our_services": "Our Services",
+    "im_a_supplier": "I'm a Supplier",
+    "more_about_wayz": "More About WAYZ",
+    "support": "Support",
+    "customer_support": "Customer Support",
+    "advertise_with_us": "Advertise With Us",
+    "careers_privacy": "Careers & Privacy",
+    "contact_us": "Contact Us",
+    "follow_us": "Follow Us",
+    "download_our_app": "Download Our App",
+    "download_on_the": "Download on the",
+    "app_store": "App Store",
+    "get_it_on": "Get it on",
+    "google_play": "Google Play",
+    "copyright": "© 2025 WAYZ. All Rights Reserved.",
+    "privacy_policy": "Privacy Policy",
+    "complaints": "Complaints",
+    "terms_and_conditions": "Terms and Conditions"
+  },
+ "YourProcess": {
+    "process": "Your Process",
+    "title": "Get Our Service in 3 Steps",
+    "steps": {
+      "1": {
+        "title": "Post a Task",
+        "description": "Let us know what you need by simply answering a few questions."
+      },
+      "2": {
+        "title": "Review Offers",
+        "description": "Receive multiple free quotes, compare, and choose the right one for your task."
+      },
+      "3": {
+        "title": "Get it Done",
+        "description": "Book your chosen contractor. Your task is now complete."
+      }
     }
   }
+}

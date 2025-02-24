@@ -1,6 +1,46 @@
 {
-    "HomePage": {
-      "title": "اهلا بالعالم!",
-      "about": "روح من هنا"
+  "HomePage": {
+    "title": "اهلا بالعالم!",
+    "about": "روح من هنا"
+  },
+  "Footer": {
+    "wayz": "وايز",
+    "quick_links": "روابط سريعة",
+    "our_services": "خدماتنا",
+    "im_a_supplier": "أنا مورد",
+    "more_about_wayz": "المزيد عن وايز",
+    "support": "الدعم",
+    "customer_support": "دعم العملاء",
+    "advertise_with_us": "الإعلان معنا",
+    "careers_privacy": "الوظائف والخصوصية",
+    "contact_us": "اتصل بنا",
+    "follow_us": "تابعنا",
+    "download_our_app": "حمل تطبيقنا",
+    "download_on_the": "تحميل من",
+    "app_store": "متجر التطبيقات",
+    "get_it_on": "احصل عليه من",
+    "google_play": "جوجل بلاي",
+    "copyright": "© 2025 وايز. جميع الحقوق محفوظة.",
+    "privacy_policy": "سياسة الخصوصية",
+    "complaints": "الشكاوى",
+    "terms_and_conditions": "الشروط والأحكام"
+  },
+  "YourProcess": {
+    "process": "عملية الطلب",
+    "title": "احصل على خدمتنا في 3 خطوات",
+    "steps": {
+      "1": {
+        "title": "نشر المهمة",
+        "description": "أخبرنا بما تحتاجه من خلال الإجابة على بعض الأسئلة البسيطة."
+      },
+      "2": {
+        "title": "مراجعة العروض",
+        "description": "استلم عروضًا مجانية متعددة، وقارن بينها، واختر الأنسب لمهمتك."
+      },
+      "3": {
+        "title": "إنجاز المهمة",
+        "description": "احجز المقاول الذي اخترته. مهمتك الآن مكتملة."
+      }
     }
   }
+}

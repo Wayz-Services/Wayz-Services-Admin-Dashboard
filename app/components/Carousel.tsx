@@ -49,7 +49,7 @@ export default function Carousel() {
                 <div className="leading-relaxed font-sans text-base sm:text-xl font-semibold">
                   {slide.description}
                 </div>
-                <div className="flex items-start mt-4">
+                <div className="flex items-start mt-4 gap-3">
                   <ImageComponent
                     src={slide.image}
                     width={60}
