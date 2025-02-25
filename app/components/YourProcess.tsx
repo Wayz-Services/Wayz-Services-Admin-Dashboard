@@ -7,10 +7,10 @@ export default function YourProcess() {
   const t = useTranslations("YourProcess");
 
   return (
-    <section className="bg-[#0059AB] text-white py-12">
+    <section className="bg-[#fff] text-white py-12">
       <div className="text-center">
-        <p className="uppercase text-sm tracking-wide">{t("process")}</p>
-        <h2 className="text-4xl font-bold mt-2">{t("title")}</h2>
+        <p className="uppercase text-lg font-bold tracking-wide text-[#0059AB]">{t("process")}</p>
+        <h2 className="text-4xl font-bold mt-2 text-black">{t("title")}</h2>
       </div>
 
       <div className="mt-10 flex flex-wrap justify-center gap-6">

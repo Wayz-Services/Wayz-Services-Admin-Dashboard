@@ -17,14 +17,14 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   ...rest
 }) => {
   return (
-    <div className={`w-[${width}px] h-[${height}px] relative`}>
+    <div className={`relative`} style={{ width: width, height: height }}>
       <Image
         src={src}
-        fill
         alt={alt}
+        fill
         unoptimized
         objectFit="cover"
-        className={className}
+        className={`${className}`}
         {...rest}
       />
     </div>
