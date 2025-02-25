@@ -25,6 +25,15 @@
     "complaints": "Complaints",
     "terms_and_conditions": "Terms and Conditions"
   },
+    "Services": {
+      "vehiclesServicesTitle": "Vehicles Services",
+      "vehiclesServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
+      "buildingServicesTitle": "Building Services",
+      "buildingServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
+      "vehiclesServicesAlt": "Image of Vehicles Services",
+      "buildingServicesAlt": "Image of Building Services"
+    } ,
+  
  "YourProcess": {
     "process": "Our Process",
     "title": "Get Our Service in 3 Steps",
@@ -43,4 +52,5 @@
       }
     }
   }
+  
 }
