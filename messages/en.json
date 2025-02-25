@@ -25,7 +25,7 @@
     "complaints": "Complaints",
     "terms_and_conditions": "Terms and Conditions"
   },
- "YourProcess": {
+  "YourProcess": {
     "process": "Our Process",
     "title": "Get Our Service in 3 Steps",
     "steps": {
@@ -42,5 +42,19 @@
         "description": "Book your chosen contractor. Your task is now complete."
       }
     }
+  },
+  "SearchBar": {
+    "title_part1": "The best way to ",
+    "title_part2": "find and hire ",
+    "title_part3": "suppliers and contractors in Lebanon",
+    "hire_and_pay": "Hiring and paying for contractors has never been easier. So you can minimize the risk of misclassification.",
+    "category": "Select Category",
+    "location": "Location",
+    "search_for_services": "Search for services",
+    "job_search": "Search for a job or keyword",
+    "search_button": "Search",
+    "construction": "Construction",
+    "cleaning": "Cleaning",
+    "electrical": "Electrical"
   }
 }
