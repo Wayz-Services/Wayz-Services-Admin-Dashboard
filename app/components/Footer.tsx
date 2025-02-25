@@ -105,9 +105,7 @@ const Footer = () => {
                 <Image
                   src={appleLogo}
                   alt="App Store"
-                  width={20}
-                  height={20}
-                  style={{ width: 20, height:25 }}
+                  style={{ width: 20, height: 25 }}
                 />
                 <div className="ms-2">
                   <p className="text-xs">{t("download_on_the")}</p>
