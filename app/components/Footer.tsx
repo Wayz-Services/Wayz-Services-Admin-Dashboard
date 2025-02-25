@@ -98,16 +98,11 @@ const Footer = () => {
             <h2 className="font-semibold mb-3">{t("download_our_app")}</h2>
             <div className="space-y-3">
               <Link
-                href="#"
+                href="https://apps.apple.com/us/app/wayz-services/id6740003970"
                 className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
+                target="blank"
               >
-                <Image
-                  src={appleLogo}
-                  alt="App Store"
-                  width={20}
-                  height={20}
-                  priority
-                />
+                <Image src={appleLogo} alt="App Store" width={20} height={20} />
                 <div className="ms-2">
                   <p className="text-xs">{t("download_on_the")}</p>
                   <p className="text-base font-semibold">{t("app_store")}</p>
@@ -115,15 +110,15 @@ const Footer = () => {
               </Link>
 
               <Link
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.technoleb.wayz&hl=en"
                 className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
+                target="blank"
               >
                 <Image
                   src={playstoreLogo}
                   alt="Play Store"
                   width={20}
                   height={20}
-                  priority
                 />
                 <div className="ms-2">
                   <p className="text-xs">{t("get_it_on")}</p>

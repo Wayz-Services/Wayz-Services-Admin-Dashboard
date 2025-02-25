@@ -4,7 +4,7 @@ interface ImageComponentProps {
   src: string;
   width: number;
   height: number;
-  className: string;
+  className?: string;
   alt?: string;
 }
 
