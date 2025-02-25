@@ -39,7 +39,7 @@ const socialMedia: SocialMediaLink[] = [
   { icon: <FaInstagram />, href: "https://www.instagram.com/wayzservices/" },
   {
     icon: <FaLinkedinIn />,
-    href: "https://www.linkedin.com/company/wayz",
+    href: "https://www.linkedin.com/company/wayzservices/",
   },
 ];
 
