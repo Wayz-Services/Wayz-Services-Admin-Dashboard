@@ -2,6 +2,7 @@ import Image from "next/image";
 import ThemeSwitcher from "../utils/ThemeSwitcher";
 import LinkButton from "./Reusables/LinkButton";
 import LocalizedLink from "./Reusables/LocalizedLink";
+import LocalSwitcher from "./LocalSwitcher";
 
 interface HeaderProps {
   isLoggedIn?: boolean;
@@ -31,22 +32,21 @@ const Header: React.FC<HeaderProps> = ({
       ];
 
   return (
-    <nav className="bg-[#0C8CE9] flex pt-10 items-start justify-around mx-auto fill-white dark:bg-black">
+    <nav className="bg-primary flex pt-10 items-start justify-around mx-auto fill-white dark:bg-primaryDark">
       {/* Logo Section */}
       <Image
         src={"/logo.png"}
         width={150}
         height={70}
         className="relative"
+        style={{ width: "auto", height: "auto" }}
         alt="wayz logo"
+        priority
       />
 
       {/* Language Selector and Theme Switcher */}
       <div className="flex items-center">
-        <select className="bg-transparent pe-1 text-white outline-none">
-          <option className="text-black">EN</option>
-          <option className="text-black">AR</option>
-        </select>
+        <LocalSwitcher />
 
         <div className="h-8 w-[1px] mx-3 border-e py-1 border-e-white me-3 dark:border-e-white" />
 

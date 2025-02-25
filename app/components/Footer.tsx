@@ -102,7 +102,13 @@ const Footer = () => {
                 className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
                 target="blank"
               >
-                <Image src={appleLogo} alt="App Store" width={20} height={20} />
+                <Image
+                  src={appleLogo}
+                  alt="App Store"
+                  width={20}
+                  height={20}
+                  style={{ width: "auto", height: "auto" }}
+                />
                 <div className="ms-2">
                   <p className="text-xs">{t("download_on_the")}</p>
                   <p className="text-base font-semibold">{t("app_store")}</p>

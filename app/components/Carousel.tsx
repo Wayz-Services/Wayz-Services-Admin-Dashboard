@@ -55,7 +55,7 @@ export default function Carousel() {
                     width={60}
                     height={60}
                     alt="User"
-                    className="rounded-full mr-4 object-cover"
+                    className="rounded-full me-4 object-cover"
                   />
 
                   <div className="items-start">
@@ -108,7 +108,7 @@ function Arrow(props: {
 
   return (
     <div
-      className={`w-10 h-10 absolute top-1/2 -translate-y-1/2 bg-[#0C8CE9] rounded-full flex items-center justify-center arrow ${disabled} ${left}`}
+      className={`p-2 absolute top-1/2 -translate-y-1/2 bg-primary rounded-full ${disabled} ${left}`}
       onClick={(e) => {
         if (!props.disabled) {
           props.onClick(e);
@@ -116,9 +116,9 @@ function Arrow(props: {
       }}
     >
       {props.left ? (
-        <IoArrowBack size={30} color="white" />
+        <IoArrowBack size={40} color="white" />
       ) : (
-        <IoArrowForward color="white" size={30} />
+        <IoArrowForward color="white" size={40} />
       )}
     </div>
   );
