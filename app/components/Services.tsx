@@ -37,12 +37,7 @@ const Services: React.FC = () => {
                 width={620}
                 height={600}
               />
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 60%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.85) 90%, rgba(0, 0, 0, 1) 100%)",
-                }}
-              ></div>
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.1)_55%,rgba(0,0,0,0.5)_75%,rgba(0,0,0,0.9)_90%,rgba(0,0,0,1)_100%)]"></div>
             </div>
             <div className="relative">
               <div className="absolute bottom-[60px] left-[20px] w-[calc(100%-40px)] text-white p-4">
