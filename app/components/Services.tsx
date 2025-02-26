@@ -25,7 +25,8 @@ const Services: React.FC = () => {
   return (
     <div className="flex flex-col items-center bg-primary p-5">
       <div className="flex flex-col ">
-        <div className="text-white text-3xl text-[20px]">Our Services</div>
+        <div className="text-white text-3xl">Our Services</div>
+        <div className="text-white text-4xl mt-2 mb-4 font-semibold">Check WAYZ Services</div>
 
         <div className="flex flex-wrap gap-[40px] mt-4">
           {services.map((service, index) => (
@@ -37,16 +38,18 @@ const Services: React.FC = () => {
                   fill
                   unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] via-[rgba(0,0,0,0.5)]"></div>
+
+                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] via-[rgba(0,0,0,0.5)]" />
               </div>
               <div className="relative">
                 <div className="absolute bottom-[60px] left-[20px] w-[calc(100%-40px)] text-white p-4">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
                     {service.title}
                   </h2>
                   <p className="text-base sm:text-lg">{service.description}</p>
                 </div>
-                <div className="left-[22px] w-[calc(100%-40px)] h-[calc(100%-100px)] bg-black opacity-30 z-0"></div>
+
+                <div className="left-[22px] w-[calc(100%-40px)] h-[calc(100%-100px)] bg-black opacity-30 z-0" />
               </div>
               <div className="absolute top-4 right-4 text-white">
                 <MdOutlineArrowOutward size={90} />

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -47,7 +47,7 @@ export default function YourProcess() {
             <div className="bg-white mt-[-1px] z-0 text-primary text-3xl font-semibold px-4 pt-4 flex items-end pb-2 justify-center rounded-b-full">
               {id}
             </div>
-            <h3 className="font-semibold h-4 text-2xl italic">
+            <h3 className="font-extrabold h-4 text-2xl italic">
               {t(`steps.${id}.title`)}
             </h3>
             <p className="text-lg max-h-8">{t(`steps.${id}.description`)}</p>

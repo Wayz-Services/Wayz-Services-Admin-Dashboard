@@ -46,7 +46,7 @@ export default function Carousel() {
               key={index}
             >
               <div className="flex flex-col justify-center p-4 w-3/4">
-                <div className="text-base sm:text-2xl font-semibold">
+                <div className="text-base sm:text-2xl font-medium">
                   {slide.description}
                 </div>
                 <div className="flex mt-4 gap-3">
