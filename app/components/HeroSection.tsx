@@ -73,7 +73,7 @@ const HeroSection = () => {
         </div>
 
         {/* Search Button */}
-        <Button className="text-white rounded-md w-auto px-14">
+        <Button className="text-white w-auto px-14">
           {t("search_button")}
         </Button>
       </div>
