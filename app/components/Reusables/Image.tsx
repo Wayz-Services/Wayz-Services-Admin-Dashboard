@@ -2,11 +2,12 @@ import Image from "next/image";
 
 interface ImageComponentProps {
   src: string;
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
   objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down"; // Restrict the values
   className?: string;
   alt?: string;
+  priority?: boolean;
 }
 
 const ImageComponent: React.FC<ImageComponentProps> = ({
@@ -16,6 +17,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   alt = "this is an image",
   className,
   objectFit = "cover",
+  priority = false,
   ...rest
 }) => {
   return (
@@ -27,6 +29,8 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         unoptimized
         className={`${className}`}
         style={{ objectFit: objectFit }}
+        priority={priority}
+        sizes="(max-width: 768px) 500px, (max-width: 1200px) 50vw, 300px"
         {...rest}
       />
     </div>

@@ -37,7 +37,7 @@ export default function Carousel() {
   ];
 
   return (
-    <div className="px-2 sm:px-10 bg-white dark:bg-black">
+    <div className="p-2 sm:px-10 bg-white dark:bg-black">
       <div className="relative">
         <div ref={sliderRef} className="keen-slider">
           {slides.map((slide, index) => (
@@ -45,7 +45,7 @@ export default function Carousel() {
               className="keen-slider__slide flex  justify-center text-black max-h-screen dark:text-white"
               key={index}
             >
-              <div className="min-h-[500px] sm:h-auto flex flex-col justify-center p-4 w-3/4">
+              <div className="flex flex-col justify-center p-4 w-3/4">
                 <div className="text-base sm:text-2xl font-semibold">
                   {slide.description}
                 </div>

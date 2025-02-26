@@ -42,7 +42,7 @@ export default async function LocaleLayout({
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={messages}>
-            <Header />
+            {/* <Header /> */}
             <main>{children}</main>
             <Footer />
           </NextIntlClientProvider>
