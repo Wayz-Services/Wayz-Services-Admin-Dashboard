@@ -4,6 +4,7 @@ interface ImageComponentProps {
   src: string;
   width: number;
   height: number;
+  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down"; // Restrict the values
   className?: string;
   alt?: string;
 }
@@ -14,6 +15,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   height,
   alt = "this is an image",
   className,
+  objectFit = "cover",
   ...rest
 }) => {
   return (
@@ -23,8 +25,8 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         alt={alt}
         fill
         unoptimized
-        objectFit="cover"
         className={`${className}`}
+        style={{ objectFit: objectFit }}
         {...rest}
       />
     </div>

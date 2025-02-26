@@ -25,6 +25,14 @@
     "complaints": "الشكاوى",
     "terms_and_conditions": "الشروط والأحكام"
   },
+    "Services": {
+      "vehiclesServicesTitle": "خدمات المركبات",
+      "vehiclesServicesDescription": "نساعدك على تجنب الأخطاء الصغيرة التي تتحول إلى مشاكل امتثال كبيرة",
+      "buildingServicesTitle": "خدمات البناء",
+      "buildingServicesDescription": "نساعدك على تجنب الأخطاء الصغيرة التي تتحول إلى مشاكل امتثال كبيرة",
+      "vehiclesServicesAlt": "صورة لخدمات المركبات",
+      "buildingServicesAlt": "صورة لخدمات البناء"
+    },
   "YourProcess": {
     "process": "عملية الطلب",
     "title": "احصل على خدمتنا في 3 خطوات",

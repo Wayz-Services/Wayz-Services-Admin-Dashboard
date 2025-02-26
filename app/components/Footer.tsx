@@ -39,7 +39,7 @@ const socialMedia: SocialMediaLink[] = [
   { icon: <FaInstagram />, href: "https://www.instagram.com/wayzservices/" },
   {
     icon: <FaLinkedinIn />,
-    href: "https://www.linkedin.com/company/wayz",
+    href: "https://www.linkedin.com/company/wayzservices/",
   },
 ];
 
@@ -102,7 +102,11 @@ const Footer = () => {
                 className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
                 target="blank"
               >
-                <Image src={appleLogo} alt="App Store" width={20} height={20} />
+                <Image
+                  src={appleLogo}
+                  alt="App Store"
+                  style={{ width: 20, height: 25 }}
+                />
                 <div className="ms-2">
                   <p className="text-xs">{t("download_on_the")}</p>
                   <p className="text-base font-semibold">{t("app_store")}</p>

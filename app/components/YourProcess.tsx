@@ -9,19 +9,19 @@ export default function YourProcess() {
   return (
     <section className="bg-[#fff] text-white py-12 px-6">
       <div className="text-center">
-        <p className="uppercase text-lg font-bold tracking-wide text-[#0059AB]">
+        <p className="uppercase text-lg font-semibold tracking-wide text-primary">
           {t("process")}
         </p>
-        <h2 className="text-4xl font-bold mt-2 text-black">{t("title")}</h2>
+        <h2 className="text-4xl font-semibold mt-2 text-black">{t("title")}</h2>
       </div>
 
       <div className="mt-10 flex flex-wrap justify-center gap-6">
         {steps.map((id) => (
           <div
             key={id}
-            className="bg-[#0059AB] border border-white rounded-xl pb-6 w-72 text-center gap-14 flex flex-col items-center justify-between"
+            className="bg-primary border border-white rounded-xl px-1 pb-6 w-72 text-center gap-14 flex flex-col items-center justify-between"
           >
-            <div className="bg-white text-blue-700 text-3xl font-semibold px-4 pt-4 flex items-end pb-2 justify-center rounded-b-full">
+            <div className="bg-white text-primary text-3xl font-semibold px-4 pt-4 flex items-end pb-2 justify-center rounded-b-full">
               {id}
             </div>
             <h3 className="font-semibold h-4 text-2xl italic">
