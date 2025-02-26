@@ -37,31 +37,29 @@ export default function Carousel() {
   ];
 
   return (
-    <div className="px-10 bg-white dark:bg-black">
+    <div className="px-2 sm:px-10 bg-white dark:bg-black">
       <div className="relative">
         <div ref={sliderRef} className="keen-slider">
           {slides.map((slide, index) => (
             <div
-              className="keen-slider__slide flex items-center justify-center text-black text-[50px] h-[300px] max-h-screen dark:text-white"
+              className="keen-slider__slide flex  justify-center text-black max-h-screen dark:text-white"
               key={index}
             >
-              <div className="w-full flex-shrink-0 min-h-[500px] flex flex-col justify-center p-4 sm:w-3/4">
-                <div className="leading-relaxed font-sans text-base sm:text-xl font-semibold">
+              <div className="min-h-[500px] sm:h-auto flex flex-col justify-center p-4 w-3/4">
+                <div className="text-base sm:text-2xl font-semibold">
                   {slide.description}
                 </div>
-                <div className="flex items-start mt-4 gap-3">
+                <div className="flex mt-4 gap-3">
                   <ImageComponent
                     src={slide.image}
                     width={60}
                     height={60}
                     alt="User"
-                    className="rounded-full me-4 object-cover"
+                    className="rounded-full me-4"
                   />
 
-                  <div className="items-start">
-                    <p className="font-bold text-sm sm:text-base">
-                      {slide.name}
-                    </p>
+                  <div>
+                    <p className="font-bold text-sm sm:text-lg">{slide.name}</p>
                     <p className="text-xs sm:text-sm">{slide.role}</p>
                   </div>
                 </div>
@@ -108,7 +106,7 @@ function Arrow(props: {
 
   return (
     <div
-      className={`p-2 absolute top-1/2 -translate-y-1/2 bg-primary rounded-full ${disabled} ${left}`}
+      className={`sm:p-2 absolute top-1/2 -translate-y-1/2 bg-primary rounded-full ${disabled} ${left}`}
       onClick={(e) => {
         if (!props.disabled) {
           props.onClick(e);

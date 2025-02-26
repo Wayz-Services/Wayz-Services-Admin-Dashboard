@@ -26,14 +26,14 @@
     "terms_and_conditions": "Terms and Conditions"
   },
   "Services": {
-      "vehiclesServicesTitle": "Vehicles Services",
-      "vehiclesServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
-      "buildingServicesTitle": "Building Services",
-      "buildingServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
-      "vehiclesServicesAlt": "Image of Vehicles Services",
-      "buildingServicesAlt": "Image of Building Services"
-    } ,
- "YourProcess": {
+    "vehiclesServicesTitle": "Vehicles Services",
+    "vehiclesServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
+    "buildingServicesTitle": "Building Services",
+    "buildingServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
+    "vehiclesServicesAlt": "Image of Vehicles Services",
+    "buildingServicesAlt": "Image of Building Services"
+  },
+  "YourProcess": {
     "process": "Our Process",
     "title": "Get Our Service in 3 Steps",
     "steps": {
@@ -53,9 +53,9 @@
   },
   "SearchBar": {
     "title_part1": "The best way to ",
-    "title_part2": "find and hire ",
-    "title_part3": "suppliers and contractors in Lebanon",
-    "hire_and_pay": "Hiring and paying for contractors has never been easier. So you can minimize the risk of misclassification.",
+    "title_part2": "Find and Hire ",
+    "title_part3": "Suppliers and Contractors in Lebanon",
+    "hire_and_pay": "Hiring and paying for contractors has never been easier. Even minimize your misclassification risks.",
     "category": "Select Category",
     "location": "Location",
     "search_for_services": "Search for services",

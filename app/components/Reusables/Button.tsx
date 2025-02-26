@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       {...rest}
-      className={`${className} bg-[#3498db] py-2 px-4`}
+      className={`${className} bg-primary py-2 hover:opacity-50`}
       onClick={onSubmit}
     >
       {children}

@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({
     { name: "Post a Task", link: "#" },
     {
       name: "Dashboard",
-      link: "#",
+      link: "",
       subNav: [
         { name: "Reports", link: "/dashboard/reports" },
         { name: "Settings", link: "/dashboard/settings" },
@@ -46,8 +46,8 @@ const Header: React.FC<HeaderProps> = ({
       link: "/",
       subNav: [
         { name: "Building Services", link: "/" },
-        { name: "Vehicle Services", link: "/" },
         { name: "Browse Suppliers", link: "/" },
+        { name: "Vehicle Services", link: "/" },
       ],
     },
     {
@@ -56,11 +56,11 @@ const Header: React.FC<HeaderProps> = ({
     },
     {
       name: "More About WAYZ",
-      link: "/register",
+      link: "",
       subNav: [
-        { name: "How it Work", link: "/" },
         { name: "About us", link: "/" },
         { name: "Contact us", link: "/" },
+        { name: "How it Work", link: "/" },
       ],
     },
   ];
