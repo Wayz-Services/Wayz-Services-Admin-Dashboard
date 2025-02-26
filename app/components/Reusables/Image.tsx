@@ -18,7 +18,6 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   className,
   objectFit = "cover",
   priority = false,
-  ...rest
 }) => {
   return (
     <div className={`relative`} style={{ width: width, height: height }}>
@@ -30,8 +29,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         className={`${className}`}
         style={{ objectFit: objectFit }}
         priority={priority}
-        sizes="(max-width: 768px) 500px, (max-width: 1200px) 50vw, 300px"
-        {...rest}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 23vw"
       />
     </div>
   );

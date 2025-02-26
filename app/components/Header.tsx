@@ -79,10 +79,10 @@ const Header: React.FC<HeaderProps> = ({
         src="/logo.png"
         width={150}
         height={70}
-        className="relative"
-        style={{ width: "auto", height: "auto" }}
+        style={{ width: 95, height: 140, objectFit: "contain" }}
         alt="wayz logo"
         priority
+        unoptimized
       />
 
       {/* Language Selector and Theme Switcher */}
@@ -124,7 +124,6 @@ const Header: React.FC<HeaderProps> = ({
         ))}
       </ul>
 
-      <div />
       <div />
 
       {/* Sign In and Post Task Buttons */}
