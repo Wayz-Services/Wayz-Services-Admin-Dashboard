@@ -30,7 +30,7 @@ export default function YourProcess() {
   }, []);
 
   return (
-    <section className="bg-[#fff] text-white py-12 px-6">
+    <section className="bg-[#F0F6FB] text-white py-12 px-6">
       <div className="text-center">
         <p className="uppercase text-lg font-semibold tracking-wide text-primary">
           {t("process")}

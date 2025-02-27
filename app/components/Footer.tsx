@@ -107,6 +107,7 @@ const Footer = () => {
                   alt="App Store"
                   style={{ width: 20, height: 25 }}
                 />
+
                 <div className="ms-2">
                   <p className="text-xs">{t("download_on_the")}</p>
                   <p className="text-base font-semibold">{t("app_store")}</p>
@@ -124,6 +125,7 @@ const Footer = () => {
                   width={20}
                   height={20}
                 />
+
                 <div className="ms-2">
                   <p className="text-xs">{t("get_it_on")}</p>
                   <p className="text-base font-semibold">{t("google_play")}</p>
@@ -133,9 +135,12 @@ const Footer = () => {
           </div>
         </div>
 
+        <div className="w-full h-[1px] bg-[#7296B6]" />
+
         {/* Copyright & Links */}
-        <div className="border-t border-gray-400 mt-8 pt-8 flex flex-col md:flex-row justify-between text-sm">
+        <div className="mt-8 flex flex-col md:flex-row justify-between text-sm">
           <p>{t("copyright")}</p>
+
           <nav className="flex space-x-6 rtl:space-x-reverse">
             <LocalizedLink href="#">{t("privacy_policy")}</LocalizedLink>
             <LocalizedLink href="#">{t("complaints")}</LocalizedLink>
