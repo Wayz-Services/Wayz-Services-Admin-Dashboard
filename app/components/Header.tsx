@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({
     : guestNavItems;
 
   return (
-    <nav className="bg-primary flex pt-10 items-start justify-around mx-auto y-[-1px] text-white dark:bg-primaryDark relative">
+    <nav className="bg-primary flex pt-10 items-start justify-around mx-auto my-[-1px] text-white dark:bg-primaryDark relative">
       {/* Logo Section */}
       <Image
         src="/logo.png"
