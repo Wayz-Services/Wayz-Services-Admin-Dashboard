@@ -26,6 +26,8 @@
     "terms_and_conditions": "الشروط والأحكام"
   },
   "Services": {
+    "ourServices": "خدماتنا",
+    "checkWayzServices": "تحقق من خدمات WAYZ",
     "vehiclesServicesTitle": "خدمات المركبات",
     "vehiclesServicesDescription": "نساعدك على تجنب الأخطاء الصغيرة التي تتحول إلى مشاكل امتثال كبيرة",
     "buildingServicesTitle": "خدمات البناء",

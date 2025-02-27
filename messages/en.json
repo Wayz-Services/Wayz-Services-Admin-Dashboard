@@ -26,6 +26,8 @@
     "terms_and_conditions": "Terms and Conditions"
   },
   "Services": {
+    "ourServices": "Our Services",
+    "checkWayzServices": "Check WAYZ Services",
     "vehiclesServicesTitle": "Vehicles Services",
     "vehiclesServicesDescription": "We help you avoid small mistakes that turn into big compliance issues",
     "buildingServicesTitle": "Building Services",
