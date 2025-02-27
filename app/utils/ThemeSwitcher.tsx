@@ -20,7 +20,13 @@ const ThemeSwitcher = () => {
         className="flex h-7 w-7 items-center justify-center rounded-md text-gray-800 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:border-slate-300 dark:text-white"
       >
         <div className="dark:hidden">
-          <Image src={"/Images/moon.png"} alt="moon" width={30} height={10} unoptimized />
+          <Image
+            src={"/Images/moon.png"}
+            alt="moon"
+            width={30}
+            height={10}
+            unoptimized
+          />
         </div>
         <svg
           className="hidden dark:block"
