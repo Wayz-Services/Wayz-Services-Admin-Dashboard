@@ -24,7 +24,7 @@ const Services: React.FC = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center bg-primary px-4 py-14 lg:py-24 overflow-hidden bg-[url('/Images/Element.png')]  bg-no-repeat bg-bottom"
+      className="relative flex flex-col items-center bg-primary px-4 py-14 lg:py-24 overflow-hidden bg-[url('/Images/Waves.png')]  bg-no-repeat bg-bottom"
       style={{ backgroundSize: "100% 50%" }}
     >
       <div className="flex flex-col items-center">
