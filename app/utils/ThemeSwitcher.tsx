@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 const ThemeSwitcher = () => {
   const [mount, setMount] = useState(false);
@@ -18,14 +19,9 @@ const ThemeSwitcher = () => {
         type="button"
         className="flex h-7 w-7 items-center justify-center rounded-md text-gray-800 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:border-slate-300 dark:text-white"
       >
-        <svg
-          className="dark:hidden"
-          fill="white"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-        </svg>
+        <div className="dark:hidden">
+          <Image src={"/Images/moon.png"} alt="moon" width={30} height={10} unoptimized />
+        </div>
         <svg
           className="hidden dark:block"
           fill="white"
