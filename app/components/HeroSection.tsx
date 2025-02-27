@@ -11,7 +11,13 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="bg-[#0059AB] pb-20 text-white text-center px-4">
+    <div
+      className="bg-[#0059AB] pb-20 text-white text-center px-4 md:bg-[url('/Images/magnet.png'),url('/Images/eye.png')] md:bg-no-repeat"
+      style={{
+        backgroundPosition: "right bottom, left center",
+        backgroundSize: "contain, 150px auto",
+      }}
+    >
       <div className="max-w-4xl mx-auto mb-8">
         <h1 className="text-3xl md:text-4xl font-normal mb-4">
           {t("title_part1")}
@@ -80,4 +86,5 @@ const HeroSection = () => {
     </div>
   );
 };
+
 export default HeroSection;
