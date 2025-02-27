@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({
     : guestNavItems;
 
   return (
-    <nav className="bg-primary flex pt-10 items-start justify-around mx-auto my-[-1px] text-white dark:bg-primaryDark relative">
+    <nav className="relative bg-primary flex pt-10 items-center justify-between px-4 pb-10 mx-auto my-[-1px] text-white md:text-sm md:items-start md:pb-0 md:px-0 md:justify-around lg:text-base dark:bg-primaryDark">
       {/* Logo Section */}
       <Image
         src="/logo.png"
@@ -86,14 +86,14 @@ const Header: React.FC<HeaderProps> = ({
       />
 
       {/* Language Selector and Theme Switcher */}
-      <div className="flex items-center">
+      <div className="items-center hidden md:flex">
         <LocalSwitcher />
         <div className="h-8 w-[1px] mx-3 border-e py-1 border-e-white me-3 dark:border-e-white" />
         <ThemeSwitcher />
       </div>
 
       {/* Dynamic Navigation Links */}
-      <ul className="flex items-center gap-7 font-bold">
+      <ul className="items-center gap-7 font-bold hidden md:flex">
         {navItems.map((item, index) => (
           <li key={index} className="relative group">
             <LocalizedLink href={item.link} className="flex items-center gap-1">
@@ -127,11 +127,16 @@ const Header: React.FC<HeaderProps> = ({
       <div />
 
       {/* Sign In and Post Task Buttons */}
-      <div className="flex items-center text-white font-semibold gap-5">
+      <div className="items-center text-white font-semibold gap-5 hidden md:flex">
         <LinkButton href="/about">Sign In</LinkButton>
         <LinkButton href="/" bg="white">
           Post Your Task
         </LinkButton>
+      </div>
+
+      <div className="flex flex-col items-center justify-center gap-2 md:hidden">
+        <div className="w-8 h-[2px] bg-white" />
+        <div className="w-8 h-[2px] bg-white" />
       </div>
     </nav>
   );

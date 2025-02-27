@@ -4,7 +4,7 @@ import Button from "./Reusables/Button";
 const ListYourBusiness = () => {
   return (
     <div
-      className="relative top-[-95px] w-[100%] sm:w-[80%] xl:w-[60%] flex flex-col md:flex-row p-6 gap-16 min-h-[300px] items-center justify-center bg-white rounded-lg"
+      className="relative md:top-[-95px] w-[100%] sm:w-[80%] xl:w-[60%] flex flex-col md:flex-row p-6 gap-16 min-h-[300px] items-center justify-center bg-white rounded-lg"
       style={{ boxShadow: "0px 7px 5px 1px rgba(184, 184, 184, 0.25)" }}
     >
       <div className="relative w-[100%] h-[300px] sm:h-[250px] lg:h-[300px] xl:h-[350px]">
