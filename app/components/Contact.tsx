@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Button from "./Reusables/Button";
 
-const ContactSection: React.FC = () => {
+const ContactSection = () => {
   const t = useTranslations("Contact");
 
   return (
