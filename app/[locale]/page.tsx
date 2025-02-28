@@ -2,6 +2,7 @@ import Carousel from "../components/Carousel";
 import YourProcess from "../components/YourProcess";
 import HeroSection from "../components/HeroSection";
 import Services from "../components/Services"; // Import the Services component
+import Facts from "../components/Facts";
 
 export default function Home() {
   const Rectangle = () => {
@@ -23,6 +24,8 @@ export default function Home() {
       </div>
 
       <YourProcess />
+
+      <Facts />
 
       <Services />
 
