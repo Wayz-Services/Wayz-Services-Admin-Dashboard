@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import ThemeSwitcher from "../utils/ThemeSwitcher";
 import LinkButton from "./Reusables/LinkButton";
 import LocalizedLink from "./Reusables/LocalizedLink";
 import LocalSwitcher from "./LocalSwitcher";
 import { IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface HeaderProps {
   isLoggedIn?: boolean;
@@ -14,8 +18,16 @@ const Header: React.FC<HeaderProps> = ({
   isLoggedIn = false,
   role = "guest",
 }) => {
+  const t = useTranslations("Nav");
+
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev: boolean) => !prev); // Toggle the menu open/close state
+  };
+
   const contractorNavItems = [
-    { name: "My Jobs", link: "#" },
+    { name: t("contractorNavItems.myJobs"), link: "#" },
     { name: "Post a Task", link: "#" },
     {
       name: "Dashboard",
@@ -42,25 +54,25 @@ const Header: React.FC<HeaderProps> = ({
 
   const guestNavItems = [
     {
-      name: "Our services",
+      name: t("guestNavItems.ourServices"),
       link: "/",
       subNav: [
-        { name: "Building Services", link: "/" },
-        { name: "Browse Suppliers", link: "/" },
-        { name: "Vehicle Services", link: "/" },
+        { name: t("guestNavItems.buildingServices"), link: "/" },
+        { name: t("guestNavItems.browseSuppliers"), link: "/" },
+        { name: t("guestNavItems.vehicleServices"), link: "/" },
       ],
     },
     {
-      name: "I'm a supplier",
+      name: t("guestNavItems.imASupplier"),
       link: "/login",
     },
     {
-      name: "More About WAYZ",
+      name: t("guestNavItems.moreAboutWAYZ"),
       link: "",
       subNav: [
-        { name: "About us", link: "/" },
-        { name: "Contact us", link: "/" },
-        { name: "How it Work", link: "/" },
+        { name: t("guestNavItems.aboutUs"), link: "/" },
+        { name: t("guestNavItems.contactUs"), link: "/" },
+        { name: t("guestNavItems.howItWorks"), link: "/" },
       ],
     },
   ];
@@ -73,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({
     : guestNavItems;
 
   return (
-    <nav className="bg-primary flex pt-10 items-start justify-around mx-auto my-[-1px] text-white dark:bg-primaryDark relative">
+    <nav className="relative bg-primary flex md:pt-10 items-center justify-between px-4 pb-10 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:items-start md:pb-0 md:px-0 md:justify-around lg:text-base dark:bg-primaryDark">
       {/* Logo Section */}
       <Image
         src="/logo.png"
@@ -86,14 +98,14 @@ const Header: React.FC<HeaderProps> = ({
       />
 
       {/* Language Selector and Theme Switcher */}
-      <div className="flex items-center">
+      <div className="items-center hidden md:flex">
         <LocalSwitcher />
         <div className="h-8 w-[1px] mx-3 border-e py-1 border-e-white me-3 dark:border-e-white" />
         <ThemeSwitcher />
       </div>
 
       {/* Dynamic Navigation Links */}
-      <ul className="flex items-center gap-7 font-bold">
+      <ul className="items-center gap-7 font-bold hidden md:flex">
         {navItems.map((item, index) => (
           <li key={index} className="relative group">
             <LocalizedLink href={item.link} className="flex items-center gap-1">
@@ -127,11 +139,28 @@ const Header: React.FC<HeaderProps> = ({
       <div />
 
       {/* Sign In and Post Task Buttons */}
-      <div className="flex items-center text-white font-semibold gap-5">
-        <LinkButton href="/about">Sign In</LinkButton>
+      <div className="items-center text-white font-semibold gap-5 hidden md:flex">
+        <LinkButton href="/about">{t("signIn")}</LinkButton>
         <LinkButton href="/" bg="white">
-          Post Your Task
+          {t("postTask")}
         </LinkButton>
+      </div>
+
+      <div
+        className="flex flex-col justify-center items-center gap-2 w-14 h-14 cursor-pointer z-15 md:hidden"
+        onClick={toggleMenu}
+      >
+        <span
+          className={`h-1 w-full bg-white rounded-sm transition-all duration-300 ease-in-out ${
+            menuOpen ? "rotate-45" : ""
+          }`}
+        ></span>
+
+        <span
+          className={`h-1 w-full bg-white rounded-sm transition-all duration-300 ease-in-out ${
+            menuOpen ? "-rotate-45 -translate-y-3" : ""
+          }`}
+        ></span>
       </div>
     </nav>
   );

@@ -1,4 +1,33 @@
 {
+  "Nav": {
+    "contractorNavItems": {
+      "myJobs": "وظائفي",
+      "postATask": "أنشر مهمة",
+      "dashboard": "لوحة التحكم",
+      "reports": "التقارير",
+      "settings": "الإعدادات"
+    },
+    "customerNavItems": {
+      "browseServices": "تصفح الخدمات",
+      "myProfile": "ملفي الشخصي",
+      "help": "المساعدة",
+      "faq": "الأسئلة الشائعة",
+      "support": "الدعم"
+    },
+    "guestNavItems": {
+      "ourServices": "خدماتنا",
+      "buildingServices": "خدمات البناء",
+      "browseSuppliers": "تصفح الموردين",
+      "vehicleServices": "خدمات المركبات",
+      "imASupplier": "أنا مورد",
+      "moreAboutWAYZ": "المزيد عن WAYZ",
+      "aboutUs": "من نحن",
+      "contactUs": "اتصل بنا",
+      "howItWorks": "كيف يعمل"
+    },
+    "signIn": "تسجيل الدخول",
+    "postTask": "أضف عملك"
+  },
   "HomePage": {
     "title": "اهلا بالعالم!",
     "about": "روح من هنا"
@@ -65,5 +94,10 @@
     "construction": "البناء",
     "cleaning": "التنظيف",
     "electrical": "الكهرباء"
+  },
+  "ListYourBusiness": {
+    "areYou": "هل أنت مقاول وتبحث عن المزيد من العملاء؟",
+    "getJob": "احصل على فرص عمل فورية!",
+    "list": "أضف عملك"
   }
 }

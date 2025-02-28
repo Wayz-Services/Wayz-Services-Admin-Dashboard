@@ -37,7 +37,7 @@ const Services: React.FC = () => {
         <div className="flex items-center justify-center flex-wrap gap-[40px] mt-4">
           {services.map((service, index) => (
             <div key={index} className="rounded-xl overflow-hidden relative">
-              <div className="relative overflow-hidden w-[330px] h-[330px] sm:w-[400px] sm:h-[400px] md:w-[430px] md:h-[430px] lg:w-[460px] lg:h-[460px] xl:w-[600px] xl:h-[600px]">
+              <div className="relative overflow-hidden w-[400px] h-[400px] sm:w-[400px] sm:h-[400px] md:w-[430px] md:h-[430px] lg:w-[460px] lg:h-[460px] xl:w-[600px] xl:h-[600px]">
                 <Image
                   src={service.imageSrc}
                   alt={service.altText}

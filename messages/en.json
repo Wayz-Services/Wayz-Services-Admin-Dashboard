@@ -1,4 +1,33 @@
 {
+  "Nav": {
+    "contractorNavItems": {
+      "myJobs": "My Jobs",
+      "postATask": "Post a Task",
+      "dashboard": "Dashboard",
+      "reports": "Reports",
+      "settings": "Settings"
+    },
+    "customerNavItems": {
+      "browseServices": "Browse Services",
+      "myProfile": "My Profile",
+      "help": "Help",
+      "faq": "FAQ",
+      "support": "Support"
+    },
+    "guestNavItems": {
+      "ourServices": "Our Services",
+      "buildingServices": "Building Services",
+      "browseSuppliers": "Browse Suppliers",
+      "vehicleServices": "Vehicle Services",
+      "imASupplier": "I'm a Supplier",
+      "moreAboutWAYZ": "More About WAYZ",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us",
+      "howItWorks": "How It Works"
+    },
+    "signIn": "Sign In",
+    "postTask": "Post Your Task"
+  },
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
@@ -66,5 +95,10 @@
     "construction": "Construction",
     "cleaning": "Cleaning",
     "electrical": "Electrical"
+  },
+  "ListYourBusiness": {
+    "areYou": "Are you a contractor, looking for more clients?",
+    "getJob": "Get instant job leads!",
+    "list": "List Your Business"
   }
 }
