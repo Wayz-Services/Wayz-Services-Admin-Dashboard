@@ -40,7 +40,7 @@ const Facts = () => {
           <h1 className="text-3xl mt-2">Quick Facts About Our Services</h1>
         </div>
 
-        <div className="flex flex-col w-full items-center justify-center md:flex-row mt-10  md:gap-16">
+        <div className="flex flex-col w-full items-center justify-center md:flex-row mt-10 md:gap-16 px-4 sm:px-0">
           <div className="flex flex-col md:flex-row md:self-start md:justify-end md:w-[40%] md:ps-3">
             <div className="flex flex-col gap-5 mb-5 md:mb-0 md:gap-10 md:min-h-[300px]">
               {factsData.slice(0, 2).map((fact, index) => (
