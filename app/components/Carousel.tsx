@@ -37,7 +37,11 @@ export default function Carousel() {
   ];
 
   return (
-    <div className="p-2 sm:px-10 bg-white dark:bg-black">
+    <div className="p-2 sm:px-10 mb-16 bg-white dark:bg-black">
+
+      <div className="uppercase text-primary text-center text-2xl font-semibold">
+        What our users have to say
+      </div>
       <div className="relative">
         <div ref={sliderRef} className="keen-slider">
           {slides.map((slide, index) => (

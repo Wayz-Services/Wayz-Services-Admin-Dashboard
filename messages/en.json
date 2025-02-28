@@ -100,5 +100,13 @@
     "areYou": "Are you a contractor, looking for more clients?",
     "getJob": "Get instant job leads!",
     "list": "List Your Business"
+  },
+  "Contact": {
+    "joinHappyUsers": "JOIN OUR HAPPY USERS",
+    "trustedClients": "TRUSTED FROM OUR 1,000 CLIENT",
+    "contactSectionTitle": "Starting A New Project Or Want To Chat With Us?",
+    "contactButton": "Contact Us",
+    "contactSectionAlt": "Modern building facade with geometric patterns",
+    "locationReminder": "Remember the current location is Zahlé, Beqaa Governorate, Lebanon."
   }
 }
