@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <HeroSection />
-      
+
       <div className="hidden md:block relative w-full bg-primary">
         <Rectangle />
       </div>

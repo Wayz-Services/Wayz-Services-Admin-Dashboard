@@ -12,7 +12,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="bg-[#0059AB] pb-20 text-white text-center px-4 md:bg-[url('/Images/magnet.png'),url('/Images/eye.png')] md:bg-no-repeat"
+      className="bg-primary pb-20 text-white text-center px-4 md:bg-[url('/Images/magnet.png'),url('/Images/eye.png')] md:bg-no-repeat"
       style={{
         backgroundPosition: "right bottom, left center",
         backgroundSize: "contain, 150px auto",
@@ -29,12 +29,16 @@ const HeroSection = () => {
       </div>
 
       {/* Search Bar Container */}
-      <div className="max-w-4xl mx-auto bg-white rounded-lg flex flex-col md:flex-row p-2 text-gray-700 gap-4 shadow-lg items-stretch">
+      <div className="max-w-4xl mx-auto rounded-lg flex flex-col text-gray-700 gap-4 shadow-lg items-stretch md:flex-row md:bg-white">
         {/* Category */}
-        <div className="flex items-center gap-2 w-full md:w-auto md:ms-2 flex-1">
+        <div className="flex items-center gap-2 w-full flex-1 bg-white p-2 rounded-lg md:w-auto md:ms-2">
           <FiLayers className="text-primary" size={35} />
-          <div className="relative">
-            <select className="outline-none focus:ring-0 bg-transparent w-full ps-2 text-gray-400 data-[value='']:text-gray-400 data-[value]:text-black">
+
+          <div className="relative w-full">
+            <select
+              className="outline-none focus:ring-0 bg-transparent w-full ps-2 text-gray-400 data-[value='']:text-gray-400 data-[value]:text-black"
+              defaultValue=""
+            >
               <option value="" disabled>
                 {t("category")}
               </option>
@@ -48,7 +52,7 @@ const HeroSection = () => {
         <VerticalSeparator />
 
         {/* Location */}
-        <div className="flex items-center gap-2 w-full md:w-auto flex-1">
+        <div className="flex items-center gap-2 w-full bg-white p-2 rounded-lg md:w-auto flex-1">
           <CiLocationOn className="text-primary" size={35} />
           <input
             type="text"
@@ -68,7 +72,7 @@ const HeroSection = () => {
         <VerticalSeparator />
 
         {/* Job Search */}
-        <div className="flex items-center gap-1 w-full md:w-auto max-md:rounded-md flex-1">
+        <div className="flex items-center gap-1 bg-white p-2 rounded-lg w-full md:w-auto max-md:rounded-md flex-1">
           <CiSearch className="text-[#0A65CC] text-4xl" size={35} />
 
           <input
@@ -79,9 +83,11 @@ const HeroSection = () => {
         </div>
 
         {/* Search Button */}
-        <Button className="text-white w-auto px-14">
-          {t("search_button")}
-        </Button>
+        <div className="bg-white p-2 rounded-lg">
+          <Button className="text-white w-full px-14 p-2 ">
+            {t("search_button")}
+          </Button>
+        </div>
       </div>
     </div>
   );

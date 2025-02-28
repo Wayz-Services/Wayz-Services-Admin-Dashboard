@@ -42,7 +42,9 @@ const ThemeSwitcher = () => {
         </svg>
       </button>
     </div>
-  ) : null;
+  ) : (
+    <></>
+  );
 };
 
 export default ThemeSwitcher;
