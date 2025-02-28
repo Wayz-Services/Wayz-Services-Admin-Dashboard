@@ -24,7 +24,7 @@ export default function YourProcess() {
         {steps.map((id) => (
           <div
             key={id}
-            className="bg-primary border z-10 w-full border-white rounded-xl px-1 pb-6 sm:w-72 text-center sm:gap-14 flex flex-col items-center justify-between"
+            className="bg-primary border z-10 w-full border-white rounded-xl px-1 pb-6 sm:w-72 text-center gap-8  sm:gap-14 flex flex-col items-center justify-between"
           >
             <div className="bg-[#F0F6FB] mt-[-1px] z-0 text-primary text-3xl font-semibold px-4 pt-4 flex items-end pb-2 justify-center rounded-b-full">
               {id}
