@@ -47,90 +47,92 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-[#0059AB] text-white py-10">
+    <footer className="bg-[#0059AB] text-white py-10 md:text-sm lg:text-base">
       <div className="container mx-auto px-6 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-4 py-10 text-center sm:text-left">
           {/* Logo Section */}
-          <div>
+          <div className="flex justify-center sm:justify-start">
             <h1 className="text-4xl font-bold">{t("wayz")}</h1>
           </div>
 
-          {/* Quick Links */}
-          <FooterLinkList
-            title={t("quick_links")}
-            links={[
-              { label: t("our_services"), href: "#" },
-              { label: t("im_a_supplier"), href: "#" },
-              { label: t("more_about_wayz"), href: "#" },
-            ]}
-          />
+          {/* Quick Links & Support - Placed in One Line on Small Screens */}
+          <div className="flex justify-center gap-8 sm:gap-12 sm:contents">
+            <FooterLinkList
+              title={t("quick_links")}
+              links={[
+                { label: t("our_services"), href: "#" },
+                { label: t("im_a_supplier"), href: "#" },
+                { label: t("more_about_wayz"), href: "#" },
+              ]}
+            />
 
-          {/* Support */}
-          <FooterLinkList
-            title={t("support")}
-            links={[
-              { label: t("customer_support"), href: "#" },
-              { label: t("advertise_with_us"), href: "#" },
-              { label: t("careers_privacy"), href: "#" },
-              { label: t("contact_us"), href: "#" },
-            ]}
-          />
-
-          {/* Follow Us */}
-          <div>
-            <h2 className="font-semibold mb-3">{t("follow_us")}</h2>
-            <nav className="flex space-x-4 rtl:space-x-reverse">
-              {socialMedia.map(({ icon, href }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="p-2 border border-white rounded-full"
-                  target="_blank"
-                >
-                  {icon}
-                </Link>
-              ))}
-            </nav>
+            <FooterLinkList
+              title={t("support")}
+              links={[
+                { label: t("customer_support"), href: "#" },
+                { label: t("advertise_with_us"), href: "#" },
+                { label: t("careers_privacy"), href: "#" },
+                { label: t("contact_us"), href: "#" },
+              ]}
+            />
           </div>
 
-          {/* Download Our App */}
-          <div>
-            <h2 className="font-semibold mb-3">{t("download_our_app")}</h2>
-            <div className="space-y-3">
-              <Link
-                href="https://apps.apple.com/us/app/wayz-services/id6740003970"
-                className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
-                target="blank"
-              >
-                <Image
-                  src={appleLogo}
-                  alt="App Store"
-                  style={{ width: 20, height: 25 }}
-                />
+          {/* Follow Us & Download App - Placed in One Row on Small Screens */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6 sm:contents">
+            {/* Follow Us */}
+            <div>
+              <h2 className="font-semibold mb-3">{t("follow_us")}</h2>
+              <nav className="flex space-x-4 rtl:space-x-reverse justify-center">
+                {socialMedia.map(({ icon, href }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="p-2 border border-white rounded-full"
+                    target="_blank"
+                  >
+                    {icon}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-                <div className="ms-2">
-                  <p className="text-xs">{t("download_on_the")}</p>
-                  <p className="text-base font-semibold">{t("app_store")}</p>
-                </div>
-              </Link>
+            {/* Download Our App */}
+            <div>
+              <h2 className="font-semibold mb-3">{t("download_our_app")}</h2>
+              <div className="space-y-3 flex flex-col items-center">
+                <Link
+                  href="https://apps.apple.com/us/app/wayz-services/id6740003970"
+                  className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
+                  target="blank"
+                >
+                  <Image
+                    src={appleLogo}
+                    alt="App Store"
+                    style={{ width: 20, height: 25 }}
+                  />
+                  <div className="ms-2">
+                    <p className="text-xs">{t("download_on_the")}</p>
+                    <p className="font-semibold">{t("app_store")}</p>
+                  </div>
+                </Link>
 
-              <Link
-                href="https://play.google.com/store/apps/details?id=com.technoleb.wayz&hl=en"
-                className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
-                target="blank"
-              >
-                <Image
-                  src={playstoreLogo}
-                  alt="Play Store"
-                  width={20}
-                  height={20}
-                />
-
-                <div className="ms-2">
-                  <p className="text-xs">{t("get_it_on")}</p>
-                  <p className="text-base font-semibold">{t("google_play")}</p>
-                </div>
-              </Link>
+                <Link
+                  href="https://play.google.com/store/apps/details?id=com.technoleb.wayz&hl=en"
+                  className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
+                  target="blank"
+                >
+                  <Image
+                    src={playstoreLogo}
+                    alt="Play Store"
+                    width={20}
+                    height={20}
+                  />
+                  <div className="ms-2">
+                    <p className="text-xs">{t("get_it_on")}</p>
+                    <p className="font-semibold">{t("google_play")}</p>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
