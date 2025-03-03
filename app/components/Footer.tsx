@@ -100,7 +100,7 @@ const Footer = () => {
             {/* Download Our App */}
             <div>
               <h2 className="font-semibold mb-3">{t("download_our_app")}</h2>
-              <div className="space-y-3 flex flex-col items-center">
+              <div className="space-y-3 flex flex-col items-center sm:items-start">
                 <Link
                   href="https://apps.apple.com/us/app/wayz-services/id6740003970"
                   className="flex items-center border border-gray-300 rounded-md px-2 py-1 w-fit"
