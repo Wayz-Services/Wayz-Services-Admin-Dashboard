@@ -33,11 +33,11 @@
     "about": "روح من هنا"
   },
   "Footer": {
-    "wayz": "وايز",
+    "wayz": "WAYZ",
     "quick_links": "روابط سريعة",
     "our_services": "خدماتنا",
     "im_a_supplier": "أنا مورد",
-    "more_about_wayz": "المزيد عن وايز",
+    "more_about_wayz": "المزيد عن WAYZ",
     "support": "الدعم",
     "customer_support": "دعم العملاء",
     "advertise_with_us": "الإعلان معنا",
@@ -46,10 +46,10 @@
     "follow_us": "تابعنا",
     "download_our_app": "حمل تطبيقنا",
     "download_on_the": "تحميل من",
-    "app_store": "متجر التطبيقات",
+    "app_store": "أبل ستور",
     "get_it_on": "احصل عليه من",
     "google_play": "جوجل بلاي",
-    "copyright": "© 2025 وايز. جميع الحقوق محفوظة.",
+    "copyright": "© 2025 WAYZ. جميع الحقوق محفوظة.",
     "privacy_policy": "سياسة الخصوصية",
     "complaints": "الشكاوى",
     "terms_and_conditions": "الشروط والأحكام"
@@ -107,5 +107,20 @@
     "contactButton": "تواصل معنا",
     "contactSectionAlt": "واجهة مبنى حديثة بأنماط هندسية",
     "locationReminder": "تذكر أن الموقع الحالي هو زحلة، محافظة البقاع، لبنان."
+  },
+  "Fact": {
+    "title": "بعض الحقائق",
+    "subTitle": "حقائق سريعة عن خدماتنا",
+    "work": "العمل",
+    "client": "العميل",
+    "staff": "الموظفون",
+    "timeless": "الوقت",
+    "projComplete": "المشاريع المنجزة",
+    "satisfGu": "ضمان الرضا",
+    "proStaff": "فريق عمل محترف",
+    "perfWork": "ننجز جميع الأعمال في الوقت المحدد"
+  },
+  "testimonial": {
+    "title": "ماذا يقول مستخدمونا"
   }
 }

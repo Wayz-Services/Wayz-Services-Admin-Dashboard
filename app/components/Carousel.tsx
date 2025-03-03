@@ -5,9 +5,13 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import ImageComponent from "./Reusables/Image";
+import { useTranslations } from "next-intl";
 
 export default function Carousel() {
+  const t = useTranslations("testimonial");
+
   const [currentSlide, setCurrentSlide] = React.useState(0);
+
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -39,7 +43,7 @@ export default function Carousel() {
   return (
     <div className="p-2 sm:px-10 mb-16 bg-white dark:bg-black">
       <div className="uppercase text-primary text-center text-2xl font-semibold">
-        What our users have to say
+       {t("title")}
       </div>
       <div className="relative">
         <div ref={sliderRef} className="keen-slider">

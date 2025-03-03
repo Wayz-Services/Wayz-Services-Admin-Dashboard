@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -8,6 +9,8 @@ interface FactsProps {
 }
 
 const Facts = () => {
+  const t = useTranslations("Fact");
+
   const CheckFact: React.FC<FactsProps> = ({ type, title, reached }) => {
     return (
       <div className="flex gap-4">
@@ -25,19 +28,19 @@ const Facts = () => {
   };
 
   const factsData = [
-    { type: "work", title: "Project Complete", reached: "100+" },
-    { type: "client", title: "Staisfaction Gaurantee", reached: "100%" },
-    { type: "staff", title: "Professional Staff", reached: "1.2K+" },
-    { type: "timeless", title: "We Perfom All Work On Time" },
+    { type: t("work"), title: t("projComplete"), reached: "100+" },
+    { type: t("client"), title: t("satisfGu"), reached: "100%" },
+    { type: t("staff"), title: t("proStaff"), reached: "1.2K+" },
+    { type: t("timeless"), title: t("perfWork") },
   ];
 
   return (
     <div className="bg-[#F0F6FB]">
       <div className="flex flex-col items-center justify-center font-semibold text-white pt-10 pb-1 bg-[url('/Images/facts.png')] bg-no-repeat bg-center bg-cover rounded-tr-[80px] rounded-tl-[80px]">
         <div className="text-center">
-          <h3 className="text-xl">SOME FACTS</h3>
+          <h3 className="text-xl uppercase">{t("title")}</h3>
 
-          <h1 className="text-3xl mt-2">Quick Facts About Our Services</h1>
+          <h1 className="text-3xl mt-2">{t("subTitle")}</h1>
         </div>
 
         <div className="flex flex-col w-full items-center justify-center md:flex-row mt-10 md:gap-16 px-4 sm:px-0">

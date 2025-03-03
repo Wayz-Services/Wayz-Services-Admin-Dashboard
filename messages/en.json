@@ -108,5 +108,20 @@
     "contactButton": "Contact Us",
     "contactSectionAlt": "Modern building facade with geometric patterns",
     "locationReminder": "Remember the current location is Zahlé, Beqaa Governorate, Lebanon."
+  },
+  "Fact": {
+    "title": "some facts",
+    "subTitle": "Quick Facts About Our Services",
+    "work": "Work",
+    "client": "Client",
+    "staff": "Staff",
+    "timeless": "TimeLess",
+    "projComplete": "Project Complete",
+    "satisfGu": "Statisfaction Guarantee",
+    "proStaff": "Professional Staff",
+    "perfWork": "We Perfom All Work On Time"
+  },
+  "testimonial": {
+    "title": "What our users have to say"
   }
 }

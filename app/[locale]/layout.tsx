@@ -3,7 +3,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Inter } from "next/font/google";
+import { Cairo, Inter } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import ThemeProvider from "../utils/ThemeProvider";
 import Header from "@/app/components/Header";
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["arabic"] });
 
 export default async function LocaleLayout({
   children,
@@ -36,10 +37,11 @@ export default async function LocaleLayout({
 
   // Determine the direction based on locale
   const isRtl = locale === "ar";
+  const fontClass = isRtl ? cairo.className : inter.className;
 
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${fontClass}`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextIntlClientProvider messages={messages}>
             <Header />
