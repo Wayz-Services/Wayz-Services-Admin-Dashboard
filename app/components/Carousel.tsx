@@ -38,7 +38,6 @@ export default function Carousel() {
 
   return (
     <div className="p-2 sm:px-10 mb-16 bg-white dark:bg-black">
-
       <div className="uppercase text-primary text-center text-2xl font-semibold">
         What our users have to say
       </div>
@@ -71,18 +70,19 @@ export default function Carousel() {
             </div>
           ))}
         </div>
+
+        {/* Arrows on the SIDES */}
         {loaded && instanceRef.current && (
-          <>
+          <div className="sm:relative flex justify-center gap-8 sm:gap-0 sm:contents">
             <Arrow
               left
-              onClick={(e: any) =>
+              onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.prev()
               }
               disabled={currentSlide === 0}
             />
-
             <Arrow
-              onClick={(e: any) =>
+              onClick={(e) =>
                 e.stopPropagation() || instanceRef.current?.next()
               }
               disabled={
@@ -90,7 +90,7 @@ export default function Carousel() {
                 instanceRef.current.track.details.slides.length - 1
               }
             />
-          </>
+          </div>
         )}
       </div>
     </div>
@@ -106,11 +106,11 @@ function Arrow(props: {
     ? "opacity-50 cursor-not-allowed pointer-events-none"
     : "cursor-pointer";
 
-  const left = props.left ? "left-[5px]" : "left-auto right-[5px]";
+  const left = props.left ? "sm:left-[5px]" : "sm:left-auto sm:right-[5px]";
 
   return (
     <div
-      className={`sm:p-2 absolute top-1/2 -translate-y-1/2 bg-primary rounded-full ${disabled} ${left}`}
+      className={`p-2 sm:absolute sm:top-1/2 sm:-translate-y-1/2 bg-primary rounded-full ${disabled} ${left}`}
       onClick={(e) => {
         if (!props.disabled) {
           props.onClick(e);
