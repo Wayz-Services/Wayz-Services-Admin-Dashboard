@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links & Support - Placed in One Line on Small Screens */}
-          <div className="flex justify-center gap-8 sm:gap-12 sm:contents">
+          <div className="flex justify-center gap-8 sm:contents">
             <FooterLinkList
               title={t("quick_links")}
               links={[
@@ -78,11 +78,12 @@ const Footer = () => {
           </div>
 
           {/* Follow Us & Download App - Placed in One Row on Small Screens */}
-          <div className="flex flex-col sm:flex-row justify-center gap-6 sm:contents">
+          <div className="flex flex-col justify-center gap-6 sm:contents">
             {/* Follow Us */}
             <div>
               <h2 className="font-semibold mb-3">{t("follow_us")}</h2>
-              <nav className="flex space-x-4 rtl:space-x-reverse justify-center">
+
+              <nav className="flex space-x-4 rtl:space-x-reverse justify-center sm:justify-normal">
                 {socialMedia.map(({ icon, href }) => (
                   <Link
                     key={href}
