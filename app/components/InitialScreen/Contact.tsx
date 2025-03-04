@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Button from "./Reusables/Button";
+import Button from "../Reusables/Button";
 
 const ContactSection = () => {
   const t = useTranslations("Contact");
@@ -12,7 +12,7 @@ const ContactSection = () => {
         {/* Image container that fully covers small screens with rounded corners on medium and large screens */}
         <div className="absolute inset-0 w-full h-full md:rounded-2xl">
           <Image
-            src="/Images/ContactImage.png"
+            src="/Images/InitialScreen/ContactImage.png"
             alt={t("contactSectionAlt")}
             fill
             className="object-cover md:rounded-2xl"

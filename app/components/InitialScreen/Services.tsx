@@ -12,13 +12,13 @@ const Services: React.FC = () => {
       title: t("vehiclesServicesTitle"),
       description: t("vehiclesServicesDescription"),
       altText: t("vehiclesServicesAlt"),
-      imageSrc: "/Images/Vehicles.png",
+      imageSrc: "/Images/InitialScreen/Vehicles.png",
     },
     {
       title: t("buildingServicesTitle"),
       description: t("buildingServicesDescription"),
       altText: t("buildingServicesAlt"),
-      imageSrc: "/Images/Buildings.png",
+      imageSrc: "/Images/InitialScreen/Buildings.png",
     },
   ];
 

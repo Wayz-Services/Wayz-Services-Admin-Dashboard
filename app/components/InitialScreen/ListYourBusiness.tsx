@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./Reusables/Button";
+import Button from "../Reusables/Button";
 import { useTranslations } from "next-intl";
 
 const ListYourBusiness = () => {
@@ -12,7 +12,7 @@ const ListYourBusiness = () => {
     >
       <div className="relative w-[100%] h-[250px] sm:h-[250px] lg:h-[300px] xl:h-[250px] 2xl:h-[350px]">
         <Image
-          src="/Images/Card.png"
+          src="/Images/InitialScreen/Card.png"
           fill
           unoptimized
           className="rounded-[20px] object-cover"

@@ -1,9 +1,9 @@
-import Carousel from "../components/Carousel";
-import YourProcess from "../components/YourProcess";
-import HeroSection from "../components/HeroSection";
-import Services from "../components/Services"; // Import the Services component
-import Facts from "../components/Facts";
-import ContactSection from "../components/Contact";
+import Testimonial from "../components/InitialScreen/Testimonial";
+import OurProcess from "../components/InitialScreen/OurProcess";
+import HeroSection from "../components/InitialScreen/HeroSection";
+import Services from "../components/InitialScreen/Services"; // Import the Services component
+import Facts from "../components/InitialScreen/Facts";
+import ContactSection from "../components/InitialScreen/Contact";
 
 export default function Home() {
   const Rectangle = () => {
@@ -24,7 +24,7 @@ export default function Home() {
         <Rectangle />
       </div>
 
-      <YourProcess />
+      <OurProcess />
 
       <Facts />
 
@@ -32,7 +32,7 @@ export default function Home() {
 
       <ContactSection />
 
-      <Carousel />
+      <Testimonial />
     </div>
   );
 }

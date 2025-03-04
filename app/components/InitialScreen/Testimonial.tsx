@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import ImageComponent from "./Reusables/Image";
+import ImageComponent from "../Reusables/Image";
 import { useTranslations } from "next-intl";
 
-export default function Carousel() {
+export default function Testimonial() {
   const t = useTranslations("testimonial");
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -27,14 +27,14 @@ export default function Carousel() {
     {
       description:
         "Our Experience With WAYZ Has Been Excellent From Start To Finish. Nathan And The Team Took The Time To Understand Our Business, Our Target Market, And Digital Ambitions They Have",
-      image: "/images/rob-olsson.png",
+      image: "/images/InitialScreen/rob-olsson.png",
       name: "Rob Olsson",
       role: "Head Of Strategy",
     },
     {
       description:
         "Working with WAYZ was a game-changer for our company. Their expertise and dedication were evident throughout the entire project. We highly recommend them.",
-      image: "/images/Slide1.png",
+      image: "/images/InitialScreen/Slide1.png",
       name: "Jane Smith",
       role: "Marketing Director",
     },

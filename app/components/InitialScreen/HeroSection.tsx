@@ -1,7 +1,7 @@
 import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { FiLayers } from "react-icons/fi";
 import { useTranslations } from "next-intl";
-import Button from "./Reusables/Button";
+import Button from "../Reusables/Button";
 
 const HeroSection = () => {
   const t = useTranslations("SearchBar");

@@ -36,7 +36,7 @@ const Facts = () => {
 
   return (
     <div className="bg-[#F0F6FB]">
-      <div className="flex flex-col items-center justify-center font-semibold text-white pt-10 bg-[url('/Images/facts.png')] bg-no-repeat bg-center bg-cover rounded-tr-[80px] rounded-tl-[80px]">
+      <div className="flex flex-col items-center justify-center font-semibold text-white pt-10 bg-[url('/Images/InitialScreen/facts.png')] bg-no-repeat bg-center bg-cover rounded-tr-[80px] rounded-tl-[80px]">
         <div className="text-center">
           <h3 className="text-xl uppercase">{t("title")}</h3>
 
@@ -62,7 +62,7 @@ const Facts = () => {
 
           <div className="relative w-full md:w-[20%] flex justify-center">
             <Image
-              src={"/Images/factor.png"}
+              src={"/Images/InitialScreen/factor.png"}
               width={250}
               height={150}
               alt="factor image"

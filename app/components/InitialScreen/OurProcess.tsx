@@ -4,8 +4,8 @@ import ListYourBusiness from "./ListYourBusiness";
 
 const steps = [1, 2, 3];
 
-export default function YourProcess() {
-  const t = useTranslations("YourProcess");
+export default function OurProcess() {
+  const t = useTranslations("OurProcess");
 
   return (
     <section className="bg-[#F0F6FB] flex flex-col items-center text-white pb-12">
