@@ -142,7 +142,7 @@ const Header: React.FC<HeaderProps> = ({
 
       {/* Sign In and Post Task Buttons */}
       <div className="items-center text-white font-semibold gap-5 hidden md:flex">
-        <LinkButton href="/about">{t("signIn")}</LinkButton>
+        <LinkButton href="/signIn">{t("signIn")}</LinkButton>
         <LinkButton href="/" bg="white">
           {t("postTask")}
         </LinkButton>

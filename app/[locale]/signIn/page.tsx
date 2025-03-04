@@ -3,8 +3,7 @@
 import Input from "@/app/components/Reusables/Input";
 import React, { useState } from "react";
 
-
-function page() {
+function SignIn() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   return (
     <div className="bg-primary">
@@ -21,4 +20,4 @@ function page() {
   );
 }
 
-export default page;
+export default SignIn;
