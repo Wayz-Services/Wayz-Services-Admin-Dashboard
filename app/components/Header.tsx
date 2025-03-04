@@ -87,15 +87,17 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <nav className="relative bg-primary flex md:pt-10 items-center justify-between px-4 pb-10 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:items-start md:pb-0 md:px-0 md:justify-around lg:text-base dark:bg-primaryDark">
       {/* Logo Section */}
-      <Image
-        src="/logo.png"
-        width={150}
-        height={70}
-        style={{ width: 95, height: 140, objectFit: "contain" }}
-        alt="wayz logo"
-        priority
-        unoptimized
-      />
+      <LocalizedLink href={"/"}>
+        <Image
+          src="/logo.png"
+          width={150}
+          height={70}
+          style={{ width: 95, height: 140, objectFit: "contain" }}
+          alt="wayz logo"
+          priority
+          unoptimized
+        />
+      </LocalizedLink>
 
       {/* Language Selector and Theme Switcher */}
       <div className="items-center hidden md:flex">
