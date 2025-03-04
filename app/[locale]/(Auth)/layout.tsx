@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Cairo, Inter } from "next/font/google";
 import { getMessages } from "next-intl/server";
-import ThemeProvider from "../utils/ThemeProvider";
+import ThemeProvider from "../../utils/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "WAYZ",

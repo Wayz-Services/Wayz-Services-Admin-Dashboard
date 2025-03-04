@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { NextIntlClientProvider } from "next-intl";
+import "../globals.css";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Cairo, Inter } from "next/font/google";
 import { getMessages } from "next-intl/server";
-import ThemeProvider from "../utils/ThemeProvider";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "WAYZ",
@@ -40,11 +40,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
       <body className={`${fontClass}`} suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <NextIntlClientProvider messages={messages}>
-            <main>{children}</main>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
