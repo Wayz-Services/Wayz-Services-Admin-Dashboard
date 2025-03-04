@@ -1,13 +1,23 @@
-import SSS from "@/app/components/SignWrapper";
-import React from "react";
+"use client";
+
+import Input from "@/app/components/Reusables/Input";
+import React, { useState } from "react";
+
 
 function page() {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   return (
-    <SSS>
-      <div className="uppercase text-2xl">Welcome back</div>
-
-      <div className="text-[60px] font-bold">Sign In Now</div>
-    </SSS>
+    <div className="bg-primary">
+      <Input
+        label="Email Address"
+        value="12113123"
+        onChange={() => {}}
+        error="Please enter your email"
+        isPassword
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
+      />
+    </div>
   );
 }
 

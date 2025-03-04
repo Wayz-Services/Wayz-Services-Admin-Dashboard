@@ -117,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({
               <div className="relative group">
                 <ul className="absolute z-10 left-0 mt-2 w-48 bg-white text-gray-500 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {/* Small triangle for dropdown */}
-                  <div className="absolute bg-white rotate-[40deg] top-[-5px] right-[50%] w-6 h-6 rounded-[5px] z-0" />
+                  <div className="absolute bg-white rotate-[40deg] top-[-5px] rtl:right-[70%] right-[50%] w-6 h-6 rounded-[5px] z-0" />
 
                   {item.subNav.map((subItem, subIndex) => (
                     <li
