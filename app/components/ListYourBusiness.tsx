@@ -18,6 +18,10 @@ const ListYourBusiness = () => {
           className="rounded-[20px]"
           alt="image"
           priority
+          sizes="(max-width: 640px) 100vw, 
+          (max-width: 1024px) 80vw, 
+          (max-width: 1280px) 60vw, 
+          50vw"
         />
       </div>
 

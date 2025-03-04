@@ -47,8 +47,6 @@ const Services: React.FC = () => {
                   fill
                   unoptimized
                 />
-
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] via-[rgba(0,0,0,0.1)]" />
               </div>
               <div className="relative">
                 <div className="absolute bottom-[60px] left-[20px] w-[calc(100%-40px)] text-white p-4">
@@ -57,8 +55,6 @@ const Services: React.FC = () => {
                   </h2>
                   <p className="text-base sm:text-lg">{service.description}</p>
                 </div>
-
-                <div className="left-[22px] w-[calc(100%-40px)] h-[calc(100%-100px)] bg-black opacity-30 z-0" />
               </div>
               <div className="absolute top-4 ltr:right-4 rtl:left-4 rtl:rotate-[-90deg] text-white">
                 <MdOutlineArrowOutward size={90} />

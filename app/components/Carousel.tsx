@@ -43,7 +43,7 @@ export default function Carousel() {
   return (
     <div className="p-2 sm:px-10 mb-16 bg-white dark:bg-black">
       <div className="uppercase text-primary text-center text-2xl font-semibold">
-       {t("title")}
+        {t("title")}
       </div>
       <div className="relative">
         <div ref={sliderRef} className="keen-slider">
@@ -77,7 +77,7 @@ export default function Carousel() {
 
         {/* Arrows on the SIDES */}
         {loaded && instanceRef.current && (
-          <div className="sm:relative flex justify-center gap-8 sm:gap-0 sm:contents">
+          <div className="sm:relative flex rtl:flex-row-reverse justify-center gap-8 sm:gap-0 sm:contents">
             <Arrow
               left
               onClick={(e) =>
