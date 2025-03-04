@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const SSS = ({ children }: { children: React.ReactNode }) => {
+const SignWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-[100vh]">
       <div
@@ -20,4 +20,4 @@ const SSS = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default SSS;
+export default SignWrapper;
