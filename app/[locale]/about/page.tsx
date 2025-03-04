@@ -1,9 +1,23 @@
-import React from 'react'
+"use client";
+
+import Input from "@/app/components/Reusables/Input";
+import React, { useState } from "react";
 
 function page() {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   return (
-    <div>page</div>
-  )
+    <div className="bg-primary">
+      <Input
+        label="Email Address"
+        value="12113123"
+        onChange={() => {}}
+        error="Please enter your email"
+        isPassword
+        showPassword={showPassword}
+        setShowPassword={setShowPassword}
+      />
+    </div>
+  );
 }
 
-export default page
+export default page;
