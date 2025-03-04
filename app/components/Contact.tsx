@@ -17,6 +17,7 @@ const ContactSection = () => {
             fill
             className="object-cover md:rounded-2xl"
             unoptimized
+            sizes="(min-width: 1640px) 75vw, (min-width: 1280px) calc(22.35vw + 853px), (min-width: 640px) 1239px, 1169px"
           />
           <div className="absolute inset-0 bg-black opacity-40 md:rounded-2xl"></div>
         </div>
@@ -31,7 +32,7 @@ const ContactSection = () => {
             >
               {t("joinHappyUsers")}
             </p>
-          
+
             <p
               className="text-lg font-semibold leading-tight uppercase tracking-wide mb-6 xs:mb-5"
               style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 1)" }}
@@ -47,7 +48,7 @@ const ContactSection = () => {
           >
             {t("contactSectionTitle")}
           </h2>
-          
+
           <Button
             backgColor="white"
             className=" font-semibold px-20 text-sm rounded-lg"

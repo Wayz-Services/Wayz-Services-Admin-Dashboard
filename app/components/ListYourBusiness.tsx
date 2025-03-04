@@ -15,13 +15,10 @@ const ListYourBusiness = () => {
           src="/Images/Card.png"
           fill
           unoptimized
-          className="rounded-[20px]"
+          className="rounded-[20px] object-cover"
           alt="image"
           priority
-          sizes="(max-width: 640px) 100vw, 
-          (max-width: 1024px) 80vw, 
-          (max-width: 1280px) 60vw, 
-          50vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, (max-width: 1440px) 60vw, (max-width: 1920px) 50vw, 40vw"
         />
       </div>
 

@@ -1,34 +1,11 @@
-"use client"
 import Carousel from "../components/Carousel";
 import YourProcess from "../components/YourProcess";
 import HeroSection from "../components/HeroSection";
 import Services from "../components/Services"; // Import the Services component
 import Facts from "../components/Facts";
 import ContactSection from "../components/Contact";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isPageLoaded, setIsPageLoaded] = useState(false);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsPageLoaded(true);
-    };
-
-    if (document.readyState === "complete") {
-      // If the document is already loaded, run immediately
-      handleLoad();
-    } else {
-      // Otherwise, listen for the load event
-      window.addEventListener("load", handleLoad);
-    }
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-
   const Rectangle = () => {
     return (
       <>
