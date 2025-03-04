@@ -12,7 +12,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="bg-primary pb-20 text-white text-center px-4 md:bg-[url('/Images/magnet.png'),url('/Images/eye.png')] md:bg-no-repeat"
+      className="bg-primary pb-20 text-white text-center px-4 md:bg-[url('/Images/InitialScreen/magnet.png'),url('/Images/InitialScreen/eye.png')] md:bg-no-repeat"
       style={{
         backgroundPosition: "right bottom, left center",
         backgroundSize: "contain, 150px auto",
