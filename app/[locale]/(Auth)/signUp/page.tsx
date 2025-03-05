@@ -1,7 +1,6 @@
+"use client";
 
-"use client"
-import React, { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";  // Import the reverse triangle icon
+import { useState } from "react";
 import SignWrapper from "@/app/components/SignWrapper";
 import Input from "@/app/components/Reusables/Input";
 import { useTranslations } from "next-intl";
@@ -28,7 +27,7 @@ const SignUp = () => {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     userName: "",
-    phoneNumber: "+961", // Start with +961
+    phoneNumber: "+961",
     emailAddress: "",
     password: "",
     confirmPassword: "",
@@ -95,8 +94,6 @@ const SignUp = () => {
       value: formData.phoneNumber,
       onChange: handleInputChange,
       error: errors.phoneNumber,
-      type: "tel",
-      // icon: <FaChevronDown />,  // Adding the triangle icon
     },
     {
       label: t("emailAddress"),
@@ -141,14 +138,15 @@ const SignUp = () => {
   return (
     <SignWrapper>
       <div className="flex flex-col items-start justify-center">
-        <h1 className="text-white text-[18px] font-inter font-medium uppercase ">
+        <h1 className="text-white text-xl sm:text-2xl font-medium uppercase ">
           {t("startYourJourney")}
         </h1>
-        <p className="text-white text-[50px] font-inter font-bold capitalize mt-1">
+
+        <p className="text-white text-3xl sm:text-5xl mb-6 font-bold capitalize mt-1">
           {t("createAccount")}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-2xl">
           {inputFields.map((field) => (
             <div key={field.name} className="relative">
               <Input
@@ -160,13 +158,7 @@ const SignUp = () => {
                 showPassword={field.showPassword}
                 setShowPassword={field.setShowPassword}
                 error={field.error}
-                type={field.type}
               />
-              {field.icon && (
-                <div className="absolute top-1/2 right-2 transform -translate-y-1/2">
-                  {field.icon}
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -184,15 +176,18 @@ const SignUp = () => {
                     type="radio"
                     name={group.name}
                     value={option.value}
-                    checked={formData[group.name as keyof FormData] === option.value}
+                    checked={
+                      formData[group.name as keyof FormData] === option.value
+                    }
                     onChange={(e) =>
                       setFormData({
                         ...formData,
                         [group.name]: e.target.value,
                       })
                     }
-                    className="mr-2 appearance-none bg-white w-3 h-3 border-2 border-gray-300 rounded-full bg-transparent checked:bg-[#F6B60B] focus:outline-none"
+                    className="me-2 appearance-none bg-white w-3 h-3 border-2 border-gray-300 rounded-full bg-transparent checked:bg-[#F6B60B] focus:outline-none"
                   />
+
                   {option.label}
                 </label>
               ))}
@@ -201,22 +196,21 @@ const SignUp = () => {
         ))}
 
         {/* Accept Terms & Conditions */}
-        <div className="mt-8 flex items-center">
+        <div className="mt-4 flex items-center">
           <input
             type="checkbox"
             name="termsAccepted"
             checked={formData.termsAccepted}
             onChange={handleInputChange}
-            className="mr-2 w-5 h-5 rounded-sm accent-white"
+            className="me-2 rounded-sm accent-white"
           />
+
           <span className="underline">{t("acceptTerms")}</span>
         </div>
 
         {/* Create Account Button */}
-        <Button className="mt-8 px-8 py-2 w-full sm:w-auto text-center" backgColor="white">
-          <span className="text-[#0059AB] font-inter text-lg font-semibold capitalize">
-            {t("createAccountButton")}
-          </span>
+        <Button className="mt-8 px-8" backgColor="white">
+          {t("createAccountButton")}
         </Button>
       </div>
     </SignWrapper>
