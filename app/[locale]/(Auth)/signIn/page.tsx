@@ -1,18 +1,9 @@
-"use client";
-import VerificationMethod from "@/app/components/Auth/verificationMethod";
-import React, { useState } from "react";
+import React from 'react'
 
 const Signin = () => {
-  const [showModal, setShowModal] = useState(false);
   return (
-    <>
-      <button onClick={() => setShowModal(true)}>Open Modal</button>
-      <VerificationMethod
-        isVisible={showModal}
-        onClose={() => setShowModal(false)}
-      />
-    </>
-  );
-};
+    <div className='font-bold dark:bg-black'>Signin</div>
+  )
+}
 
-export default Signin;
+export default Signin
