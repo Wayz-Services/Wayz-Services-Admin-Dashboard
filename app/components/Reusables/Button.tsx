@@ -3,14 +3,14 @@ import { ButtonHTMLAttributes } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   redirectTo?: string;
-  onSubmit?: () => void;
+  onClick?: () => void;
   backgColor?: "blue" | "white";
 }
 
 const Button: React.FC<ButtonProps> = ({
   className,
   children,
-  onSubmit,
+  onClick,
   backgColor = "blue",
   ...rest
 }) => {
@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...rest}
       className={`${className} ${isBackPrimary} py-2 hover:opacity-70 rounded-md`}
-      onClick={onSubmit}
+      onClick={onClick}
     >
       {children}
     </button>

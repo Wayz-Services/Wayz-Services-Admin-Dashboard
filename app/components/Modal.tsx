@@ -20,13 +20,13 @@ const Modal = ({ isVisible, onClose, children }: ModalProps) => {
       id="wrapper"
       onClick={handleClose}
     >
-      <div className="flex flex-col">
+      <div className="relative flex flex-col">
         {/* Close button */}
         <IoCloseOutline
           onClick={onClose}
-          size={30}
+          size={40}
           color="white"
-          className="cursor-pointer self-end"
+          className="cursor-pointer self-end absolute -top-10"
         />
 
         <div className="bg-white p-6 rounded-lg shadow-lg">{children}</div>
