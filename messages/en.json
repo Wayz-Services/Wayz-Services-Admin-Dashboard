@@ -138,6 +138,7 @@
     "customer": "Customer",
     "acceptTerms": "Accept Terms & Conditions",
     "createAccountButton": "Create Account"
+  },
   "VerificationMethod": {
     "select_verification_methods": "Select Verification Methods",
     "email_verification": "Email Verification",
