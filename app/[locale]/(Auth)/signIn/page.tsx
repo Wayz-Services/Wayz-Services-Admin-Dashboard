@@ -8,7 +8,7 @@ import Button from "@/app/components/Reusables/Button";
 import LocalizedLink from "@/app/components/Reusables/LocalizedLink";
 
 const HorizontalSeparator = () => {
-  return <div className="h-[1px] w-full bg-[#377FC1] hidden md:block" />;
+  return <div className="h-[1px] w-full bg-[#377FC1] block" />;
 };
 
 const Signin = () => {
@@ -59,14 +59,14 @@ const Signin = () => {
               <label className="flex items-center">
                 <input
                   type="checkbox"
-                  className="accent-[#fff] border border-[#64A6E3] rounded-md"
+                  className="accent-white border border-[#64A6E3] rounded-md"
                 />
 
                 <span className="ml-2 text-sm text-white">Remember Me</span>
               </label>
 
               <LocalizedLink
-                className="inline-block  text-sm text-[#F6B60B] hover:text-blue-800 mt-2 sm:mt-0"
+                className="inline-block  text-sm text-[#F6B60B] hover:underline mt-2 sm:mt-0"
                 href="#"
               >
                 Forgot Password?
