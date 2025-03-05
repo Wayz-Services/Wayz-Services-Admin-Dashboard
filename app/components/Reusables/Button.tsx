@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...rest}
       className={`${className} ${isBackPrimary} py-2 hover:opacity-70 font-semibold rounded-md`}
-      onClick={onSubmit}
+      onClick={onClick}
     >
       {children}
     </button>
