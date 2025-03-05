@@ -9,7 +9,7 @@ export default function Home() {
   const Rectangle = () => {
     return (
       <>
-        <div className="absolute top-[13px] left-0 w-full h-0 border-l-[50vw] border-r-[50vw] border-b-[100px] border-l-transparent border-r-transparent border-b-[#F0F6FB]"></div>
+        <div className="absolute top-[13px] left-0 w-full h-0 border-l-[50vw] border-r-[50vw] border-b-[100px] border-l-transparent border-r-transparent border-b-secondary"></div>
 
         <div className="relative z-10 text-white text-center py-14"></div>
       </>

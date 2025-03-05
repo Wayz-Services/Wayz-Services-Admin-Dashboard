@@ -5,8 +5,7 @@
 :root {
   --primary: #0059ab;
   --primary-dark: #000;
-  --secondary: #171717;
-}
+  --secondary: #F0F6FB;
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -14,5 +13,4 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #1F6EB6 inset !important;
   -webkit-text-fill-color: white !important;
-
 }

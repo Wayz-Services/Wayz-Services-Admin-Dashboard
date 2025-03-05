@@ -123,5 +123,19 @@
   },
   "testimonial": {
     "title": "What our users have to say"
+  },
+  "VerificationMethod": {
+    "select_verification_methods": "Select Verification Methods",
+    "email_verification": "Email Verification",
+    "phone_verification": "Phone Verification",
+    "send_otp": "Send OTP"
+  },
+  "VerificationModal": {
+    "otp_verification": "OTP Verification",
+    "otp_sent_message": "One-time password (OTP) has been sent via email to",
+    "enter_otp_message": "Enter the OTP below to verify it.",
+    "didnt_receive_code": "Didn't receive the code?",
+    "resend": "Resend",
+    "verify_otp": "Verify OTP"
   }
 }
