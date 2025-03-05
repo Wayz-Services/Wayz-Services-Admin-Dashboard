@@ -29,7 +29,7 @@ const Modal = ({ isVisible, onClose, children }: ModalProps) => {
           className="cursor-pointer self-end absolute -top-10"
         />
 
-        <div className="bg-white p-6 rounded-lg shadow-lg">{children}</div>
+        <div className="bg-white p-12 rounded-lg shadow-lg">{children}</div>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const VerificationMethod = ({
 
   return (
     <Modal isVisible={isVisible} onClose={onClose}>
-      <div className="flex flex-col items-center px-8 py-6">
+      <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold mb-4 text-center text-primary">
           {t("select_verification_methods")}
         </h2>
@@ -29,7 +29,7 @@ const VerificationMethod = ({
           {verificationMethods.map(({ value, label }) => (
             <div
               key={value}
-              className="mb-3 flex items-center space-x-2 cursor-pointer"
+              className="mb-3 flex items-center gap-2 cursor-pointer"
               onClick={() => setSelectedMethod(value)} // Clickable div for selection
             >
               {/* Custom radio button */}
@@ -41,7 +41,7 @@ const VerificationMethod = ({
                 )}
               </div>
 
-              <span className="text-left">{label}</span>
+              <span className="">{label}</span>
             </div>
           ))}
         </div>
