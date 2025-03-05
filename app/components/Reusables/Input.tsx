@@ -2,33 +2,47 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 interface InputProps {
   label: string;
-  value: string;
-  onChange: () => void;
+  name: string;
+  value: string | undefined;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   isPassword?: boolean;
   setShowPassword?: React.Dispatch<React.SetStateAction<boolean>>;
   showPassword?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ ...props }) => {
+const Input: React.FC<InputProps> = ({
+  label,
+  name,
+  value,
+  onChange,
+  isPassword,
+  showPassword,
+  setShowPassword,
+  error,
+}) => {
   const toggleShowPassword = () => {
-    props.setShowPassword?.(!props.showPassword);
+    setShowPassword?.(!showPassword);
   };
 
   return (
     <div>
-      <label className="font-medium text-white">{props.label}</label>
+      <label htmlFor={name} className="font-medium text-white">
+        {label}
+      </label>
 
       <div className="bg-[#1F6EB6] w-full border border-solid border-[#76A4CE] rounded-md my-1 text-white pl-1 pr-3 py-2 flex items-center justify-between">
         <input
-          type={props.isPassword && !props.showPassword ? "password" : "text"}
-          className="bg-[#1F6EB6] w-full rounded-md outline-none pe-2"
-          value={props.value}
-          onChange={props.onChange}
+          id={name}
+          name={name}
+          type={isPassword && !showPassword ? "password" : "text"}
+          className="bg-[#1F6EB6] w-full outline-none pe-2"
+          value={value}
+          onChange={onChange}
         />
 
-        {props.isPassword &&
-          (props.showPassword ? (
+        {isPassword &&
+          (showPassword ? (
             <IoEyeOutline
               onClick={toggleShowPassword}
               className="cursor-pointer"
@@ -41,7 +55,7 @@ const Input: React.FC<InputProps> = ({ ...props }) => {
           ))}
       </div>
 
-      {props.error && <div className="text-sm text-red-400">{props.error}</div>}
+      {error && <div className="text-sm text-red-400">{error}</div>}
     </div>
   );
 };
