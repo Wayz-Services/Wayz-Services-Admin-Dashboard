@@ -11,7 +11,7 @@ const SignWrapper = ({ children }: { children: React.ReactNode }) => {
         <Image src={"/logo.png"} alt="Logo" width={200} height={200} />
       </div>
       <div
-        className="w-[60%] text-white p-24 bg-primary bg-[url('/Images/squares.png')] bg-center bg-no-repeat "
+        className="w-[60%] text-white p-14 bg-primary bg-[url('/Images/squares.png')] bg-center bg-no-repeat "
         style={{ backgroundSize: "90% auto" }}
       >
         {children}

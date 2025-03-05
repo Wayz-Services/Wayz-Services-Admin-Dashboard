@@ -122,5 +122,20 @@
   },
   "testimonial": {
     "title": "ماذا يقول مستخدمونا"
-  }
+  },
+  "SignUp": {
+  "startYourJourney": "ابدأ رحلتك",
+  "createAccount": "إنشاء حساب",
+  "fullName": "الاسم الكامل",
+  "userName": "اسم المستخدم",
+  "phoneNumber": "رقم الهاتف",
+  "emailAddress": "عنوان البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "accountType": "نوع الحساب:",
+  "contractor": "مقاول",
+  "customer": "عميل",
+  "acceptTerms": "أوافق على الشروط والأحكام",
+  "createAccountButton": "إنشاء حساب"
+}
 }
