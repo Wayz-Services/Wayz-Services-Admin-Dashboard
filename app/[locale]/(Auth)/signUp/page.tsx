@@ -164,9 +164,9 @@ const SignUp = () => {
         </div>
 
         {radioGroups.map((group) => (
-          <div key={group.name} className="mt-8 w-full max-w-2xl">
+          <div key={group.name} className="mt-8">
             <p className="text-white text-sm mb-2">{group.label}</p>
-            <div className="flex space-x-4">
+            <div className="flex gap-3">
               {group.options.map((option) => (
                 <label
                   key={option.value}
@@ -185,7 +185,7 @@ const SignUp = () => {
                         [group.name]: e.target.value,
                       })
                     }
-                    className="me-2 appearance-none bg-white w-3 h-3 border-2 border-gray-300 rounded-full bg-transparent checked:bg-[#F6B60B] focus:outline-none"
+                    className="me-2 appearance-none bg-white w-3 h-3 border-2 border-gray-300 rounded-full checked:bg-[#F6B60B] focus:outline-none"
                   />
 
                   {option.label}
