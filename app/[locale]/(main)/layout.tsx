@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
-import { Cairo, Inter } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -12,38 +9,18 @@ export const metadata: Metadata = {
   description: "Welcome to WAYZ applicatoin!",
 };
 
-const inter = Inter({ subsets: ["latin"] });
-const cairo = Cairo({ subsets: ["arabic"] });
-
-export default async function LocaleLayout({
+export default async function MainLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
-  const { locale } = await params;
-
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
-    notFound();
-  }
-
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
-  // Determine the direction based on locale
-  const isRtl = locale === "ar";
-  const fontClass = isRtl ? cairo.className : inter.className;
-
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
-      <body className={`${fontClass}`} suppressHydrationWarning>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </>
   );
 }
