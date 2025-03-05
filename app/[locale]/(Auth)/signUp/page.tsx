@@ -5,6 +5,7 @@ import SignWrapper from "@/app/components/SignWrapper";
 import Input from "@/app/components/Reusables/Input";
 import { useTranslations } from "next-intl";
 import Button from "@/app/components/Reusables/Button"; // Assuming the Button component is in this path
+import "intl-tel-input/build/css/intlTelInput.css";
 
 interface FormData {
   fullName: string;
@@ -146,21 +147,23 @@ const SignUp = () => {
           {t("createAccount")}
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-2xl">
-          {inputFields.map((field) => (
-            <div key={field.name} className="relative">
-              <Input
-                label={field.label}
-                name={field.name}
-                value={field.value}
-                onChange={field.onChange}
-                isPassword={field.isPassword}
-                showPassword={field.showPassword}
-                setShowPassword={field.setShowPassword}
-                error={field.error}
-              />
-            </div>
-          ))}
+        <div className="w-full lg:max-w-2xl">
+          <form className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {inputFields.map((field) => (
+              <div key={field.name} className="relative">
+                <Input
+                  label={field.label}
+                  name={field.name}
+                  value={field.value}
+                  onChange={field.onChange}
+                  isPassword={field.isPassword}
+                  showPassword={field.showPassword}
+                  setShowPassword={field.setShowPassword}
+                  error={field.error}
+                />
+              </div>
+            ))}
+          </form>
         </div>
 
         {radioGroups.map((group) => (
