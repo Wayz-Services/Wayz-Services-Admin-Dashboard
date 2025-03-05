@@ -2,7 +2,7 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 interface InputProps {
   label: string;
-  name: string; // Add name prop
+  name: string;
   value: string | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
@@ -13,7 +13,7 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({
   label,
-  name, // Destructure name
+  name,
   value,
   onChange,
   isPassword,

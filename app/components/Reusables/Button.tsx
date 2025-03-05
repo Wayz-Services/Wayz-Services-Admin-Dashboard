@@ -3,14 +3,14 @@ import { ButtonHTMLAttributes } from "react";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   redirectTo?: string;
-  onSubmit?: () => void;
+  onClick?: () => void;
   backgColor?: "blue" | "white";
 }
 
 const Button: React.FC<ButtonProps> = ({
   className,
   children,
-  onSubmit,
+  onClick,
   backgColor = "blue",
   ...rest
 }) => {

@@ -138,4 +138,18 @@
   "acceptTerms": "أوافق على الشروط والأحكام",
   "createAccountButton": "إنشاء حساب"
 }
+  "VerificationMethod": {
+    "select_verification_methods": "اختر طرق التحقق",
+    "email_verification": "التحقق عبر البريد الإلكتروني",
+    "phone_verification": "التحقق عبر الهاتف",
+    "send_otp": "إرسال OTP"
+  },
+  "VerificationModal": {
+    "otp_verification": "التحقق من OTP",
+    "otp_sent_message": "تم إرسال كلمة المرور لمرة واحدة (OTP) عبر البريد الإلكتروني إلى",
+    "enter_otp_message": "أدخل OTP أدناه للتحقق منه.",
+    "didnt_receive_code": "لم تستلم الرمز؟",
+    "resend": "إعادة الإرسال",
+    "verify_otp": "تحقق من OTP"
+  }
 }

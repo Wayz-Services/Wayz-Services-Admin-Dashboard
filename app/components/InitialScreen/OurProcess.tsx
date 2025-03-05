@@ -8,7 +8,7 @@ export default function OurProcess() {
   const t = useTranslations("OurProcess");
 
   return (
-    <section className="bg-[#F0F6FB] flex flex-col items-center text-white pb-12">
+    <section className="bg-secondary flex flex-col items-center text-white pb-12">
       <ListYourBusiness />
 
       <div className="text-center px-6">
@@ -29,10 +29,13 @@ export default function OurProcess() {
             <div className="bg-[#F0F6FB] mt-[-1px] z-0 text-primary text-3xl font-semibold px-4 pt-4 flex items-end pb-2 justify-center rounded-b-full">
               {id}
             </div>
+
             <h3 className="font-extrabold h-4 text-2xl italic">
               {t(`steps.${id}.title`)}
             </h3>
+
             <p className="text-lg max-h-8">{t(`steps.${id}.description`)}</p>
+
             <div className="mt-4 flex justify-center rtl:rotate-[-90deg]">
               <MdOutlineArrowOutward size={40} />
             </div>
