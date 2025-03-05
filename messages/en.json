@@ -124,6 +124,20 @@
   "testimonial": {
     "title": "What our users have to say"
   },
+  "SignUp": {
+    "startYourJourney": "START YOUR JOURNEY",
+    "createAccount": "Create An Account",
+    "fullName": "Full Name",
+    "userName": "Usern  ame",
+    "phoneNumber": "Phone Number",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "accountType": "Account Type:",
+    "contractor": "Contractor",
+    "customer": "Customer",
+    "acceptTerms": "Accept Terms & Conditions",
+    "createAccountButton": "Create Account"
   "VerificationMethod": {
     "select_verification_methods": "Select Verification Methods",
     "email_verification": "Email Verification",
