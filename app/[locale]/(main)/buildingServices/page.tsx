@@ -1,6 +1,3 @@
-"use client"
-
-import VerificationMethod from "@/app/components/Auth/verificationMethod";
 import Button from "@/app/components/Reusables/Button";
 import { CiSearch } from "react-icons/ci";
 
@@ -40,8 +37,6 @@ const page = () => {
       <div className="p-10">
         <Card />
       </div>
-
-      <VerificationMethod isVisible onClose={() => {}} />
     </div>
   );
 };
