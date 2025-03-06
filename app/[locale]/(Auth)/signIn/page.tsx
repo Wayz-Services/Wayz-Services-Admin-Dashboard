@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import SignWrapper from "@/app/components/SignWrapper";
 import { FcGoogle } from "react-icons/fc";
@@ -15,17 +15,17 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
+  const t = useTranslations("signIn");
   return (
     <SignWrapper>
       {/* Adjust container width on larger screens */}
       <div className="flex flex-col items-start md:w-3/4 lg:w-1/2 ">
         <h1 className="mb-4 text-xl sm:text-2xl text-center text-white">
-          Welcome back
+          {t("welcome_back")}
         </h1>
 
         <h2 className="text-3xl sm:text-5xl font-semibold mb-6 text-center">
-          Sign In Now
+          {t("sign_in_now")}
         </h2>
 
         <div className="w-full">
@@ -33,7 +33,7 @@ const Signin = () => {
             <div className="mb-4">
               <Input
                 name="Email"
-                label="Email Address"
+                label={t("email_address")}
                 value={email}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setEmail(e.target.value)
@@ -43,8 +43,8 @@ const Signin = () => {
 
             <div className="mb-6">
               <Input
-                label="Password"
-                name="password"
+                label={t("password")}
+                name="Password"
                 value={password}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(e.target.value)
@@ -62,14 +62,17 @@ const Signin = () => {
                   className="accent-white border border-[#64A6E3] rounded-md"
                 />
 
-                <span className="ml-2 text-sm text-white">Remember Me</span>
+                <span className="ms-2 text-sm text-white">
+                  {" "}
+                  {t("remember_me")}
+                </span>
               </label>
 
               <LocalizedLink
                 className="inline-block  text-sm text-[#F6B60B] hover:underline mt-2 sm:mt-0"
                 href="#"
               >
-                Forgot Password?
+                {t("forgot_password")}
               </LocalizedLink>
             </div>
 
@@ -78,33 +81,33 @@ const Signin = () => {
               backgColor="white"
               type="button"
             >
-              Sign In
+              {t("sign_in")}
             </Button>
           </form>
 
           {/* Centered Section Below the Form */}
-          <div className="flex flex-col items-center mt-6">
-            <p className="text-white text-center">
-              Don't Have An Account Yet?{" "}
+          <div className="flex flex-col items-center mt-6 ">
+            <p className="text-white text-center   ">
+              {t("dont_have_an_account_yet")}
               <LocalizedLink
                 href="/signUp"
-                className="text-[#F6B60B] font-semibold hover:underline"
+                className="text-[#F6B60B] font-semibold hover:underline ms-1"
               >
-                Sign Up
+                {t("sign_up")}
               </LocalizedLink>
             </p>
           </div>
 
           <div className="flex items-center my-4">
             <HorizontalSeparator />
-            <span className="mx-4 text-white">Or</span>
+            <span className="mx-4 text-white"> {t("or")}</span>
             <HorizontalSeparator />
           </div>
 
           <div className="flex items-center justify-center">
             <button className="flex items-center justify-center border rounded-full py-2 px-4 bg-[#0D4170] border-none hover:opacity-70">
               <FcGoogle className="me-2" size={22} />
-              Continue With Google
+              {t("continue_with_google")}
             </button>
           </div>
         </div>
