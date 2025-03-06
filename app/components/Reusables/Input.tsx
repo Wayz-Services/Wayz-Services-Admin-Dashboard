@@ -31,7 +31,7 @@ const Input: React.FC<InputProps> = ({
         {label}
       </label>
 
-      <div className="bg-[#1F6EB6] w-full border border-solid border-[#76A4CE] rounded-md my-1 text-white pl-1 pr-3 py-2 flex items-center justify-between">
+      <div className="bg-[#1F6EB6] w-full border border-solid border-[#76A4CE] rounded-md my-1 text-white ps-2 pe-3 py-2 flex items-center justify-between">
         <input
           id={name}
           name={name}
