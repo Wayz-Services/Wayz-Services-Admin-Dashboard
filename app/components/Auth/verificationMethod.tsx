@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "../Modal";
 import { useTranslations } from "next-intl";
 import Button from "../Reusables/Button";
+import { MdEmail, MdPhone, MdKeyboardArrowRight } from "react-icons/md";
 
 const VerificationMethod = ({
   isVisible,
@@ -11,11 +12,19 @@ const VerificationMethod = ({
   onClose: () => void;
 }) => {
   const t = useTranslations("VerificationMethod");
-  const [selectedMethod, setSelectedMethod] = useState<string>("email");
+  const [selectedMethod, setSelectedMethod] = useState<string>("");
 
   const verificationMethods = [
-    { value: "email", label: t("email_verification") },
-    { value: "phone", label: t("phone_verification") },
+    {
+      value: "email",
+      label: t("email_verification"),
+      icon: <MdEmail size={25} />,
+    },
+    {
+      value: "phone",
+      label: t("phone_verification"),
+      icon: <MdPhone size={25} />,
+    },
   ];
 
   return (
@@ -25,23 +34,23 @@ const VerificationMethod = ({
           {t("select_verification_methods")}
         </h2>
 
-        <div>
-          {verificationMethods.map(({ value, label }) => (
+        <div className="w-full">
+          {verificationMethods.map((method, index) => (
             <div
-              key={value}
-              className="mb-3 flex items-center gap-2 cursor-pointer"
-              onClick={() => setSelectedMethod(value)} // Clickable div for selection
+              key={index}
+              className={`mb-3 flex items-center justify-between gap-2 cursor-pointer border rounded-md px-4 py-2 transition-all ${
+                selectedMethod === method.value
+                  ? "bg-primary text-white border-primary"
+                  : "border-gray-300 hover:bg-gray-100"
+              }`}
+              onClick={() => setSelectedMethod(method.value)}
             >
-              {/* Custom radio button */}
-              <div
-                className={`w-4 h-4 border-2 border-gray-400 rounded-full flex items-center justify-center transition-all `}
-              >
-                {selectedMethod === value && (
-                  <div className="w-2 h-2 bg-[#F6B60B] rounded-full"></div>
-                )}
+              <div className="flex items-center gap-3">
+                {method.icon}
+                <span>{method.label}</span>
               </div>
 
-              <span className="">{label}</span>
+              <MdKeyboardArrowRight size={25} />
             </div>
           ))}
         </div>

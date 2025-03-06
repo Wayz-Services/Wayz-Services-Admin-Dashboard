@@ -19,9 +19,9 @@ const Facts = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <p className="uppercase text-base">{type}</p>
-          <p className="font-bold text-2xl">{title}</p>
-          <p className="text-3xl">{reached}</p>
+          <p className="uppercase text-sm lg:text-base">{type}</p>
+          <p className="font-bold text-xl lg:text-2xl">{title}</p>
+          <p className="text-2xl lg:text-3xl">{reached}</p>
         </div>
       </div>
     );
@@ -61,14 +61,15 @@ const Facts = () => {
           </div>
 
           <div className="relative w-full md:w-[20%] flex justify-center">
-            <Image
-              src={"/Images/InitialScreen/factor.png"}
-              width={250}
-              height={150}
-              alt="factor image"
-              style={{ width: "auto", height: "auto" }}
-              quality={100}
-            />
+            <div className="relative overflow-hidden w-[256px] h-[386px] md:w-[160px] xl:w-[256px]">
+              <Image
+                src={"/Images/InitialScreen/factor.png"}
+                fill
+                alt="factor image"
+                quality={100}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           </div>
 
           <div className="hidden md:flex md:self-start justify-start pb-3 md:w-[40%] md:pe-3">
