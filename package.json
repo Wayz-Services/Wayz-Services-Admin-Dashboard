@@ -15,7 +15,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "install": "^0.13.0",
-    "intl-tel-input": "^25.3.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.477.0",
     "mobx": "^6.13.6",
@@ -28,6 +27,7 @@
     "react-dom": "^19.0.0",
     "react-feather": "^2.0.10",
     "react-icons": "^5.5.0",
+    "react-phone-input-2": "^2.15.1",
     "tailwind-rn": "^4.2.0"
   },
   "devDependencies": {

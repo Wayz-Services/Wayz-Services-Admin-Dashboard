@@ -5,7 +5,7 @@ import SignWrapper from "@/app/components/SignWrapper";
 import Input from "@/app/components/Reusables/Input";
 import { useTranslations } from "next-intl";
 import Button from "@/app/components/Reusables/Button"; // Assuming the Button component is in this path
-import "intl-tel-input/build/css/intlTelInput.css";
+import PhoneInput from "@/app/components/Reusables/PhoneInput";
 
 interface FormData {
   fullName: string;
@@ -21,14 +21,15 @@ interface FormData {
 
 const SignUp = () => {
   const t = useTranslations("SignUp");
-
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState<boolean>(false);
 
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     userName: "",
-    phoneNumber: "+961",
+    phoneNumber: "",
     emailAddress: "",
     password: "",
     confirmPassword: "",
@@ -151,16 +152,20 @@ const SignUp = () => {
           <form className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {inputFields.map((field) => (
               <div key={field.name} className="relative">
-                <Input
-                  label={field.label}
-                  name={field.name}
-                  value={field.value}
-                  onChange={field.onChange}
-                  isPassword={field.isPassword}
-                  showPassword={field.showPassword}
-                  setShowPassword={field.setShowPassword}
-                  error={field.error}
-                />
+                {field.name === "phoneNumber" ? (
+                  <PhoneInput setPhoneNumber={setPhoneNumber} />
+                ) : (
+                  <Input
+                    label={field.label}
+                    name={field.name}
+                    value={field.value}
+                    onChange={field.onChange}
+                    isPassword={field.isPassword}
+                    showPassword={field.showPassword}
+                    setShowPassword={field.setShowPassword}
+                    error={field.error}
+                  />
+                )}
               </div>
             ))}
           </form>

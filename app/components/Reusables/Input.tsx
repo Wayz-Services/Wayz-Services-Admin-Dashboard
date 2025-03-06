@@ -39,7 +39,7 @@ const Input: React.FC<InputProps> = ({
           className="bg-[#1F6EB6] w-full outline-none pe-2"
           value={value}
           onChange={onChange}
-          autoComplete={isPassword ? "on": "off"}
+          autoComplete={isPassword ? "on" : "off"}
         />
 
         {isPassword &&
