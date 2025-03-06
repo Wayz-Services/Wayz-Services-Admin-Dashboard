@@ -20,11 +20,11 @@ const Signin = () => {
     <SignWrapper>
       {/* Adjust container width on larger screens */}
       <div className="flex flex-col items-start md:w-3/4 lg:w-1/2 ">
-        <h1 className="mb-4 text-xl sm:text-2xl text-center text-white">
+        <h1 className="mb-4 text-xl sm:text-2xl text-center uppercase text-white">
           {t("welcome_back")}
         </h1>
 
-        <h2 className="text-3xl sm:text-5xl font-semibold mb-6 text-center">
+        <h2 className="text-3xl sm:text-5xl font-semibold uppercase mb-6 text-center">
           {t("sign_in_now")}
         </h2>
 
