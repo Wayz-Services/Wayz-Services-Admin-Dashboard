@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import { getMessages } from "next-intl/server";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
@@ -14,8 +13,6 @@ export default async function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const messages = await getMessages();
-
   return (
     <>
       <Header />

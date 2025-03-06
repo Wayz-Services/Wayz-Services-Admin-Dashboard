@@ -7,7 +7,8 @@ import LocalizedLink from "./Reusables/LocalizedLink";
 import LocalSwitcher from "./LocalSwitcher";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   isLoggedIn?: boolean;
@@ -84,15 +85,32 @@ const Header: React.FC<HeaderProps> = ({
       : customerNavItems
     : guestNavItems;
 
+  const pathname = usePathname(); // Get the current path
+  const locale = useLocale();
+
+  // Check if the current path is '/'
+  const isInitialScreen = pathname === `/${locale}`;
+  console.log(pathname);
+
   return (
-    <nav className="relative bg-primary flex md:pt-10 items-center justify-between px-4 pb-10 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:items-start md:pb-0 md:px-0 md:justify-around lg:text-base dark:bg-primaryDark">
+    <nav
+      className="relative bg-primary flex items-center justify-between px-4 pb-10 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:pb-0 md:px-0 md:justify-around lg:text-base dark:bg-primaryDark"
+      style={{
+        alignItems: !isInitialScreen ? "center" : "start",
+        paddingTop: isInitialScreen ? 40 : 0,
+      }}
+    >
       {/* Logo Section */}
       <LocalizedLink href={"/"}>
         <Image
           src="/logo.png"
-          width={150}
+          width={!isInitialScreen ? 70 : 150}
           height={70}
-          style={{ width: 95, height: 140, objectFit: "contain" }}
+          style={{
+            width: !isInitialScreen ? 70 : 95,
+            height: 140,
+            objectFit: "contain",
+          }}
           alt="wayz logo"
           priority
           unoptimized
