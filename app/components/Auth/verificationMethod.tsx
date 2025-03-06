@@ -55,7 +55,7 @@ const VerificationMethod = ({
           ))}
         </div>
 
-        <Button className="px-10 mt-4 transition">{t("send_otp")}</Button>
+        <Button className="px-10 mt-4 w-full transition">{t("send_otp")}</Button>
       </div>
     </Modal>
   );
