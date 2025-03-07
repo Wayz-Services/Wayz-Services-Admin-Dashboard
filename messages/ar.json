@@ -163,6 +163,10 @@
     "dont_have_an_account_yet": "ليس لديك حساب حتى الآن؟",
     "sign_up": "إنشاء حساب",
     "or": "أو",
-    "continue_with_google": "تسجيل الدخول باستخدام جوجل"
+    "continue_with_google": "تسجيل الدخول باستخدام جوجل",
+    "error_enter_email": "أدخل بريدك الإلكتروني",
+    "error_invalid_email": "يرجى إدخال بريد إلكتروني صالح",
+    "error_enter_password": "أدخل كلمة المرور",
+    "error_invalid_password": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وحرف كبير واحد، ورقم واحد."
   }
 }

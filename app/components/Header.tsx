@@ -4,7 +4,7 @@ import Image from "next/image";
 import ThemeSwitcher from "../utils/ThemeSwitcher";
 import LinkButton from "./Reusables/LinkButton";
 import LocalizedLink from "./Reusables/LocalizedLink";
-import LocalSwitcher from "./LocalSwitcher";
+import LocalSwitcher from "../utils/LocalSwitcher";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -90,7 +90,6 @@ const Header: React.FC<HeaderProps> = ({
 
   // Check if the current path is '/'
   const isInitialScreen = pathname === `/${locale}`;
-  console.log(pathname);
 
   return (
     <nav
