@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "Welcome to WAYZ applicatoin!",
 };
 
+type Params = Promise<{ locale: string }>;
+
 const inter = Inter({ subsets: ["latin"] });
 const cairo = Cairo({ subsets: ["arabic"] });
 
@@ -20,7 +22,7 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Params;
 }) {
   const { locale } = await params;
 
