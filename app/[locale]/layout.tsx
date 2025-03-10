@@ -9,7 +9,7 @@ import ThemeProvider from "../utils/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "WAYZ",
-  description: "Welcome to WAYZ applicatoin!",
+  description: "Welcome to WAYZ application!",
 };
 
 type Params = Promise<{ locale: string }>;
