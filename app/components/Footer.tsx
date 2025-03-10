@@ -47,12 +47,19 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-[#0059AB] text-white py-10 md:text-sm lg:text-base">
+    <footer className="bg-[#0059AB] text-white py-5 md:py-10 md:text-sm lg:text-base">
       <div className="container mx-auto px-6 lg:px-20">
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-4 py-10 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-4 pb-5 md:py-10 text-center sm:text-left">
           {/* Logo Section */}
-          <div className="flex justify-center sm:justify-start">
-            <h1 className="text-4xl font-bold">{t("wayz")}</h1>
+          <div className="relative flex items-center justify-center">
+            <div className="relative w-[100px] h-[150px] md:absolute md:top-[-120px] md:w-[200px] md:h-[330px]">
+              <Image
+                src={"/logo.png"}
+                fill
+                alt="WAYZ logo"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           </div>
 
           {/* Quick Links & Support - Placed in One Line on Small Screens */}

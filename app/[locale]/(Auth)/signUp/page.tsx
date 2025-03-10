@@ -48,26 +48,12 @@ const SignUp = () => {
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
 
-    if (name === "phoneNumber") {
-      // Ensure the phone number always starts with +961
-      if (!value.startsWith("+961")) {
-        return;
-      }
-    }
-
-    if (type === "checkbox") {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: checked, // Update checkbox value
-      }));
-    } else {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    }
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
 
     setErrors((prevData) => ({
       ...prevData,
