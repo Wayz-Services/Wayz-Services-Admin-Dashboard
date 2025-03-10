@@ -32,9 +32,11 @@ class AuthStore {
     makeObservable(this, {
       userInfo: observable,
       isLoading: observable,
+      errorMessage: observable,
       reset: action.bound,
       setUserInfo: action.bound,
       setIsLoading: action.bound,
+      setErrorMessage: action.bound,
       SignIn: action.bound,
       SignOut: action.bound,
     });
@@ -79,17 +81,20 @@ class AuthStore {
 
       if (resp?.error) {
         this.setErrorMessage(resp?.error); // Set the error message
+
         this.setIsLoading(false);
+
         return;
       }
-
-      console.log(resp);
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
+        this.setErrorMessage((error as any)?.error); // Set the error message
+
         this.setIsLoading(false);
 
         console.log("Login error", error.message);
       } else {
+        this.setErrorMessage((error as any)?.error); // Set the error message
         this.setIsLoading(false);
 
         console.log("An unknown error occurred", error as Error);

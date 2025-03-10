@@ -5,6 +5,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   redirectTo?: string;
   onClick?: () => void;
   backgColor?: "blue" | "white";
+  isLoading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,6 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
   backgColor = "blue",
+  isLoading = false,
   ...rest
 }) => {
   const isBackPrimary =
@@ -23,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`${className} ${isBackPrimary} py-2 hover:opacity-70 font-semibold rounded-md`}
       onClick={onClick}
     >
-      {children}
+      {isLoading ? "Loading..." : children}
     </button>
   );
 };

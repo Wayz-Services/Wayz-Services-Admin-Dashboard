@@ -19,7 +19,7 @@ const HorizontalSeparator = () => (
 );
 
 const Signin = () => {
-  const { SignIn } = authStore;
+  const { SignIn, errorMessage, isLoading } = authStore;
 
   const [data, setData] = useState<SignInData>({ email: "", password: "" });
   const [errors, setErrors] = useState<SignInData>({ email: "", password: "" });
@@ -125,10 +125,13 @@ const Signin = () => {
             </LocalizedLink>
           </div>
 
+          <div className="text-red-400 text-sm mb-2">{errorMessage}</div>
+
           <Button
             className="w-full font-bold py-2 px-4 rounded"
             backgColor="white"
             type="submit"
+            isLoading={isLoading}
           >
             {t("sign_in")}
           </Button>
