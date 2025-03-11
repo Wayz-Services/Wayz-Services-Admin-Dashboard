@@ -1,3 +1,4 @@
+"use client"
 import Testimonial from "../../components/InitialScreen/Testimonial";
 import OurProcess from "../../components/InitialScreen/OurProcess";
 import HeroSection from "../../components/InitialScreen/HeroSection";
@@ -5,7 +6,7 @@ import Services from "../../components/InitialScreen/Services"; // Import the Se
 import Facts from "../../components/InitialScreen/Facts";
 import ContactSection from "../../components/InitialScreen/Contact";
 
-export default function Home() {
+const Home = () => {
   const Rectangle = () => {
     return (
       <>
@@ -35,4 +36,6 @@ export default function Home() {
       <Testimonial />
     </div>
   );
-}
+};
+
+export default Home;
