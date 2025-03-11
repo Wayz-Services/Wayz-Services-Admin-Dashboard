@@ -26,5 +26,5 @@ export function middleware(request: NextRequest) {
 
 // Match only internationalized pathnames
 export const config = {
-  matcher: ["/", "/(ar|en)/buildingServices"],
+  matcher: [],
 };
