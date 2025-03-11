@@ -1,6 +1,13 @@
 import { AxiosError } from "axios";
 import { action, makeObservable, observable } from "mobx";
 import ApiRequest from "../utils/AxiosReq";
+import {
+  getCookie,
+  getCookies,
+  setCookie,
+  deleteCookie,
+  hasCookie,
+} from "cookies-next";
 
 interface AuthState {
   UserID: string;
@@ -39,7 +46,10 @@ class AuthStore {
       setErrorMessage: action.bound,
       SignIn: action.bound,
       SignOut: action.bound,
+      IsLoggedIn: action.bound,
     });
+
+    this.IsLoggedIn();
   }
 
   reset() {
@@ -86,6 +96,10 @@ class AuthStore {
 
         return;
       }
+
+      setCookie("userInfo", JSON.stringify(resp));
+
+      this.setIsLoading(false);
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
         this.setErrorMessage((error as any)?.error); // Set the error message
@@ -94,7 +108,8 @@ class AuthStore {
 
         console.log("Login error", error.message);
       } else {
-        this.setErrorMessage((error as any)?.error); // Set the error message
+        this.setErrorMessage(error as any); // Set the error message
+
         this.setIsLoading(false);
 
         console.log("An unknown error occurred", error as Error);
@@ -104,6 +119,10 @@ class AuthStore {
 
   async SignOut() {
     this.reset();
+  }
+
+  async IsLoggedIn() {
+    const userInfo = getCookie("userInfo");
   }
 }
 
