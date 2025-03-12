@@ -169,5 +169,9 @@
     "error_invalid_email": "Please enter a valid email",
     "error_enter_password": "Enter your password",
     "error_invalid_password": "Password must contain at least 8 characters, one capital letter, and one number."
+  },
+  "BuildingServices": {
+    "title": "We can help you get Your Services done?",
+    "subtitle": "We find top talent that matches your need"
   }
 }

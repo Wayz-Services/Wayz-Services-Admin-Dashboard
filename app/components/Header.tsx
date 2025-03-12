@@ -56,9 +56,12 @@ const Header: React.FC<HeaderProps> = ({
   const guestNavItems = [
     {
       name: t("guestNavItems.ourServices"),
-      link: "/",
+      link: "#",
       subNav: [
-        { name: t("guestNavItems.buildingServices"), link: "/" },
+        {
+          name: t("guestNavItems.buildingServices"),
+          link: "/buildingServices",
+        },
         { name: t("guestNavItems.browseSuppliers"), link: "/" },
         { name: t("guestNavItems.vehicleServices"), link: "/" },
       ],
@@ -93,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <nav
-      className="relative bg-primary flex items-center justify-between px-4 pb-10 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:pb-0 md:px-0 md:justify-around lg:text-base dark:bg-primaryDark"
+      className="relative bg-primary flex items-center justify-between px-4 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:px-0 md:justify-around lg:text-base dark:bg-primaryDark"
       style={{
         alignItems: !isInitialScreen ? "center" : "start",
         paddingTop: isInitialScreen ? 40 : 0,
