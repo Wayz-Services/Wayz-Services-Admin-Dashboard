@@ -87,7 +87,7 @@ class AuthStore {
         passwordx: data.password,
       };
 
-      const resp = await ApiRequest<any>("login.php", "POST", requestData);
+      const resp = await ApiRequest<any>("api/login.php", "POST", requestData);
 
       if (resp?.error) {
         this.setErrorMessage(resp?.error); // Set the error message
