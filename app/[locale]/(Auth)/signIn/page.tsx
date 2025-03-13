@@ -8,6 +8,7 @@ import Button from "@/app/components/Reusables/Button";
 import LocalizedLink from "@/app/components/Reusables/LocalizedLink";
 import { observer } from "mobx-react-lite";
 import { authStore } from "@/app/mobx/AuthStore";
+import FixErrors from "@/app/components/FixErrors";
 
 interface SignInData {
   email: string;
@@ -81,6 +82,8 @@ const Signin = () => {
         <h2 className="text-3xl sm:text-5xl font-semibold uppercase mb-6 text-center">
           {t("sign_in_now")}
         </h2>
+
+        <FixErrors errors={errors} />
 
         <form className="w-full" onSubmit={handleSignIn}>
           <div className="mb-4">

@@ -173,5 +173,8 @@
   "BuildingServices": {
     "title": "We can help you get Your Services done?",
     "subtitle": "We find top talent that matches your need"
+  },
+  "FixErrors": {
+    "title": "Please Fix The Errors Below And Try Again"
   }
 }

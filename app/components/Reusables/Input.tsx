@@ -31,7 +31,10 @@ const Input: React.FC<InputProps> = ({
         {label}
       </label>
 
-      <div className="bg-[#1F6EB6] w-full border border-solid border-[#76A4CE] rounded-md my-1 text-white ps-2 pe-3 py-2 flex items-center justify-between">
+      <div
+        className="bg-[#1F6EB6] w-full border border-solid border-[#76A4CE] rounded-md my-1 text-white ps-2 pe-3 py-2 flex items-center justify-between"
+        style={{ border: error && "1px solid rgb(248 113 113)" }}
+      >
         <input
           id={name}
           name={name}

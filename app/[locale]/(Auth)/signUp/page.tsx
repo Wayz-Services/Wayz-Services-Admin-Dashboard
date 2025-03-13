@@ -10,7 +10,6 @@ import PhoneInput from "@/app/components/Reusables/PhoneInput";
 interface FormData {
   fullName: string;
   userName: string;
-  phoneNumber: string;
   emailAddress: string;
   password: string;
   confirmPassword: string;
@@ -29,7 +28,6 @@ const SignUp = () => {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     userName: "",
-    phoneNumber: "",
     emailAddress: "",
     password: "",
     confirmPassword: "",
@@ -79,7 +77,7 @@ const SignUp = () => {
     {
       label: t("phoneNumber"),
       name: "phoneNumber",
-      value: formData.phoneNumber,
+      value: phoneNumber,
       onChange: handleInputChange,
       error: errors.phoneNumber,
     },
