@@ -213,7 +213,7 @@ const SignUp = () => {
     <SignWrapper>
       <div className="flex flex-col items-start justify-center">
         <h1 className="text-white text-xl sm:text-2xl font-medium uppercase ">
-          {t("startYourJourney")}
+          {t("getStarted")}
         </h1>
 
         <p className="text-white text-3xl sm:text-5xl mb-6 font-bold capitalize mt-1">
