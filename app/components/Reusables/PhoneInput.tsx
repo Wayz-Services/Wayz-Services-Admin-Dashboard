@@ -1,16 +1,30 @@
 import { useTranslations } from "next-intl";
 import ReactPhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import Error from "./Error";
 
 interface PhoneInputProps {
+  phoneNumber: string;
   setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
+  setErrors: any;
+  error: string | undefined;
 }
 
-const PhoneInput: React.FC<PhoneInputProps> = ({ setPhoneNumber }) => {
+const PhoneInput: React.FC<PhoneInputProps> = ({
+  phoneNumber,
+  setPhoneNumber,
+  error,
+  setErrors,
+}) => {
   const t = useTranslations("SignUp");
 
   const handlePhoneChange = (value: any, country: any) => {
-    setPhoneNumber(country.dialCode);
+    setPhoneNumber(value);
+
+    setErrors((prevData: any) => ({
+      ...prevData,
+      phoneNumber: "",
+    }));
   };
 
   return (
@@ -21,6 +35,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ setPhoneNumber }) => {
         <ReactPhoneInput
           country={"lb"}
           onChange={handlePhoneChange}
+          value={phoneNumber}
           enableSearch
           containerStyle={{
             color: "black",
@@ -47,6 +62,8 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ setPhoneNumber }) => {
           }}
         />
       </div>
+
+      {error && <Error error={error} />}
     </div>
   );
 };

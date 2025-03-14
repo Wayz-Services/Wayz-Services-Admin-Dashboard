@@ -127,7 +127,7 @@
   "SignUp": {
     "startYourJourney": "Let's get started",
     "createAccount": "Create An Account",
-    "fullName": "Full Name",
+    "firstName": "First Name",
     "userName": "Username",
     "phoneNumber": "Phone Number",
     "emailAddress": "Email Address",
@@ -137,7 +137,21 @@
     "contractor": "Contractor",
     "customer": "Customer",
     "acceptTerms": "Accept Terms & Conditions",
-    "createAccountButton": "Create Account"
+    "createAccountButton": "Create Account",
+    "error_enter_firstName": "Please Enter your first name",
+    "error_invalid_firstName": "First name should be at least 3 charachters",
+    "error_enter_userName": "Please Enter your username",
+    "error_invalid_userName": "Username should be at least 3 charachters",
+    "error_enter_email": "Please enter your email",
+    "error_invalid_email": "Please enter a valid email",
+    "error_enter_phoneNumber": "Please enter your phone number",
+    "error_invalid_phoneNumber": "Please enter a valid number",
+    "error_enter_password": "Please enter your password",
+    "error_invalid_password": "Password must contain at least 8 characters, one capital letter, and one number.",
+    "error_enter_confirmPassword": "Please confirm your password",
+    "error_invalid_confirmPassword": "Password does not match",
+    "error_enter_accountType": "Please select you are either a customer or contractor",
+    "error_enter_terms": "You should accept the terms to continue"
   },
   "VerificationMethod": {
     "select_verification_methods": "Select Verification Methods",

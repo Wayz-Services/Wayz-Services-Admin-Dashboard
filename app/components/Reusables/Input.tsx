@@ -1,4 +1,5 @@
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import Error from "./Error";
 
 interface InputProps {
   label: string;
@@ -59,7 +60,7 @@ const Input: React.FC<InputProps> = ({
           ))}
       </div>
 
-      {error && <div className="text-sm text-red-400">{error}</div>}
+      {error && <Error error={error} />}
     </div>
   );
 };

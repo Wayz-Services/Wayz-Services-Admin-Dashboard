@@ -126,7 +126,7 @@
   "SignUp": {
     "startYourJourney": "ابدأ رحلتك",
     "createAccount": "إنشاء حساب",
-    "fullName": "الاسم الكامل",
+    "firstName": "الإسم الأول",
     "userName": "اسم المستخدم",
     "phoneNumber": "رقم الهاتف",
     "emailAddress": "عنوان البريد الإلكتروني",
@@ -136,7 +136,21 @@
     "contractor": "مقاول",
     "customer": "عميل",
     "acceptTerms": "أوافق على الشروط والأحكام",
-    "createAccountButton": "إنشاء حساب"
+    "createAccountButton": "إنشاء حساب",
+    "error_enter_firstName": "يرجى إدخال اسمك الأول",
+    "error_invalid_firstName": "يجب أن يكون الاسم الأول مكونًا من 3 أحرف على الأقل",
+    "error_enter_userName": "يرجى إدخال اسم المستخدم",
+    "error_invalid_userName": "يجب أن يكون اسم المستخدم مكونًا من 3 أحرف على الأقل",
+    "error_enter_email": "يرجى إدخال بريدك الإلكتروني",
+    "error_invalid_email": "يرجى إدخال بريد إلكتروني صالح",
+    "error_enter_phoneNumber": "يرجى إدخال رقم هاتفك",
+    "error_invalid_phoneNumber": "يرجى إدخال رقم هاتف صالح",
+    "error_enter_password": "يرجى إدخال كلمة المرور",
+    "error_invalid_password": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل، وحرف كبير واحد، ورقم واحد.",
+    "error_enter_confirmPassword": "يرجى تأكيد كلمة المرور",
+    "error_invalid_confirmPassword": "كلمة المرور غير متطابقة",
+    "error_enter_accountType": "يرجى تحديد ما إذا كنت عميلاً أو مقاولًا",
+    "error_enter_terms": "يجب أن توافق على الشروط للمتابعة"
   },
   "VerificationMethod": {
     "select_verification_methods": "اختر طرق التحقق",
