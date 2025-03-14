@@ -48,7 +48,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
             width: "100%",
             height: "42px",
             borderRadius: "6px",
-            border: "1px solid #76A4CE",
+            border: error ? "1px solid rgb(248 113 113)" : "1px solid #76A4CE",
             paddingLeft: "50px",
             color: "white",
             backgroundColor: "#1F6EB6",
@@ -57,7 +57,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
             borderTopLeftRadius: "6px",
             borderBottomLeftRadius: "6px",
             background: "#1F6EB6",
-            border: "1px solid #76A4CE",
+            border: error ? "1px solid rgb(248 113 113)" : "1px solid #76A4CE",
             fontSize: "16px",
           }}
         />
