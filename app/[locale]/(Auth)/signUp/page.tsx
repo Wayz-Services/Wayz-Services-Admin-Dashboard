@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import Button from "@/app/components/Reusables/Button"; // Assuming the Button component is in this path
 import PhoneInput from "@/app/components/Reusables/PhoneInput";
 import Error from "@/app/components/Reusables/Error";
+import FixErrors from "@/app/components/FixErrors";
 
 interface FormData {
   firstName: string;
@@ -211,7 +212,7 @@ const SignUp = () => {
 
   return (
     <SignWrapper>
-      <div className="flex flex-col items-start justify-center">
+      <div className="flex flex-col items-start md:w-3/4">
         <h1 className="mb-4 text-xl sm:text-2xl text-center uppercase text-white">
           {t("getStarted")}
         </h1>
@@ -220,7 +221,9 @@ const SignUp = () => {
           {t("createAccount")}
         </p>
 
-        <div className="w-full lg:max-w-2xl">
+        <FixErrors errors={errors} />
+
+        <div className="w-full">
           <form onSubmit={handleSignUp}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {inputFields.map((field) => (

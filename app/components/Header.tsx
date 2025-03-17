@@ -96,9 +96,10 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <nav
-      className="relative bg-primary flex items-center justify-between px-4 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:px-0 md:justify-around lg:text-base dark:bg-primaryDark"
+      className={`relative bg-primary flex justify-between px-4 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:px-0 md:justify-around lg:text-base dark:bg-primaryDark ${
+        !isInitialScreen ? "items-center" : "items-center md:items-start"
+      }`}
       style={{
-        alignItems: !isInitialScreen ? "center" : "start",
         paddingTop: isInitialScreen ? 40 : 0,
       }}
     >

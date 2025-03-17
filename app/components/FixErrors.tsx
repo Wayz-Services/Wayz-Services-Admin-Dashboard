@@ -18,3 +18,4 @@ const FixErrors = ({ errors }: { errors: any }) => {
 };
 
 export default FixErrors;
+  
