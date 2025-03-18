@@ -212,7 +212,7 @@ const SignUp = () => {
 
   return (
     <SignWrapper>
-      <div className="flex flex-col items-start md:w-3/4">
+      <div className="md:w-3/4">
         <h1 className="mb-4 text-xl sm:text-2xl uppercase text-white">
           {t("getStarted")}
         </h1>
