@@ -213,11 +213,11 @@ const SignUp = () => {
   return (
     <SignWrapper>
       <div className="flex flex-col items-start md:w-3/4">
-        <h1 className="mb-4 text-xl sm:text-2xl text-center uppercase text-white">
+        <h1 className="mb-4 text-xl sm:text-2xl uppercase text-white">
           {t("getStarted")}
         </h1>
 
-        <p className="text-3xl sm:text-5xl font-semibold uppercase mb-6 text-center">
+        <p className="text-3xl sm:text-5xl font-semibold uppercase mb-6">
           {t("createAccount")}
         </p>
 
@@ -252,7 +252,7 @@ const SignUp = () => {
             </div>
 
             {radioGroups.map((group) => (
-              <div key={group.name} className="mt-8">
+              <div key={group.name} className="mt-2">
                 <p className="text-white text-sm mb-2">{group.label}</p>
                 <div className="flex gap-3">
                   {group.options.map((option) => (
@@ -304,7 +304,7 @@ const SignUp = () => {
             </div>
 
             {/* Create Account Button */}
-            <Button className="mt-8 px-8" backgColor="white">
+            <Button className="mt-5 px-8" backgColor="white">
               {t("createAccountButton")}
             </Button>
           </form>

@@ -1,4 +1,5 @@
 "use client";
+
 import { useTranslations } from "next-intl";
 import React, { useState, useCallback } from "react";
 import SignWrapper from "@/app/components/SignWrapper";
@@ -75,11 +76,11 @@ const Signin = () => {
   return (
     <SignWrapper>
       <div className="flex flex-col items-start md:w-3/4 lg:w-1/2">
-        <h1 className="mb-4 text-xl sm:text-2xl text-center uppercase text-white">
+        <h1 className="mb-4 text-xl sm:text-2xl uppercase text-white">
           {t("welcome_back")}
         </h1>
 
-        <h2 className="text-3xl sm:text-5xl font-semibold uppercase mb-6 text-center">
+        <h2 className="text-3xl sm:text-5xl font-semibold uppercase mb-6">
           {t("sign_in_now")}
         </h2>
 
@@ -140,16 +141,15 @@ const Signin = () => {
           </Button>
         </form>
 
-        <div className="flex flex-col items-center mt-6">
-          <p className="text-white text-center">
-            {t("dont_have_an_account_yet")}
-            <LocalizedLink
-              href="/signUp"
-              className="text-[#F6B60B] font-semibold hover:underline ms-1"
-            >
-              {t("sign_up")}
-            </LocalizedLink>
-          </p>
+        <div className="flex flex-row items-center mt-6 text-white">
+          {t("dont_have_an_account_yet")}
+
+          <LocalizedLink
+            href="/signUp"
+            className="text-[#F6B60B] font-semibold hover:underline ms-1"
+          >
+            {t("sign_up")}
+          </LocalizedLink>
         </div>
 
         <div className="flex w-full items-center my-4">
