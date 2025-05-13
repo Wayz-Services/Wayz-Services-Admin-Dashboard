@@ -20,6 +20,7 @@ const ServicesImages = () => {
       imageSrc: "/Images/InitialScreen/Buildings.png",
     },
   ];
+
   return (
     <div className="flex items-center justify-center flex-wrap gap-[40px] mt-4">
       {services.map((service, index) => (

@@ -8,6 +8,8 @@ import Button from "@/app/components/Reusables/Button"; // Assuming the Button c
 import PhoneInput from "@/app/components/Reusables/PhoneInput";
 import Error from "@/app/components/Reusables/Error";
 import FixErrors from "@/app/components/FixErrors";
+import ApiRequest from "@/app/utils/AxiosReq";
+import axios from "axios";
 
 interface FormData {
   firstName: string;
@@ -204,9 +206,29 @@ const SignUp = () => {
     return valid;
   };
 
-  const handleSignUp = (e: React.FormEvent) => {
+  const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
+      const requestData = {
+        firstName: "John",
+        middleName: "M",
+        lastName: "Doe",
+        email: "johndoe@example.coرm",
+        username: "johndoe123",
+        phoneNumber: "1234567890",
+        password: "password123",
+        confirmPassword: "password123",
+        preferredOption: "option1",
+      };
+
+      const resp = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/testApi/signUp.php`,
+        {
+          data: requestData,
+        }
+      );
+
+      console.log("resp", resp);
     }
   };
 

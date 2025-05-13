@@ -10,10 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary)",
-        primaryDark: "var(--primary-dark)",
-        secondary: "var(--secondary)",
-
+        primary: "rgb(var(--primary)/<alpha-value>)",
+        "primary-dark": "rgb(var(--primary-dark)/<alpha-value>)",
+        secondary: "rgb(var(--secondary)/<alpha-value>)",
       },
     },
   },
