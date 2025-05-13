@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 interface ImageComponentProps {
   src: string;
   width: number | string;
   height: number | string;
-  objectFit?: "fill" | "contain" | "cover" | "none" | "scale-down"; // Restrict the values
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'; // Restrict the values
   className?: string;
   alt?: string;
   priority?: boolean;
@@ -14,9 +14,9 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   src,
   width,
   height,
-  alt = "this is an image",
+  alt = 'this is an image',
   className,
-  objectFit = "cover",
+  objectFit = 'cover',
   priority = false,
 }) => {
   return (
@@ -29,7 +29,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         className={`${className}`}
         style={{ objectFit: objectFit }}
         priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 23vw"
+        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 23vw'
       />
     </div>
   );
