@@ -8,13 +8,7 @@ export default {
   ],
   darkMode: "class",
   theme: {
-    extend: {
-      colors: {
-        primary: "rgb(var(--primary)/<alpha-value>)",
-        "primary-dark": "rgb(var(--primary-dark)/<alpha-value>)",
-        secondary: "rgb(var(--secondary)/<alpha-value>)",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 } satisfies Config;
