@@ -1,0 +1,12 @@
+import { useTranslations } from 'next-intl';
+import LocalizedLink from '../components/LocalizedLink';
+
+export default function Home() {
+  const t = useTranslations('HomePage');
+  return (
+    <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white dark:bg-black'>
+      <h1>{t('title')}</h1>
+      <LocalizedLink href={'/about'}>{t('about')}</LocalizedLink>
+    </div>
+  );
+}
