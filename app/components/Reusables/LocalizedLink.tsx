@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Link, { LinkProps } from "next/link";
-import { useLocale } from "next-intl";
-import { ComponentProps, useMemo } from "react";
+import Link, { LinkProps } from 'next/link';
+import { useLocale } from 'next-intl';
+import { ComponentProps, useMemo } from 'react';
 
 type LocalizedLinkProps = LinkProps &
-  ComponentProps<"a"> & {
+  ComponentProps<'a'> & {
     children: React.ReactNode;
     hreflang?: string;
   };
@@ -20,7 +20,7 @@ export default function LocalizedLink({
 
   // Memoize the localized href to avoid unnecessary recalculations
   const localizedHref = useMemo(() => {
-    if (typeof href === "string") {
+    if (typeof href === 'string') {
       // If href is a string, prepend the locale if it's not already included
       return href.startsWith(`/${locale}`) ? href : `/${locale}${href}`;
     }

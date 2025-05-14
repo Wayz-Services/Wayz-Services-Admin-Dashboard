@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, Method } from "axios";
+import axios, { AxiosRequestConfig, Method } from 'axios';
 
 /**
  * Reusable Axios request function with URLSearchParams body
@@ -10,9 +10,9 @@ import axios, { AxiosRequestConfig, Method } from "axios";
  */
 const ApiRequest = async <T>(
   url: string,
-  method: Method = "POST",
+  method: Method = 'POST',
   data: Record<string, any> = {},
-  headers: Record<string, string> = {}
+  headers: Record<string, string> = {},
 ): Promise<T> => {
   try {
     // Convert object to URLSearchParams
@@ -27,7 +27,7 @@ const ApiRequest = async <T>(
       method,
       data: params,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
         ...headers,
       },
     };

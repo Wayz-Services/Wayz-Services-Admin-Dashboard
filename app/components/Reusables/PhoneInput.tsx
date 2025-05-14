@@ -1,7 +1,7 @@
-import { useTranslations } from "next-intl";
-import ReactPhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
-import Error from "./Error";
+import { useTranslations } from 'next-intl';
+import ReactPhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import Error from './Error';
 
 interface PhoneInputProps {
   phoneNumber: string;
@@ -16,49 +16,49 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   error,
   setErrors,
 }) => {
-  const t = useTranslations("SignUp");
+  const t = useTranslations('SignUp');
 
   const handlePhoneChange = (value: any, country: any) => {
     setPhoneNumber(value);
 
     setErrors((prevData: any) => ({
       ...prevData,
-      phoneNumber: "",
+      phoneNumber: '',
     }));
   };
 
   return (
     <div>
-      <label className="font-medium text-white">{t("phoneNumber")}</label>
+      <label className='font-medium text-white'>{t('phoneNumber')}</label>
 
-      <div style={{ direction: "ltr" }}>
+      <div style={{ direction: 'ltr' }}>
         <ReactPhoneInput
-          country={"lb"}
+          country={'lb'}
           onChange={handlePhoneChange}
           value={phoneNumber}
           enableSearch
           containerStyle={{
-            color: "black",
-            height: "42px",
-            margin: "4px 0",
+            color: 'black',
+            height: '42px',
+            margin: '4px 0',
           }}
           inputStyle={{
-            fontSize: "16px",
-            fontFamily: "Inter",
-            width: "100%",
-            height: "42px",
-            borderRadius: "6px",
-            border: error ? "1px solid rgb(248 113 113)" : "1px solid #76A4CE",
-            paddingLeft: "50px",
-            color: "white",
-            backgroundColor: "#1F6EB6",
+            fontSize: '16px',
+            fontFamily: 'Inter',
+            width: '100%',
+            height: '42px',
+            borderRadius: '6px',
+            border: error ? '1px solid rgb(248 113 113)' : '1px solid #76A4CE',
+            paddingLeft: '50px',
+            color: 'white',
+            backgroundColor: '#1F6EB6',
           }}
           buttonStyle={{
-            borderTopLeftRadius: "6px",
-            borderBottomLeftRadius: "6px",
-            background: "#1F6EB6",
-            border: error ? "1px solid rgb(248 113 113)" : "1px solid #76A4CE",
-            fontSize: "16px",
+            borderTopLeftRadius: '6px',
+            borderBottomLeftRadius: '6px',
+            background: '#1F6EB6',
+            border: error ? '1px solid rgb(248 113 113)' : '1px solid #76A4CE',
+            fontSize: '16px',
           }}
         />
       </div>

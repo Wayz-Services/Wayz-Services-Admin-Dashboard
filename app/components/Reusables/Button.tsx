@@ -1,10 +1,10 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   redirectTo?: string;
   onClick?: () => void;
-  backgColor?: "blue" | "white";
+  backgColor?: 'blue' | 'white';
   isLoading?: boolean;
 }
 
@@ -12,12 +12,12 @@ const Button: React.FC<ButtonProps> = ({
   className,
   children,
   onClick,
-  backgColor = "blue",
+  backgColor = 'blue',
   isLoading = false,
   ...rest
 }) => {
   const isBackPrimary =
-    backgColor === "blue" ? "bg-primary text-white" : "bg-white text-primary";
+    backgColor === 'blue' ? 'bg-primary text-white' : 'bg-white text-primary';
 
   return (
     <button
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`${className} ${isBackPrimary} py-2 hover:opacity-70 font-semibold rounded-md`}
       onClick={onClick}
     >
-      {isLoading ? "Loading..." : children}
+      {isLoading ? 'Loading...' : children}
     </button>
   );
 };

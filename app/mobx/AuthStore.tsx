@@ -1,7 +1,7 @@
-import { AxiosError } from "axios";
-import { action, makeObservable, observable } from "mobx";
-import ApiRequest from "../utils/AxiosReq";
-import { getCookie, setCookie } from "cookies-next";
+import { AxiosError } from 'axios';
+import { action, makeObservable, observable } from 'mobx';
+import ApiRequest from '../utils/AxiosReq';
+import { getCookie, setCookie } from 'cookies-next';
 
 interface AuthState {
   UserID: string;
@@ -19,15 +19,15 @@ interface DataProps {
 
 class AuthStore {
   userInfo: AuthState = {
-    UserID: "",
-    Username: "",
-    email: "",
+    UserID: '',
+    Username: '',
+    email: '',
     UserTypeID: 0,
-    phone_number: "",
-    ProfilePic: "",
+    phone_number: '',
+    ProfilePic: '',
   };
   isLoading: boolean = false;
-  errorMessage: string = "";
+  errorMessage: string = '';
 
   constructor() {
     makeObservable(this, {
@@ -48,12 +48,12 @@ class AuthStore {
 
   reset() {
     this.userInfo = {
-      UserID: "",
-      Username: "",
-      email: "",
+      UserID: '',
+      Username: '',
+      email: '',
       UserTypeID: 0,
-      phone_number: "",
-      ProfilePic: "",
+      phone_number: '',
+      ProfilePic: '',
     };
   }
 
@@ -81,7 +81,7 @@ class AuthStore {
         passwordx: data.password,
       };
 
-      const resp = await ApiRequest<any>("api/login.php", "POST", requestData);
+      const resp = await ApiRequest<any>('api/login.php', 'POST', requestData);
 
       if (resp?.error) {
         this.setErrorMessage(resp?.error); // Set the error message
@@ -91,7 +91,7 @@ class AuthStore {
         return;
       }
 
-      setCookie("userInfo", JSON.stringify(resp));
+      setCookie('userInfo', JSON.stringify(resp));
 
       this.setIsLoading(false);
     } catch (error: unknown) {
@@ -100,13 +100,13 @@ class AuthStore {
 
         this.setIsLoading(false);
 
-        console.log("Login error", error.message);
+        console.log('Login error', error.message);
       } else {
         this.setErrorMessage((error as any)?.error); // Set the error message
 
         this.setIsLoading(false);
 
-        console.log("An unknown error occurred", error as Error);
+        console.log('An unknown error occurred', error as Error);
       }
     }
   }
@@ -116,7 +116,7 @@ class AuthStore {
   }
 
   async IsLoggedIn() {
-    const userInfo = getCookie("userInfo");
+    const userInfo = getCookie('userInfo');
   }
 }
 
