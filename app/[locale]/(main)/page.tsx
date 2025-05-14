@@ -1,9 +1,9 @@
-import Testimonial from "../../components/InitialScreen/Testimonial";
-import OurProcess from "../../components/InitialScreen/OurProcess";
-import HeroSection from "../../components/InitialScreen/HeroSection";
-import Services from "../../components/InitialScreen/Services"; // Import the Services component
-import Facts from "../../components/InitialScreen/Facts";
-import ContactSection from "../../components/InitialScreen/Contact";
+import Testimonial from '../../components/InitialScreen/Testimonial';
+import OurProcess from '../../components/InitialScreen/OurProcess';
+import HeroSection from '../../components/InitialScreen/HeroSection';
+import Services from '../../components/InitialScreen/Services'; // Import the Services component
+import Facts from '../../components/InitialScreen/Facts';
+import ContactSection from '../../components/InitialScreen/Contact';
 
 const Home = () => {
   const Rectangle = () => {
@@ -20,7 +20,7 @@ const Home = () => {
     <div className='overflow-hidden'>
       <HeroSection />
 
-      <div className="hidden md:block relative w-full mt-[-1px] bg-primary dark:bg-black">
+      <div className='hidden md:block relative w-full mt-[-1px] bg-primary dark:bg-black'>
         <Rectangle />
       </div>
 

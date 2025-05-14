@@ -97,7 +97,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <nav
       className={`relative bg-primary dark:bg-black flex justify-between px-4 mx-auto my-[-1px] text-white sm:text-xs md:text-xs md:px-0 md:justify-around lg:text-base ${
-        !isInitialScreen ? "items-center" : "items-center md:items-start"
+        !isInitialScreen ? 'items-center' : 'items-center md:items-start'
       }`}
       style={{
         paddingTop: isInitialScreen ? 40 : 0,
