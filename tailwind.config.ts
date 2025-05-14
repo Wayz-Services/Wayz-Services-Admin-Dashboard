@@ -8,13 +8,7 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {
-      colors: {
-        primary: 'var(--primary)',
-        primaryDark: 'var(--primary-dark)',
-        secondary: 'var(--secondary)',
-      },
-    },
+    extend: {},
   },
   plugins: [],
 } satisfies Config;
