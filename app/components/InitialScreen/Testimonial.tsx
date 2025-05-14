@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import ImageComponent from "../Reusables/Image";
-import { useTranslations } from "next-intl";
+import React, { useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
+import ImageComponent from '../Reusables/Image';
+import { useTranslations } from 'next-intl';
 
 export default function Testimonial() {
-  const t = useTranslations("testimonial");
+  const t = useTranslations('testimonial');
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
@@ -26,48 +26,48 @@ export default function Testimonial() {
   const slides = [
     {
       description:
-        "Our Experience With WAYZ Has Been Excellent From Start To Finish. Nathan And The Team Took The Time To Understand Our Business, Our Target Market, And Digital Ambitions They Have",
-      image: "/images/InitialScreen/rob-olsson.png",
-      name: "Rob Olsson",
-      role: "Head Of Strategy",
+        'Our Experience With WAYZ Has Been Excellent From Start To Finish. Nathan And The Team Took The Time To Understand Our Business, Our Target Market, And Digital Ambitions They Have',
+      image: '/images/InitialScreen/rob-olsson.png',
+      name: 'Rob Olsson',
+      role: 'Head Of Strategy',
     },
     {
       description:
-        "Working with WAYZ was a game-changer for our company. Their expertise and dedication were evident throughout the entire project. We highly recommend them.",
-      image: "/images/InitialScreen/Slide1.png",
-      name: "Jane Smith",
-      role: "Marketing Director",
+        'Working with WAYZ was a game-changer for our company. Their expertise and dedication were evident throughout the entire project. We highly recommend them.',
+      image: '/images/InitialScreen/Slide1.png',
+      name: 'Jane Smith',
+      role: 'Marketing Director',
     },
   ];
 
   return (
-    <div className="p-2 sm:px-10 mb-16 bg-white dark:bg-black">
-      <div className="uppercase text-primary text-center text-2xl font-semibold">
-        {t("title")}
+    <div className='p-2 sm:px-10 mb-16 bg-white dark:bg-black'>
+      <div className='uppercase text-primary text-center text-2xl font-semibold'>
+        {t('title')}
       </div>
-      <div className="relative">
-        <div ref={sliderRef} className="keen-slider">
+      <div className='relative'>
+        <div ref={sliderRef} className='keen-slider'>
           {slides.map((slide, index) => (
             <div
-              className="keen-slider__slide flex  justify-center text-black max-h-screen dark:text-white"
+              className='keen-slider__slide flex  justify-center text-black max-h-screen dark:text-white'
               key={index}
             >
-              <div className="flex flex-col justify-center p-4 w-3/4">
-                <div className="text-base sm:text-2xl font-medium">
+              <div className='flex flex-col justify-center p-4 w-3/4'>
+                <div className='text-base sm:text-2xl font-medium'>
                   {slide.description}
                 </div>
-                <div className="flex mt-4 gap-3">
+                <div className='flex mt-4 gap-3'>
                   <ImageComponent
                     src={slide.image}
                     width={60}
                     height={60}
-                    alt="User"
-                    className="rounded-full me-4"
+                    alt='User'
+                    className='rounded-full me-4'
                   />
 
                   <div>
-                    <p className="font-bold text-sm sm:text-lg">{slide.name}</p>
-                    <p className="text-xs sm:text-sm">{slide.role}</p>
+                    <p className='font-bold text-sm sm:text-lg'>{slide.name}</p>
+                    <p className='text-xs sm:text-sm'>{slide.role}</p>
                   </div>
                 </div>
               </div>
@@ -77,18 +77,20 @@ export default function Testimonial() {
 
         {/* Arrows on the SIDES */}
         {loaded && instanceRef.current && (
-          <div className="sm:relative flex rtl:flex-row-reverse justify-center gap-8 sm:gap-0 sm:contents">
+          <div className='sm:relative flex rtl:flex-row-reverse justify-center gap-8 sm:gap-0 sm:contents'>
             <Arrow
               left
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
+              onClick={(e) => {
+                e.stopPropagation();
+                instanceRef.current?.prev();
+              }}
               disabled={currentSlide === 0}
             />
             <Arrow
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
+              onClick={(e) => {
+                e.stopPropagation();
+                instanceRef.current?.next();
+              }}
               disabled={
                 currentSlide ===
                 instanceRef.current.track.details.slides.length - 1
@@ -104,13 +106,13 @@ export default function Testimonial() {
 function Arrow(props: {
   disabled: boolean;
   left?: boolean;
-  onClick: (e: any) => void;
+  onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) {
   const disabled = props.disabled
-    ? "opacity-50 cursor-not-allowed pointer-events-none"
-    : "cursor-pointer";
+    ? 'opacity-50 cursor-not-allowed pointer-events-none'
+    : 'cursor-pointer';
 
-  const left = props.left ? "sm:left-[5px]" : "sm:left-auto sm:right-[5px]";
+  const left = props.left ? 'sm:left-[5px]' : 'sm:left-auto sm:right-[5px]';
 
   return (
     <div
@@ -122,9 +124,9 @@ function Arrow(props: {
       }}
     >
       {props.left ? (
-        <IoArrowBack size={40} color="white" />
+        <IoArrowBack size={40} color='white' />
       ) : (
-        <IoArrowForward color="white" size={40} />
+        <IoArrowForward color='white' size={40} />
       )}
     </div>
   );

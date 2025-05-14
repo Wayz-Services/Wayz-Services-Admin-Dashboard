@@ -9,8 +9,8 @@ import ThemeProvider from "../utils/ThemeProvider";
 import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
-  title: "WAYZ",
-  description: "Welcome to WAYZ application!",
+  title: 'WAYZ',
+  description: 'Welcome to WAYZ application!',
 };
 
 const META_THEME_COLORS = {
@@ -23,8 +23,8 @@ export const viewport: Viewport = {
 
 type Params = Promise<{ locale: string }>;
 
-const inter = Inter({ subsets: ["latin"] });
-const cairo = Cairo({ subsets: ["arabic"] });
+const inter = Inter({ subsets: ['latin'] });
+const cairo = Cairo({ subsets: ['arabic'] });
 
 export default async function LocaleLayout({
   children,
@@ -36,7 +36,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as 'en' | 'ar')) {
     notFound();
   }
 
@@ -45,7 +45,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   // Determine the direction based on locale
-  const isRtl = locale === "ar";
+  const isRtl = locale === 'ar';
   const fontClass = isRtl ? cairo.className : inter.className;
 
   const cookieStore = await cookies();

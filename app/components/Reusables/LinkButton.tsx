@@ -1,14 +1,14 @@
-import LocalizedLink from "./LocalizedLink";
+import LocalizedLink from './LocalizedLink';
 
 interface LinkButtonProps {
   className?: string;
   href: string;
   children: React.ReactNode;
-  bg?: "white" | "blue";
+  bg?: 'white' | 'blue';
 }
 
 const LinkButton: React.FC<LinkButtonProps> = ({
-  className = "",
+  className = '',
   href,
   children,
   bg,
@@ -21,7 +21,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
       ? "bg-[#0C8CE9] text-white"
       : "";
 
-  const baseStyles = bg ? "px-4 py-2 rounded-lg" : "";
+  const baseStyles = bg ? 'px-4 py-2 rounded-lg' : '';
 
   return (
     <LocalizedLink
