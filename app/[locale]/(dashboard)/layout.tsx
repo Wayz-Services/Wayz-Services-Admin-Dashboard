@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 import '../globals.css';
-import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'WAYZ',
-  description: 'Welcome to WAYZ applicatoin!',
+  title: 'WAYZ Dashboard',
+  description: 'Welcome to WAYZ dashboard!',
 };
 
 export default async function MainLayout({
@@ -15,9 +13,7 @@ export default async function MainLayout({
 }) {
   return (
     <>
-      <Header />
       <main>{children}</main>
-      <Footer />
     </>
   );
 }
