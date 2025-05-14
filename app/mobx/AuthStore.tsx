@@ -81,7 +81,21 @@ class AuthStore {
         passwordx: data.password,
       };
 
-      const resp = await ApiRequest<any>('api/login.php', 'POST', requestData);
+      interface LoginResponse {
+        error?: string;
+        UserID?: string;
+        Username?: string;
+        UserTypeID?: number;
+        email?: string;
+        phone_number?: number | string;
+        ProfilePic?: string;
+      }
+
+      const resp = await ApiRequest<LoginResponse>(
+        'api/login.php',
+        'POST',
+        requestData,
+      );
 
       if (resp?.error) {
         this.setErrorMessage(resp?.error); // Set the error message
@@ -96,13 +110,17 @@ class AuthStore {
       this.setIsLoading(false);
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
-        this.setErrorMessage((error as any)?.error); // Set the error message
+        this.setErrorMessage(
+          error.response?.data?.error || 'An error occurred',
+        ); // Set the error message
 
         this.setIsLoading(false);
 
         console.log('Login error', error.message);
       } else {
-        this.setErrorMessage((error as any)?.error); // Set the error message
+        const errorMessage =
+          (error as { error?: string })?.error || 'An unknown error occurred';
+        this.setErrorMessage(errorMessage); // Set the error message
 
         this.setIsLoading(false);
 

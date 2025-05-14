@@ -130,7 +130,7 @@ const SignUp = () => {
 
   const validateForm = () => {
     let valid = true;
-    let newErrors: FormData & { termsAccepted: string } = {
+    const newErrors: FormData & { termsAccepted: string } = {
       firstName: '',
       userName: '',
       email: '',
@@ -227,8 +227,6 @@ const SignUp = () => {
           data: requestData,
         },
       );
-
-      console.log('resp', resp);
     }
   };
 
@@ -243,7 +241,7 @@ const SignUp = () => {
           {t('createAccount')}
         </p>
 
-        <FixErrors errors={errors} />
+        <FixErrors errors={errors as unknown as Record<string, string>} />
 
         <div className='w-full'>
           <form onSubmit={handleSignUp}>
@@ -255,7 +253,16 @@ const SignUp = () => {
                       phoneNumber={phoneNumber}
                       setPhoneNumber={setPhoneNumber}
                       error={errors.phoneNumber}
-                      setErrors={setErrors}
+                      setErrors={(update) =>
+                        setErrors((prevErrors) => ({
+                          ...prevErrors,
+                          ...(typeof update === 'function'
+                            ? update({
+                                phoneNumber: prevErrors.phoneNumber || '',
+                              })
+                            : update),
+                        }))
+                      }
                     />
                   ) : (
                     <Input

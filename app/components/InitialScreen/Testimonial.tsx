@@ -80,15 +80,17 @@ export default function Testimonial() {
           <div className='sm:relative flex rtl:flex-row-reverse justify-center gap-8 sm:gap-0 sm:contents'>
             <Arrow
               left
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
+              onClick={(e) => {
+                e.stopPropagation();
+                instanceRef.current?.prev();
+              }}
               disabled={currentSlide === 0}
             />
             <Arrow
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
+              onClick={(e) => {
+                e.stopPropagation();
+                instanceRef.current?.next();
+              }}
               disabled={
                 currentSlide ===
                 instanceRef.current.track.details.slides.length - 1
@@ -104,7 +106,7 @@ export default function Testimonial() {
 function Arrow(props: {
   disabled: boolean;
   left?: boolean;
-  onClick: (e: any) => void;
+  onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
 }) {
   const disabled = props.disabled
     ? 'opacity-50 cursor-not-allowed pointer-events-none'

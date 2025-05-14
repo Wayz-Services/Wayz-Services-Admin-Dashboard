@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { IoIosWarning } from 'react-icons/io';
 
-const FixErrors = ({ errors }: { errors: any }) => {
+const FixErrors = ({ errors }: { errors: Record<string, string> }) => {
   const t = useTranslations('FixErrors');
 
   const hasErrors = Object.values(errors).some((value) => value !== '');

@@ -6,7 +6,7 @@ import Error from './Error';
 interface PhoneInputProps {
   phoneNumber: string;
   setPhoneNumber: React.Dispatch<React.SetStateAction<string>>;
-  setErrors: any;
+  setErrors: React.Dispatch<React.SetStateAction<{ phoneNumber: string }>>;
   error: string | undefined;
 }
 
@@ -18,10 +18,13 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
 }) => {
   const t = useTranslations('SignUp');
 
-  const handlePhoneChange = (value: any, country: any) => {
+  const handlePhoneChange = (
+    value: string,
+    _country: { name: string; dialCode: string; countryCode: string },
+  ) => {
     setPhoneNumber(value);
 
-    setErrors((prevData: any) => ({
+    setErrors((prevData: { phoneNumber: string }) => ({
       ...prevData,
       phoneNumber: '',
     }));

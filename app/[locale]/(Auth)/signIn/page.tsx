@@ -41,7 +41,7 @@ const Signin = () => {
 
   const validateForm = () => {
     let valid = true;
-    let newErrors: SignInData = { email: '', password: '' };
+    const newErrors: SignInData = { email: '', password: '' };
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?!.*\s).{8,}$/;
@@ -84,7 +84,7 @@ const Signin = () => {
           {t('sign_in_now')}
         </h2>
 
-        <FixErrors errors={errors} />
+        <FixErrors errors={errors as unknown as Record<string, string>} />
 
         <form className='w-full' onSubmit={handleSignIn}>
           <div className='mb-4'>

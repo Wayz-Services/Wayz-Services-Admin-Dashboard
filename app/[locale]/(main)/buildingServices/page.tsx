@@ -39,9 +39,9 @@ const Card = ({ Category, CategoryAr, Icone }: BuildingServicesData) => {
 export default function Page() {
   const t = useTranslations('BuildingServices');
 
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<BuildingServicesData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [currentItems, setCurrentItems] = useState<any[]>([]); // Items to display
+  const [currentItems, setCurrentItems] = useState<BuildingServicesData[]>([]); // Items to display
   const itemsPerPage = 10; // Number of items per load
   const [totalItems, setTotalItems] = useState(0); // Total number of items
 
@@ -49,7 +49,10 @@ export default function Page() {
     const fetchData = async () => {
       setIsLoading(true);
 
-      const response = await ApiRequest<any>('/testapi/apibuilding.php', 'GET');
+      const response = await ApiRequest<BuildingServicesData[]>(
+        '/testapi/apibuilding.php',
+        'GET',
+      );
 
       if (response) {
         setData(response); // Save all the data
@@ -71,7 +74,7 @@ export default function Page() {
   }, [currentItems, data, itemsPerPage]);
 
   const memoizedItems = useMemo(() => {
-    return currentItems.map((item: any, index: number) => (
+    return currentItems.map((item: BuildingServicesData, index: number) => (
       <Card key={index} {...item} />
     ));
   }, [currentItems]); // Only recalculate when currentItems change

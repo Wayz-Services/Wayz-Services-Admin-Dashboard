@@ -11,6 +11,7 @@ import axios, { AxiosRequestConfig, Method } from 'axios';
 const ApiRequest = async <T>(
   url: string,
   method: Method = 'POST',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any> = {},
   headers: Record<string, string> = {},
 ): Promise<T> => {
@@ -34,8 +35,11 @@ const ApiRequest = async <T>(
 
     const response = await axios(config);
     return response.data;
-  } catch (error: any) {
-    throw error.response?.data || error.message;
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error) && error.response) {
+      throw error.response.data;
+    }
+    throw error instanceof Error ? error.message : 'An unknown error occurred';
   }
 };
 
