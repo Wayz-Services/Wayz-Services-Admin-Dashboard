@@ -16,7 +16,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
 }) => {
   const bgClass =
     bg === "white"
-      ? "bg-white text-[#0C8CE9]"
+      ? "bg-white text-blue-500 hover:bg-blue-500 hover:text-white"
       : bg === "blue"
       ? "bg-[#0C8CE9] text-white"
       : "";

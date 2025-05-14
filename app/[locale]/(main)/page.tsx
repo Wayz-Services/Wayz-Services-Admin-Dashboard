@@ -1,4 +1,3 @@
-"use client"
 import Testimonial from "../../components/InitialScreen/Testimonial";
 import OurProcess from "../../components/InitialScreen/OurProcess";
 import HeroSection from "../../components/InitialScreen/HeroSection";
@@ -21,7 +20,7 @@ const Home = () => {
     <div className="overflow-hidden">
       <HeroSection />
 
-      <div className="hidden md:block relative w-full mt-[-1px] bg-primary">
+      <div className="hidden md:block relative w-full mt-[-1px] bg-primary dark:bg-black">
         <Rectangle />
       </div>
 

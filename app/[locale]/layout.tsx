@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -6,10 +6,19 @@ import { routing } from "@/i18n/routing";
 import { Cairo, Inter } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import ThemeProvider from "../utils/ThemeProvider";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   title: "WAYZ",
   description: "Welcome to WAYZ application!",
+};
+
+const META_THEME_COLORS = {
+  light: '#ffffff',
+  dark: '#09090b'
+};
+export const viewport: Viewport = {
+  themeColor: META_THEME_COLORS.light
 };
 
 type Params = Promise<{ locale: string }>;
@@ -39,10 +48,26 @@ export default async function LocaleLayout({
   const isRtl = locale === "ar";
   const fontClass = isRtl ? cairo.className : inter.className;
 
+  const cookieStore = await cookies();
+  const activeThemeValue = cookieStore.get("active_theme")?.value;
+  const isScaled = activeThemeValue?.endsWith("-scaled");
+
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
-      <body className={`${fontClass}`} suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body
+        className={`${fontClass} ${
+          activeThemeValue ? `theme-${activeThemeValue}` : ""
+        }${isScaled ? "theme-scaled" : ""}
+        `}
+        suppressHydrationWarning
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          disableTransitionOnChange
+          enableColorScheme
+          enableSystem
+        >
           <NextIntlClientProvider messages={messages}>
             <main>{children}</main>
           </NextIntlClientProvider>
