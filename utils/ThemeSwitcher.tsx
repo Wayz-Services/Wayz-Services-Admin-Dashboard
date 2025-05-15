@@ -1,9 +1,11 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import { SunMoon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 
-export default function ModeToggle() {
+export function ThemeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme();
 
   const handleThemeToggle = React.useCallback(
@@ -30,9 +32,15 @@ export default function ModeToggle() {
   );
 
   return (
-    <button className='group/toggle size-8' onClick={handleThemeToggle}>
-      dsadsdadasd
+    <Button
+      variant='secondary'
+      size='icon'
+      className=''
+      onClick={handleThemeToggle}
+    >
+      <SunMoon />
+
       <span className='sr-only'>Toggle theme</span>
-    </button>
+    </Button>
   );
 }

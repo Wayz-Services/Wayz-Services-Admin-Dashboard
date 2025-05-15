@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Cairo, Inter } from 'next/font/google';
 import { getMessages } from 'next-intl/server';
-import ThemeProvider from '../utils/ThemeProvider';
+import ThemeProvider from '../../utils/ThemeProvider';
 import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {

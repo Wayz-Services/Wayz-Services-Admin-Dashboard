@@ -17,6 +17,34 @@ interface DataProps {
   password: string;
 }
 
+export interface AuthErrorResponse {
+  status: number;
+  reason: string;
+  valid: 'NO' | string;
+}
+
+export interface UserData {
+  _id: string;
+  first_name: string;
+  last_name: string;
+  user_name: string;
+  phone_number: number;
+  email: string;
+  account_type: 'Admin' | 'User' | string; // Add more roles as needed
+  createdAt: string;
+  updatedAt: string;
+  profile_pic: string;
+}
+
+export interface AuthResponse {
+  status: number;
+  results: {
+    userData: UserData;
+    token: string;
+  };
+  valid: 'YES';
+}
+
 class AuthStore {
   userInfo: AuthState = {
     UserID: '',
@@ -36,7 +64,6 @@ class AuthStore {
       errorMessage: observable,
       reset: action.bound,
       setUserInfo: action.bound,
-      setIsLoading: action.bound,
       setErrorMessage: action.bound,
       SignIn: action.bound,
       SignOut: action.bound,
@@ -64,68 +91,43 @@ class AuthStore {
     };
   }
 
-  setIsLoading(value: boolean) {
-    this.isLoading = value;
-  }
-
   setErrorMessage(message: string) {
     this.errorMessage = message;
   }
 
   async SignIn(data: DataProps) {
     try {
-      this.setIsLoading(true);
+      this.isLoading = true;
 
       const requestData = {
-        usernamex: data.email,
-        passwordx: data.password,
+        user_name: data.email,
+        password: data.password,
       };
 
-      interface LoginResponse {
-        error?: string;
-        UserID?: string;
-        Username?: string;
-        UserTypeID?: number;
-        email?: string;
-        phone_number?: number | string;
-        ProfilePic?: string;
-      }
-
-      const resp = await ApiRequest<LoginResponse>(
-        'api/login.php',
+      const resp = await ApiRequest<AuthResponse>(
+        'api/user/login',
         'POST',
         requestData,
       );
 
-      if (resp?.error) {
-        this.setErrorMessage(resp?.error); // Set the error message
+      setCookie('userInfo', JSON.stringify(resp.results.userData));
 
-        this.setIsLoading(false);
+      setCookie('token', JSON.stringify(resp.results.token));
 
-        return;
-      }
-
-      setCookie('userInfo', JSON.stringify(resp));
-
-      this.setIsLoading(false);
+      this.isLoading = false;
     } catch (error: unknown) {
-      if (error instanceof AxiosError) {
-        this.setErrorMessage(
-          error.response?.data?.error || 'An error occurred',
-        ); // Set the error message
+      let errorMessage = 'An unknown error occurred';
 
-        this.setIsLoading(false);
-
-        console.log('Login error', error.message);
-      } else {
-        const errorMessage =
-          (error as { error?: string })?.error || 'An unknown error occurred';
-        this.setErrorMessage(errorMessage); // Set the error message
-
-        this.setIsLoading(false);
-
-        console.log('An unknown error occurred', error as Error);
+      if (typeof error === 'object' && error !== null && 'reason' in error) {
+        errorMessage =
+          typeof error.reason === 'string' ? error.reason : errorMessage;
       }
+
+      this.errorMessage = errorMessage;
+
+      this.isLoading = false;
+
+      console.log('An unknown error occurred', error as Error);
     }
   }
 
