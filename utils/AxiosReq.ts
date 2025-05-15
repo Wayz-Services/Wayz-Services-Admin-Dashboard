@@ -1,11 +1,12 @@
 import axios, { AxiosRequestConfig, Method } from 'axios';
 
 /**
- * Reusable Axios request function with URLSearchParams body
+ * Reusable Axios request function with support for JSON and FormData bodies
  * @param url - API endpoint
  * @param method - HTTP method (GET, POST, PUT, DELETE, etc.)
- * @param data - Request body (converted to URLSearchParams)
+ * @param data - Request body (object or FormData)
  * @param headers - Additional headers (optional)
+ * @param isFormData - Whether to send data as FormData (optional)
  * @returns Axios response data
  */
 const ApiRequest = async <T>(
@@ -14,21 +15,29 @@ const ApiRequest = async <T>(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any> = {},
   headers: Record<string, string> = {},
+  isFormData = false,
 ): Promise<T> => {
   try {
-    // Convert object to URLSearchParams
-    const params = new URLSearchParams();
-    Object.entries(data).forEach(([key, value]) => {
-      params.append(key, value);
-    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let requestData: any = data;
+    let contentType = 'application/json';
 
-    // Axios config
+    if (isFormData) {
+      requestData = new FormData();
+
+      Object.entries(data).forEach(([key, value]) => {
+        requestData.append(key, value);
+      });
+
+      contentType = 'multipart/form-data';
+    }
+
     const config: AxiosRequestConfig = {
       url: `${process.env.NEXT_PUBLIC_API_URL}${url}`,
       method,
-      data: params,
+      data: requestData,
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': contentType,
         ...headers,
       },
     };
