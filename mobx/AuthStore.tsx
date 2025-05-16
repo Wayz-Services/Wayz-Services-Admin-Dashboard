@@ -1,19 +1,9 @@
-import { AxiosError } from 'axios';
 import { action, makeObservable, observable } from 'mobx';
 import ApiRequest from '../utils/AxiosReq';
-import { getCookie, setCookie } from 'cookies-next';
-
-interface AuthState {
-  UserID: string;
-  Username: string;
-  UserTypeID: number;
-  email?: string;
-  phone_number?: number | string;
-  ProfilePic: string;
-}
+import { deleteCookie, getCookie, setCookie } from 'cookies-next';
 
 interface DataProps {
-  email: string;
+  account: string;
   password: string;
 }
 
@@ -30,7 +20,7 @@ export interface UserData {
   user_name: string;
   phone_number: number;
   email: string;
-  account_type: 'Admin' | 'User' | string; // Add more roles as needed
+  account_type: 'Admin';
   createdAt: string;
   updatedAt: string;
   profile_pic: string;
@@ -46,13 +36,17 @@ export interface AuthResponse {
 }
 
 class AuthStore {
-  userInfo: AuthState = {
-    UserID: '',
-    Username: '',
+  userInfo: UserData = {
+    _id: '',
+    first_name: '',
+    last_name: '',
+    user_name: '',
+    phone_number: 0,
     email: '',
-    UserTypeID: 0,
-    phone_number: '',
-    ProfilePic: '',
+    account_type: 'Admin',
+    createdAt: '',
+    updatedAt: '',
+    profile_pic: '',
   };
   isLoading: boolean = false;
   errorMessage: string = '';
@@ -64,6 +58,7 @@ class AuthStore {
       errorMessage: observable,
       reset: action.bound,
       setUserInfo: action.bound,
+      setIsLoading: action.bound,
       setErrorMessage: action.bound,
       SignIn: action.bound,
       SignOut: action.bound,
@@ -75,20 +70,28 @@ class AuthStore {
 
   reset() {
     this.userInfo = {
-      UserID: '',
-      Username: '',
+      _id: '',
+      first_name: '',
+      last_name: '',
+      user_name: '',
+      phone_number: 0,
       email: '',
-      UserTypeID: 0,
-      phone_number: '',
-      ProfilePic: '',
+      account_type: 'Admin',
+      createdAt: '',
+      updatedAt: '',
+      profile_pic: '',
     };
   }
 
-  setUserInfo(data: Partial<AuthState>) {
+  setUserInfo(data: Partial<UserData>) {
     this.userInfo = {
       ...this.userInfo,
       ...data, // Merge existing userInfo with new data
     };
+  }
+
+  setIsLoading(isLoading: boolean) {
+    this.isLoading = isLoading;
   }
 
   setErrorMessage(message: string) {
@@ -100,7 +103,7 @@ class AuthStore {
       this.isLoading = true;
 
       const requestData = {
-        user_name: data.email,
+        user_name: data.account,
         password: data.password,
       };
 
@@ -114,7 +117,7 @@ class AuthStore {
 
       setCookie('token', JSON.stringify(resp.results.token));
 
-      this.isLoading = false;
+      return true;
     } catch (error: unknown) {
       let errorMessage = 'An unknown error occurred';
 
@@ -128,11 +131,19 @@ class AuthStore {
       this.isLoading = false;
 
       console.log('An unknown error occurred', error as Error);
+
+      return false;
     }
   }
 
   async SignOut() {
     this.reset();
+    console.log('Sign out called');
+
+    deleteCookie('userInfo');
+    deleteCookie('token');
+
+    return true;
   }
 
   async IsLoggedIn() {

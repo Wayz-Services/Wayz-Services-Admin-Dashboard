@@ -1,33 +1,68 @@
 import { NextRequest, NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { getCookie } from 'cookies-next';
 
 const intlMiddleware = createMiddleware(routing);
 
+const supportedLocales = ['en', 'ar'];
+const defaultLocale = 'en';
+
 export default function middleware(request: NextRequest) {
-  const { nextUrl } = request;
+  const { nextUrl, cookies } = request;
 
-  // Handle the root "/" path before intl middleware does
-  if (nextUrl.pathname === '/') {
-    const locale = nextUrl.locale || 'en';
+  const token = cookies.get('token')?.value;
+  const userIsLoggedIn = Boolean(token);
 
-    // TODO: Replace this with your real auth logic (e.g., cookies, headers)
-    const token = getCookie('token', { req: request });
+  const pathname = nextUrl.pathname;
+  const pathLocale = pathname.split('/')[1];
+  const cookieLocale = cookies.get('NEXT_LOCALE')?.value || defaultLocale;
 
-    const userIsLoggedIn = Boolean(token);
+  // Handle root "/" and locale root like "/en" or "/ar"
+  if (
+    pathname === '/' ||
+    (supportedLocales.includes(pathLocale) && pathname === `/${pathLocale}`)
+  ) {
+    const locale = supportedLocales.includes(pathLocale)
+      ? pathLocale
+      : cookieLocale;
+    const redirectPath = userIsLoggedIn ? 'dashboard' : 'sign-in';
 
-    const redirectTo = userIsLoggedIn
-      ? `/${locale}/dashboard/overview`
-      : `/${locale}/sign-in`;
-
-    return NextResponse.redirect(new URL(redirectTo, request.url));
+    return NextResponse.redirect(
+      new URL(`/${locale}/${redirectPath}`, request.url),
+    );
   }
 
-  // Fallback to the default intl middleware
+  // If path does not start with a supported locale, prefix it
+  if (!supportedLocales.includes(pathLocale)) {
+    const locale = cookieLocale;
+    const url = new URL(request.url);
+    url.pathname = `/${locale}${pathname}`;
+    return NextResponse.redirect(url);
+  }
+
+  // Redirect unauthenticated users away from protected routes
+  const isSignInPage = pathname.startsWith(`/${pathLocale}/sign-in`);
+  const isProtectedRoute = !isSignInPage && !userIsLoggedIn;
+
+  if (isSignInPage && userIsLoggedIn) {
+    return NextResponse.redirect(
+      new URL(`/${pathLocale}/dashboard`, request.url),
+    );
+  }
+
+  if (isProtectedRoute) {
+    return NextResponse.redirect(
+      new URL(`/${pathLocale}/sign-in`, request.url),
+    );
+  }
+
+  // Fallback to intl middleware
   return intlMiddleware(request);
 }
 
 export const config = {
-  matcher: ['/', '/(ar|en)/:path*'],
+  matcher: [
+    '/',
+    '/((?!_next|favicon\\.ico|images|api).*)', // exclude static assets & API
+  ],
 };

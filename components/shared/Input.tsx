@@ -45,7 +45,7 @@ const FormInput: React.FC<React.ComponentProps<'input'> & InputProps> = ({
 
         {isPassword && (
           <div
-            className='absolute inset-y-0 right-2 flex items-center text-gray-500 cursor-pointer'
+            className='absolute inset-y-0 lex self-center text-gray-500 cursor-pointer rtl:left-2 ltr:right-2'
             onClick={toggleShowPassword}
           >
             {showPassword ? (

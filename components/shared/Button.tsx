@@ -1,33 +1,34 @@
+import { Loader2 } from 'lucide-react';
 import { ButtonHTMLAttributes } from 'react';
+import { Button } from '../ui/button';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   redirectTo?: string;
-  onClick?: () => void;
-  backgColor?: 'blue' | 'white';
+  onClick?: (e: React.FormEvent) => void;
   isLoading?: boolean;
+  variant?: 'outline' | 'default' | 'link' | 'destructive';
 }
 
-const Button: React.FC<ButtonProps> = ({
+const CustomButton: React.FC<ButtonProps> = ({
   className,
   children,
   onClick,
-  backgColor = 'blue',
   isLoading = false,
+  variant = 'outline',
   ...rest
 }) => {
-  const isBackPrimary =
-    backgColor === 'blue' ? 'bg-primary text-white' : 'bg-white text-primary';
-
   return (
-    <button
+    <Button
       {...rest}
-      className={`${className} ${isBackPrimary} py-2 hover:opacity-70 font-semibold rounded-md`}
+      variant={variant}
+      className={`${className}`}
       onClick={onClick}
+      disabled={isLoading}
     >
-      {isLoading ? 'Loading...' : children}
-    </button>
+      {isLoading ? <Loader2 className='animate-spin' /> : children}
+    </Button>
   );
 };
 
-export default Button;
+export default CustomButton;

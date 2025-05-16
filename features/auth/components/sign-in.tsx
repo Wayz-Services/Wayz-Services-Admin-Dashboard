@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -13,18 +12,29 @@ import FormInput from '@/components/shared/Input';
 import { authStore } from '@/mobx/AuthStore';
 import Error from '@/components/shared/Error';
 import { observer } from 'mobx-react-lite';
+import { useTranslations } from 'next-intl';
+import CustomButton from '@/components/shared/Button';
+import { useRouter } from '@/i18n/routing';
 
 interface SignInData {
-  email: string;
+  account: string;
   password: string;
 }
 
 export const SignIn = observer(() => {
-  const { SignIn, errorMessage, setErrorMessage } = authStore;
+  const { SignIn, errorMessage, setErrorMessage, isLoading, setIsLoading } =
+    authStore;
 
-  const [form, setForm] = useState<SignInData>({ email: '', password: '' });
+  const [form, setForm] = useState<SignInData>({ account: '', password: '' });
 
-  const [errors, setErrors] = useState<SignInData>({ email: '', password: '' });
+  const [errors, setErrors] = useState<SignInData>({
+    account: '',
+    password: '',
+  });
+
+  const t = useTranslations('sign_in');
+
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,25 +46,32 @@ export const SignIn = observer(() => {
 
   const validateForm = () => {
     let valid = true;
-    const newErrors: SignInData = { email: '', password: '' };
+    const newErrors: SignInData = { account: '', password: '' };
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const accountRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?!.*\s).{8,}$/;
 
-    if (!form.email) {
-      newErrors.email = 'Enter your email';
+    if (!form.account) {
+      newErrors.account = t('required');
       valid = false;
-    } else if (form.email.includes('@') && !emailRegex.test(form.email)) {
-      newErrors.email = 'Please enter a valid email';
+    } else if (form.account.includes('@') && !accountRegex.test(form.account)) {
+      newErrors.account = t('valid_email');
       valid = false;
+    } else if (!form.account.includes('@')) {
+      // Username must be 3-20 characters, alphanumeric, underscores allowed, no spaces
+      const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
+      if (!usernameRegex.test(form.account)) {
+        valid = false;
+      }
+
+      newErrors.account = t('valid_username');
     }
 
     if (!form.password) {
-      newErrors.password = 'Please enter your password';
+      newErrors.password = t('required');
       valid = false;
     } else if (!passwordRegex.test(form.password)) {
-      newErrors.password =
-        'Password must contain at least 8 characters, one capital letter, and one number.';
+      newErrors.password = t('valid_password');
       valid = false;
     }
 
@@ -62,43 +79,70 @@ export const SignIn = observer(() => {
     return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Handle form submission logic here
-    SignIn(form);
+    // if (validateForm()) {
+    const resp: boolean = await SignIn(form);
+
+    if (resp) {
+      // Redirect to dashboard or perform any other action
+      router.push(`/dashboard`);
+
+      setIsLoading(false);
+
+      return;
+    }
+
+    setIsLoading(false);
+    // }
   };
+
+  const formData = [
+    {
+      placeholder: t('account_placeholder'),
+      id: 'account',
+      label: t('account'),
+      name: 'account',
+      isPassword: false,
+      value: form.account,
+      error: errors.account,
+    },
+    {
+      placeholder: t('password_placeholder'),
+      id: 'password',
+      label: t('password'),
+      name: 'password',
+      isPassword: true,
+      value: form.password,
+      error: errors.password,
+    },
+  ];
 
   return (
     <div className='flex flex-col items-center justify-center h-[100vh]'>
       <Card className='w-[20vw]'>
         <CardHeader className='text-center'>
-          <CardTitle>Welcome Back!</CardTitle>
+          <CardTitle>{t('title')}</CardTitle>
         </CardHeader>
 
         <CardContent>
           <form>
             <div className='grid w-full items-center gap-4'>
-              <FormInput
-                placeholder='Enter your email'
-                id='email'
-                label='Email'
-                name='email'
-                value={form.email}
-                onChange={handleChange}
-                error={errors.email}
-              />
-
-              <FormInput
-                placeholder='Enter your password'
-                id='password'
-                label='Password'
-                name='password'
-                isPassword
-                value={form.password}
-                onChange={handleChange}
-                error={errors.password}
-              />
+              {formData.map((input, idx) => (
+                <FormInput
+                  key={idx}
+                  placeholder={input.placeholder}
+                  id={input.id}
+                  label={input.label}
+                  name={input.name}
+                  isPassword={input.isPassword}
+                  value={input.value}
+                  onChange={handleChange}
+                  error={input.error}
+                />
+              ))}
             </div>
           </form>
 
@@ -106,13 +150,13 @@ export const SignIn = observer(() => {
         </CardContent>
 
         <CardFooter className='flex'>
-          <Button
-            variant='outline'
+          <CustomButton
             onClick={handleSubmit}
+            isLoading={isLoading}
             className='w-full hover:cursor-pointer'
           >
-            Login
-          </Button>
+            {t('sign_in_button')}
+          </CustomButton>
         </CardFooter>
       </Card>
     </div>

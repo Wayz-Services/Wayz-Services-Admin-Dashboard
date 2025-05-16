@@ -1,1 +1,14 @@
-{}
+{
+  "sign_in": {
+    "title": "Welcome Back",
+    "account": "Account",
+    "account_placeholder": "Enter your username or email",
+    "password_placeholder": "Enter your password",
+    "password": "Password",
+    "sign_in_button": "Sign In",
+    "required": "Required",
+    "valid_email": "Please enter a valid email address",
+    "valid_password": "Password must contain at least 8 characters, one capital letter, and one number.",
+    "valid_username": "Username must be 3-20 characters, alphanumeric, underscores allowed, no spaces"
+  }
+}
